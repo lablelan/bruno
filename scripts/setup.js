@@ -68,7 +68,7 @@ async function setup() {
     }
 
     // Install dependencies
-    execCommand('npm i --legacy-peer-deps', 'Installing dependencies');
+    execCommand('npm i --save-exact --legacy-peer-deps', 'Installing dependencies');
 
     // Build packages
     execCommand('npm run build:graphql-docs', 'Building graphql-docs');
