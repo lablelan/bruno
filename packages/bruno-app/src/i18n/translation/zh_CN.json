@@ -1,0 +1,36 @@
+{
+  "COMMON": {
+    "COLLECTIONS": "集合",
+    "DOCUMENTATION": "文档",
+    "REPORT_ISSUES": "反馈问题",
+    "GITHUB": "GitHub",
+    "DISCORD": "Discord",
+    "TWITTER": "Twitter"
+  },
+  "WELCOME": {
+    "ABOUT_BRUNO": "用于探索和测试 API 的开源集成开发环境",
+    "LINKS": "链接",
+    "CREATE_COLLECTION": "创建集合",
+    "OPEN_COLLECTION": "打开集合",
+    "IMPORT_COLLECTION": "导入集合",
+    "COLLECTION_IMPORT_SUCCESS": "集合导入成功",
+    "COLLECTION_IMPORT_ERROR": "导入集合时发生错误。查看日志了解更多信息。",
+    "COLLECTION_OPEN_ERROR": "打开集合时发生错误"
+  },
+  "ResponsePane_Placeholder": {
+    "Send_Request": "发送请求",
+    "New_Request": "新建请求",
+    "Edit_Environments": "编辑环境"
+  },
+  "VariablesEditor": {
+    "No_environment_selected": "未选择环境",
+    "No_environment_variables_found": "未找到环境变量",
+    "No_runtime_variables_found": "未找到运行时变量",
+    "Environment_Variables": "环境变量",
+    "Runtime_Variables": "运行时变量",
+    "Note": "注意：截至目前，运行时变量只能通过 API 进行设置",
+    "And": "和",
+    "HIDE_SECRET_VALUES": "隐藏敏感变量值",
+    "SHOW_SECRET_VALUES": "显示敏感变量值"
+  }
+}

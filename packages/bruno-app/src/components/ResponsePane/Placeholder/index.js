@@ -3,8 +3,10 @@ import { IconSend } from '@tabler/icons';
 import { useSelector } from 'react-redux';
 import StyledWrapper from './StyledWrapper';
 import { isMacOS } from 'utils/common/platform';
+import { useTranslation } from 'react-i18next';
 
 const Placeholder = () => {
+  const { t } = useTranslation();
   const isMac = isMacOS();
   const sendRequestShortcut = isMac ? 'Cmd + Enter' : 'Ctrl + Enter';
   const newRequestShortcut = isMac ? 'Cmd + B' : 'Ctrl + B';
@@ -19,9 +21,9 @@ const Placeholder = () => {
       </div>
       <div className="flex mt-4">
         <div className="flex flex-1 flex-col items-end px-1">
-          <div className="px-1 py-2">Send Request</div>
-          <div className="px-1 py-2">New Request</div>
-          <div className="px-1 py-2">Edit Environments</div>
+          <div className="px-1 py-2">{t('ResponsePane_Placeholder.Send_Request')}</div>
+          <div className="px-1 py-2">{t('ResponsePane_Placeholder.New_Request')}</div>
+          <div className="px-1 py-2">{t('ResponsePane_Placeholder.Edit_Environments')}</div>
         </div>
         <div className="flex flex-1 flex-col px-1">
           <div className="px-1 py-2">{sendRequestShortcut}</div>

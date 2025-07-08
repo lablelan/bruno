@@ -9,7 +9,8 @@
     "preview": "rsbuild preview",
     "test": "jest",
     "test:prettier": "prettier --check \"./src/**/*.{js,jsx,json,ts,tsx}\"",
-    "prettier": "prettier --write \"./src/**/*.{js,jsx,json,ts,tsx}\""
+    "prettier": "prettier --write \"./src/**/*.{js,jsx,json,ts,tsx}\"",
+    "extract": "node extractEnglish.js"
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.15",
