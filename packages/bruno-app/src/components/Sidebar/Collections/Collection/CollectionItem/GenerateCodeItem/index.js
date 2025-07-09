@@ -13,8 +13,10 @@ import { getLanguages } from 'utils/codegenerator/targets';
 import { useSelector } from 'react-redux';
 import { getGlobalEnvironmentVariables } from 'utils/collections/index';
 import { resolveInheritedAuth } from './utils/auth-utils';
+import { useTranslation } from 'react-i18next';
 
 const GenerateCodeItem = ({ collectionUid, item, onClose }) => {
+  const { t } = useTranslation();
   const languages = getLanguages();
   const collection = useSelector(state => state.collections.collections?.find(c => c.uid === collectionUid));
   const { globalEnvironments, activeGlobalEnvironmentUid } = useSelector((state) => state.globalEnvironments);
@@ -83,8 +85,8 @@ const GenerateCodeItem = ({ collectionUid, item, onClose }) => {
               />
             ) : (
               <div className="error-message">
-                <h1>Invalid URL: {finalUrl}</h1>
-                <p>Please check the URL and try again</p>
+                <h1>{t('Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem.Invalid_URL')}: {finalUrl}</h1>
+                <p>{t('Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem.Please_check_the_URL_and_try_again')}</p>
               </div>
             )}
           </div>

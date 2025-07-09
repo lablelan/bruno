@@ -14,8 +14,10 @@ import path from 'utils/common/path';
 import Portal from 'components/Portal';
 import Dropdown from 'components/Dropdown';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const CloneCollectionItem = ({ collectionUid, item, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const isFolder = isItemAFolder(item);
   const inputRef = useRef();
@@ -72,9 +74,7 @@ const CloneCollectionItem = ({ collectionUid, item, onClose }) => {
         <button
           className="btn-advanced"
           type="button"
-        >
-          Options
-        </button>
+        >{t('Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem.Options')}</button>
         <IconCaretDown className="caret ml-1" size={14} strokeWidth={2}/>
       </div>
     );
@@ -92,7 +92,7 @@ const CloneCollectionItem = ({ collectionUid, item, onClose }) => {
           <form className="bruno-form" onSubmit={formik.handleSubmit}>
             <div>
               <label htmlFor="name" className="block font-semibold">
-                {isFolder ? 'Folder' : 'Request'} Name
+                {isFolder ? t('Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem.FolderName') : t('Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem.RequestName')}
               </label>
               <input
                 id="collection-item-name"
@@ -199,17 +199,13 @@ const CloneCollectionItem = ({ collectionUid, item, onClose }) => {
               </div>
               <div className='flex justify-end'>
                 <span className='mr-2'>
-                  <button type="button" onClick={onClose} className="btn btn-md btn-close">
-                    Cancel
-                  </button>
+                  <button type="button" onClick={onClose} className="btn btn-md btn-close">{t('Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem.Cancel')}</button>
                 </span>
                 <span>
                   <button
                     type="submit"
                     className="submit btn btn-md btn-secondary"
-                  >
-                    Clone
-                  </button>
+                  >{t('Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem.Clone')}</button>
                 </span>
               </div>
             </div>

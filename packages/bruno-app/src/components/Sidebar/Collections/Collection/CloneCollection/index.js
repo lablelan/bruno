@@ -12,8 +12,10 @@ import PathDisplay from 'components/PathDisplay';
 import { useState } from 'react';
 import { IconArrowBackUp, IconEdit } from "@tabler/icons";
 import { findCollectionByUid } from 'utils/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const CloneCollection = ({ onClose, collectionUid }) => {
+  const { t } = useTranslation();
   const inputRef = useRef();
   const dispatch = useDispatch();
   const [isEditing, toggleEditing] = useState(false);
@@ -85,9 +87,7 @@ const CloneCollection = ({ onClose, collectionUid }) => {
     <Modal size="sm" title="Clone Collection" confirmText="Create" handleConfirm={onSubmit} handleCancel={onClose}>
       <form className="bruno-form" onSubmit={e => e.preventDefault()}>
         <div>
-          <label htmlFor="collection-name" className="flex items-center font-semibold">
-            Name
-          </label>
+          <label htmlFor="collection-name" className="flex items-center font-semibold">{t('Sidebar_Collections_Collection_CloneCollection.Name')}</label>
           <input
             id="collection-name"
             type="text"
@@ -108,9 +108,7 @@ const CloneCollection = ({ onClose, collectionUid }) => {
             <div className="text-red-500">{formik.errors.collectionName}</div>
           ) : null}
 
-          <label htmlFor="collection-location" className="block font-semibold mt-3">
-            Location
-          </label>
+          <label htmlFor="collection-location" className="block font-semibold mt-3">{t('Sidebar_Collections_Collection_CloneCollection.Location')}</label>
           <input
             id="collection-location"
             type="text"
@@ -134,20 +132,21 @@ const CloneCollection = ({ onClose, collectionUid }) => {
                 fontSize: '0.8125rem'
               }}
             >
-              Browse
+              {t('Sidebar_Collections_Collection_CloneCollection.Browse')}
             </span>
           </div>
 
           <div className="mt-4">
             <div className="flex items-center justify-between">
               <label htmlFor="filename" className="flex items-center font-semibold">
-                Folder Name
+                {t('Sidebar_Collections_Collection_CloneCollection.Folder_Name')}
+                
                 <Help width="300">
                   <p>
-                    The name of the folder used to store the collection.
+                    {t('Sidebar_Collections_Collection_CloneCollection.LongDescriptions2')}
                   </p>
                   <p className="mt-2">
-                    You can choose a folder name different from your collection's name or one compatible with filesystem rules.
+                    {t('Sidebar_Collections_Collection_CloneCollection.LongDescriptions1')}
                   </p>
                 </Help>
               </label>

@@ -19,8 +19,10 @@ import PathDisplay from 'components/PathDisplay';
 import Portal from 'components/Portal';
 import Help from 'components/Help';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inputRef = useRef();
 
@@ -244,9 +246,7 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
         <button
           className="btn-advanced"
           type="button"
-        >
-          Options
-        </button>
+        >{t('Sidebar_NewRequest.Options')}</button>
         <IconCaretDown className="caret ml-1" size={14} strokeWidth={2}/>
       </div>
     );
@@ -267,9 +267,7 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
             }}
           >
             <div>
-              <label htmlFor="requestName" className="block font-semibold">
-                Type
-              </label>
+              <label htmlFor="requestName" className="block font-semibold">{t('Sidebar_NewRequest.Type')}</label>
 
               <div className="flex items-center mt-2">
                 <input
@@ -281,9 +279,7 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
                   value="http-request"
                   checked={formik.values.requestType === 'http-request'}
                 />
-                <label htmlFor="http-request" className="ml-1 cursor-pointer select-none">
-                  HTTP
-                </label>
+                <label htmlFor="http-request" className="ml-1 cursor-pointer select-none">{t('Sidebar_NewRequest.HTTP')}</label>
 
                 <input
                   id="graphql-request"
@@ -297,9 +293,7 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
                   value="graphql-request"
                   checked={formik.values.requestType === 'graphql-request'}
                 />
-                <label htmlFor="graphql-request" className="ml-1 cursor-pointer select-none">
-                  GraphQL
-                </label>
+                <label htmlFor="graphql-request" className="ml-1 cursor-pointer select-none">{t('Sidebar_NewRequest.GraphQL')}</label>
 
                 <input
                   id="from-curl"
@@ -311,15 +305,11 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
                   checked={formik.values.requestType === 'from-curl'}
                 />
 
-                <label htmlFor="from-curl" className="ml-1 cursor-pointer select-none">
-                  From cURL
-                </label>
+                <label htmlFor="from-curl" className="ml-1 cursor-pointer select-none">{t('Sidebar_NewRequest.From_cURL')}</label>
               </div>
             </div>
             <div className="mt-4">
-              <label htmlFor="requestName" className="block font-semibold">
-                Request Name
-              </label>
+              <label htmlFor="requestName" className="block font-semibold">{t('Sidebar_NewRequest.Request_Name')}</label>
               <input
                 id="request-name"
                 type="text"
@@ -345,13 +335,13 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
               <div className="mt-4">
                 <div className="flex items-center justify-between">
                   <label htmlFor="filename" className="flex items-center font-semibold">
-                    File Name <small className='font-normal text-muted ml-1'>(on filesystem)</small>
+                    {t('Sidebar_NewRequest.File_Name')} <small className='font-normal text-muted ml-1'>(on filesystem)</small>
                     <Help width="300">
                       <p>
-                        Bruno saves each request as a file in your collection's folder.
+                        {t('Sidebar_NewRequest.LongDescriptions1')}
                       </p>
                       <p className="mt-2">
-                        You can choose a file name different from your request's name or one compatible with filesystem rules.
+                        {t('Sidebar_NewRequest.LongDescriptions2')}
                       </p>
                     </Help>
                   </label>
@@ -403,9 +393,7 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
             {formik.values.requestType !== 'from-curl' ? (
               <>
                 <div className="mt-4">
-                  <label htmlFor="request-url" className="block font-semibold">
-                    URL
-                  </label>
+                  <label htmlFor="request-url" className="block font-semibold">{t('Sidebar_NewRequest.URL')}</label>
                   <div className="flex items-center mt-2 ">
                     <div className="flex items-center h-full method-selector-container">
                       <HttpMethodSelector
@@ -438,9 +426,7 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
             ) : (
               <div className="mt-4">
                 <div className="flex justify-between">
-                  <label htmlFor="request-url" className="block font-semibold">
-                    cURL Command
-                  </label>
+                  <label htmlFor="request-url" className="block font-semibold">{t('Sidebar_NewRequest.cURL_Command')}</label>
                   <Dropdown className="dropdown" onCreate={onDropdownCreate} icon={<Icon />} placement="bottom-end">
                     <div
                       className="dropdown-item"
@@ -491,17 +477,13 @@ const NewRequest = ({ collectionUid, item, isEphemeral, onClose }) => {
               </div>
               <div className='flex justify-end'>
                 <span className='mr-2'>
-                  <button type="button" onClick={onClose} className="btn btn-md btn-close">
-                    Cancel
-                  </button>
+                  <button type="button" onClick={onClose} className="btn btn-md btn-close">{t('Sidebar_NewRequest.Cancel')}</button>
                 </span>
                 <span>
                   <button
                     type="submit"
                     className="submit btn btn-md btn-secondary"
-                  >
-                    Create
-                  </button>
+                  >{t('Sidebar_NewRequest.Create')}</button>
                 </span>
               </div>
             </div>

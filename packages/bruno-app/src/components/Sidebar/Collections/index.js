@@ -13,10 +13,12 @@ import CreateCollection from '../CreateCollection';
 import StyledWrapper from './StyledWrapper';
 import CreateOrOpenCollection from './CreateOrOpenCollection';
 import { sortCollections } from 'providers/ReduxStore/slices/collections/actions';
+import { useTranslation } from 'react-i18next';
 
 // todo: move this to a separate folder
 // the coding convention is to keep all the components in a folder named after the component
 const CollectionsBadge = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { collections } = useSelector((state) => state.collections);
   const { collectionSortOrder } = useSelector((state) => state.collections);
@@ -42,7 +44,7 @@ const CollectionsBadge = () => {
           <span className="mr-2">
             <IconFolders size={18} strokeWidth={1.5} />
           </span>
-          <span>Collections</span>
+          <span>{t('Sidebar_Collections.Collections')}</span>
         </div>
         {collections.length >= 1 && (
           <button onClick={() => sortCollectionOrder()}>

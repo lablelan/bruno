@@ -13,8 +13,10 @@ import { IconArrowBackUp, IconEdit } from '@tabler/icons';
 import Help from 'components/Help';
 import { multiLineMsg } from "utils/common";
 import { formatIpcError } from "utils/common/error";
+import { useTranslation } from 'react-i18next';
 
 const CreateCollection = ({ onClose }) => {
+  const { t } = useTranslation();
   const inputRef = useRef();
   const dispatch = useDispatch();
   const [isEditing, toggleEditing] = useState(false);
@@ -77,9 +79,7 @@ const CreateCollection = ({ onClose }) => {
     <Modal size="sm" title="Create Collection" confirmText="Create" handleConfirm={onSubmit} handleCancel={onClose}>
       <form className="bruno-form" onSubmit={e => e.preventDefault()}>
         <div>
-          <label htmlFor="collection-name" className="flex items-center font-semibold">
-            Name
-          </label>
+          <label htmlFor="collection-name" className="flex items-center font-semibold">{t('Sidebar_CreateCollection.Name')}</label>
           <input
             id="collection-name"
             type="text"
@@ -101,13 +101,13 @@ const CreateCollection = ({ onClose }) => {
           ) : null}
 
           <label htmlFor="collection-location" className="block font-semibold mt-3 flex items-center">
-            Location
+            {t('Sidebar_CreateCollection.Location')}
             <Help>
               <p>
-                Bruno stores your collections on your computer's filesystem.
+                {t('Sidebar_CreateCollection.LongDescriptions1')}
               </p>
               <p className="mt-2">
-                Choose the location where you want to store this collection.
+                {t('Sidebar_CreateCollection.LongDescriptions2')}
               </p>
             </Help>
           </label>
@@ -136,20 +136,20 @@ const CreateCollection = ({ onClose }) => {
                 fontSize: '0.8125rem'
               }}
             >
-              Browse
+              {t('Sidebar_CreateCollection.Browse')}
             </span>
           </div>
           {formik.values.collectionName?.trim()?.length > 0 && (
             <div className="mt-4">
               <div className="flex items-center justify-between">
                 <label htmlFor="filename" className="flex items-center font-semibold">
-                  Folder Name
+                  {t('Sidebar_CreateCollection.Folder_Name')}
                   <Help width="300">
                     <p>
-                      The name of the folder used to store the collection.
+                      {t('Sidebar_CreateCollection.LongDescriptions3')}
                     </p>
                     <p className="mt-2">
-                      You can choose a folder name different from your collection's name or one compatible with filesystem rules.
+                      {t('Sidebar_CreateCollection.LongDescriptions4')}
                     </p>
                   </Help>
                 </label>

@@ -349,5 +349,120 @@
     "Expr": "Expr",
     "Operator": "Operator",
     "Value": "Value"
+  },
+  "Sidebar_Collections_Collection_CloneCollection": {
+    "Name": "Name",
+    "Location": "Location",
+    "Folder_Name": "Folder Name",
+    "Browse": "Browse",
+    "LongDescriptions2": "The name of the folder used to store the collection.",
+    "LongDescriptions1": "You can choose a folder name different from your collection's name or one compatible with filesystem rules."
+  },
+  "Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem": {
+    "Options": "Options",
+    "Cancel": "Cancel",
+    "Clone": "Clone",
+    "FolderName": "Folder Name",
+    "RequestName": "Request Name"
+  },
+  "Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem_CodeViewToolbar": {
+    "Interpolate_Variables": "Interpolate Variables"
+  },
+  "Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem": {
+    "Invalid_URL": "Invalid URL",
+    "Please_check_the_URL_and_try_again": "Please check the URL and try again"
+  },
+  "Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem": {
+    "Options": "Options",
+    "Cancel": "Cancel",
+    "Rename": "Rename",
+    "FolderName": "FolderName",
+    "FileName": "FileName",
+    "RequestName": "RequestName",
+    "LongDescriptions3": "You can choose to save the folder as a different name on your file system versus what is displayed in the app.",
+    "LongDescriptions2": "Bruno saves each request as a file in your collection's folder.",
+    "LongDescriptions1": "You can choose a file name different from your request's name or one compatible with filesystem rules."
+  },
+  "Sidebar_Collections_Collection_CollectionItem_RunCollectionItem": {
+    "Run": "Run",
+    "Recursive_Run": "Recursive Run",
+    "Cancel": "Cancel",
+    "LongDescriptions1": "No request found in this folder.",
+    "LongDescriptions2": "This will only run the requests in this folder.",
+    "LongDescriptions3": "This will run all the requests in this folder and all its subfolders.",
+    "LongDescriptions4": "Requests in this folder are still loading.",
+    "LongDescriptions5": "A Collection Run is already in progress.",
+    "View_Run": "View Run"
+  },
+  "Sidebar_Collections_Collection_ExportCollection": {
+    "Postman_Collection": "Postman Collection",
+    "Bruno_Collection": "Bruno Collection"
+  },
+  "Sidebar_Collections_Collection_RenameCollection": {
+    "Name": "Name"
+  },
+  "Sidebar_Collections": {
+    "Collections": "Collections"
+  },
+  "Sidebar_Collections_SelectCollection": {
+    "No_collections_found": "No collections found"
+  },
+  "Sidebar_CreateCollection": {
+    "Name": "Name",
+    "Location": "Location",
+    "Browse": "Browse",
+    "Folder_Name": "Folder Name",
+    "LongDescriptions1":"Bruno stores your collections on your computer's filesystem.",
+    "LongDescriptions2":"Choose the location where you want to store this collection.",
+    "LongDescriptions3":"The name of the folder used to store the collection.",
+    "LongDescriptions4":"You can choose a folder name different from your collection's name or one compatible with filesystem rules."
+  },
+  "Sidebar_GoldenEdition": {
+    "Buy": "Buy",
+    "Everything_in_the_Individual_Plan": "Everything in the Individual Plan",
+    "Golden_Edition": "Golden Edition",
+    "One_Time_Payment": "One Time Payment",
+    "Individuals": "Individuals",
+    "Organizations": "Organizations",
+    "perpetual_license_with_2_years_of_updates": "perpetual license with 2 years of updates",
+    "LongDescriptions1": "perpetual license for 2 devices, with 2 years of updates",
+    "LongDescriptions2": "Support Bruno's Development"
+  },
+  "Sidebar_ImportCollection": {
+    "Bruno_Collection": "Bruno Collection",
+    "Postman_Collection": "Postman Collection",
+    "Insomnia_Collection": "Insomnia Collection",
+    "OpenAPI_V3_Spec": "OpenAPI V3 Spec",
+    "LongDescriptions1":"Select the type of your existing collection :",
+    "This_may_take_a_moment_depending_on_the_collection_size": "This may take a moment depending on the collection size"
+  },
+  "Sidebar_ImportCollectionLocation": {
+    "Browse": "Browse",
+    "Name": "Name",
+    "Location": "Location",
+    "LongDescriptions1": "Bruno stores your collections on your computer's filesystem.",
+    "LongDescriptions2": "Choose the location where you want to store this collection."
+  },
+  "Sidebar_NewFolder": {
+    "Folder_Name": "Folder Name",
+    "Options": "Options",
+    "Cancel": "Cancel",
+    "Create": "Create",
+    "LongDescriptions1": "You can choose to save the folder as a different name on your file system versus what is displayed in the app."
+  },
+  "Sidebar_NewRequest": {
+    "Type": "Type",
+    "HTTP": "HTTP",
+    "GraphQL": "GraphQL",
+    "From_cURL": "From cURL",
+    "Request_Name": "Request Name",
+    "URL": "URL",
+    "cURL_Command": "cURL Command",
+    "Options": "Options",
+    "Cancel": "Cancel",
+    "Create": "Create",
+    "File_Name": "File Name",
+    "LongDescriptions1": "Bruno saves each request as a file in your collection's folder.",
+    "LongDescriptions2": "You can choose a file name different from your request's name or one compatible with filesystem rules."
   }
 }

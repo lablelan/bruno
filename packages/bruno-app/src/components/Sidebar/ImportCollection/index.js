@@ -7,8 +7,10 @@ import importOpenapiCollection from 'utils/importers/openapi-collection';
 import { toastError } from 'utils/common/error';
 import Modal from 'components/Modal';
 import fileDialog from 'file-dialog';
+import { useTranslation } from 'react-i18next';
 
 const ImportCollection = ({ onClose, handleSubmit }) => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false)
 
   const handleImportBrunoCollection = () => {
@@ -96,9 +98,7 @@ const ImportCollection = ({ onClose, handleSubmit }) => {
           <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50 mb-2">
             {loadingMessage}
           </h3>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            This may take a moment depending on the collection size
-          </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">{t('Sidebar_ImportCollection.This_may_take_a_moment_depending_on_the_collection_size')}</p>
         </div>
       </div>
     );
@@ -110,12 +110,12 @@ const ImportCollection = ({ onClose, handleSubmit }) => {
       {!isLoading && (
         <Modal size="sm" title="Import Collection" hideFooter={true} handleCancel={onClose}>
           <div className="flex flex-col">
-            <h3 className="text-sm">Select the type of your existing collection :</h3>
+            <h3 className="text-sm">{t('Sidebar_ImportCollection.LongDescriptions1')}</h3>
             <div className="mt-4 grid grid-rows-2 grid-flow-col gap-2">
-              <CollectionButton onClick={handleImportBrunoCollection}>Bruno Collection</CollectionButton>
-              <CollectionButton onClick={handleImportPostmanCollection}>Postman Collection</CollectionButton>
-              <CollectionButton onClick={handleImportInsomniaCollection}>Insomnia Collection</CollectionButton>
-              <CollectionButton onClick={handleImportOpenapiCollection}>OpenAPI V3 Spec</CollectionButton>
+              <CollectionButton onClick={handleImportBrunoCollection}>{t('Sidebar_ImportCollection.Bruno_Collection')}</CollectionButton>
+              <CollectionButton onClick={handleImportPostmanCollection}>{t('Sidebar_ImportCollection.Postman_Collection')}</CollectionButton>
+              <CollectionButton onClick={handleImportInsomniaCollection}>{t('Sidebar_ImportCollection.Insomnia_Collection')}</CollectionButton>
+              <CollectionButton onClick={handleImportOpenapiCollection}>{t('Sidebar_ImportCollection.OpenAPI_V3_Spec')}</CollectionButton>
             </div>
           </div>
         </Modal>

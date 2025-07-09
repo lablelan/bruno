@@ -15,8 +15,10 @@ import PathDisplay from 'components/PathDisplay';
 import Portal from 'components/Portal';
 import Dropdown from 'components/Dropdown';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const RenameCollectionItem = ({ collectionUid, item, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const isFolder = isItemAFolder(item);
   const inputRef = useRef();
@@ -92,9 +94,7 @@ const RenameCollectionItem = ({ collectionUid, item, onClose }) => {
         <button
           className="btn-advanced"
           type="button"
-        >
-          Options
-        </button>
+        >{t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.Options')}</button>
         <IconCaretDown className="caret ml-1" size={14} strokeWidth={2}/>
       </div>
     );
@@ -112,7 +112,7 @@ const RenameCollectionItem = ({ collectionUid, item, onClose }) => {
           <form className="bruno-form" onSubmit={formik.handleSubmit}>
             <div className='flex flex-col mt-2'>
               <label htmlFor="name" className="block font-semibold">
-                {isFolder ? 'Folder' : 'Request'} Name
+                {isFolder ?  t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.FolderName') : t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.RequestName')}
               </label>
               <input
                 id="collection-item-name"
@@ -137,20 +137,20 @@ const RenameCollectionItem = ({ collectionUid, item, onClose }) => {
               <div className="mt-4">
                 <div className="flex items-center justify-between">
                   <label htmlFor="filename" className="flex items-center font-semibold">
-                    {isFolder ? 'Folder' : 'File'} Name <small className='font-normal text-muted ml-1'>(on filesystem)</small>
+                    {isFolder ? t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.FolderName') : t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.FileName')} <small className='font-normal text-muted ml-1'>(on filesystem)</small>
                     { isFolder ? (
                       <Help width="300">
                         <p>
-                          You can choose to save the folder as a different name on your file system versus what is displayed in the app.
+                          {t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.LongDescriptions3')}
                         </p>
                       </Help>
                     ) : (
                       <Help width="300">
                         <p>
-                          Bruno saves each request as a file in your collection's folder.
+                          {t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.LongDescriptions2')}
                         </p>
                         <p className="mt-2">
-                          You can choose a file name different from your request's name or one compatible with filesystem rules.
+                          {t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.LongDescriptions1')}
                         </p>
                       </Help>
                     )}
@@ -217,17 +217,13 @@ const RenameCollectionItem = ({ collectionUid, item, onClose }) => {
               </div>
               <div className='flex justify-end'>
                 <span className='mr-2'>
-                  <button type="button" onClick={onClose} className="btn btn-md btn-close">
-                    Cancel
-                  </button>
+                  <button type="button" onClick={onClose} className="btn btn-md btn-close">{t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.Cancel')}</button>
                 </span>
                 <span>
                   <button
                     type="submit"
                     className="submit btn btn-md btn-secondary"
-                  >
-                    Rename
-                  </button>
+                  >{t('Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem.Rename')}</button>
                 </span>
               </div>
             </div>

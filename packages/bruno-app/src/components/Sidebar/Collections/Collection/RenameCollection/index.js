@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { renameCollection } from 'providers/ReduxStore/slices/collections/actions';
 import { findCollectionByUid } from 'utils/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const RenameCollection = ({ collectionUid, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inputRef = useRef();
   const collection = useSelector(state => findCollectionByUid(state.collections.collections, collectionUid));
@@ -45,9 +47,7 @@ const RenameCollection = ({ collectionUid, onClose }) => {
     <Modal size="sm" title="Rename Collection" confirmText="Rename" handleConfirm={onSubmit} handleCancel={onClose}>
       <form className="bruno-form" onSubmit={e => e.preventDefault()}>
         <div>
-          <label htmlFor="name" className="block font-semibold">
-            Name
-          </label>
+          <label htmlFor="name" className="block font-semibold">{t('Sidebar_Collections_Collection_RenameCollection.Name')}</label>
           <input
             id="collection-name"
             type="text"

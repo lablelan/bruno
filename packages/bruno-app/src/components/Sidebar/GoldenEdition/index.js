@@ -6,10 +6,12 @@ import { IconHeart, IconUser, IconUsers, IconPlus } from '@tabler/icons';
 import platformLib from 'platform';
 import StyledWrapper from './StyledWrapper';
 import { useTheme } from 'providers/Theme/index';
+import { useTranslation } from 'react-i18next';
 
 let posthogClient = null;
 const posthogApiKey = process.env.NEXT_PUBLIC_POSTHOG_API_KEY;
 const getPosthogClient = () => {
+  const { t } = useTranslation();
   if (posthogClient) {
     return posthogClient;
   }
@@ -121,7 +123,7 @@ const GoldenEdition = ({ onClose }) => {
       <Modal size="sm" title={'Golden Edition'} handleCancel={onClose} hideFooter={true}>
         <div className={`flex flex-col w-full ${themeBasedContainerClassNames}`}>
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold">Golden Edition</h3>
+            <h3 className="text-lg font-semibold">{t('Sidebar_GoldenEdition.Golden_Edition')}</h3>
             <a
               onClick={() => {
                 goldenEditionBuyClick();
@@ -130,7 +132,7 @@ const GoldenEdition = ({ onClose }) => {
               target="_blank"
               className="flex text-white bg-yellow-600 hover:bg-yellow-700 font-medium rounded-lg text-sm px-4 py-2 text-center cursor-pointer"
             >
-              <IconHeart size={18} strokeWidth={1.5} /> <span className="ml-2">Buy</span>
+              <IconHeart size={18} strokeWidth={1.5} /> <span className="ml-2">{t('Sidebar_GoldenEdition.Buy')}</span>
             </a>
           </div>
           {pricingOption === 'individuals' ? (
@@ -138,8 +140,8 @@ const GoldenEdition = ({ onClose }) => {
               <div className="my-4">
                 <span className="text-3xl font-extrabold">$19</span>
               </div>
-              <p className="bg-yellow-200 text-black rounded-md px-2 py-1 mb-2 inline-flex text-sm">One Time Payment</p>
-              <p className="text-sm">perpetual license for 2 devices, with 2 years of updates</p>
+              <p className="bg-yellow-200 text-black rounded-md px-2 py-1 mb-2 inline-flex text-sm">{t('Sidebar_GoldenEdition.One_Time_Payment')}</p>
+              <p className="text-sm">{t('Sidebar_GoldenEdition.LongDescriptions1')}</p>
             </div>
           ) : (
             <div>
@@ -147,8 +149,8 @@ const GoldenEdition = ({ onClose }) => {
                 <span className="text-3xl font-extrabold">$49</span>
                 <span className="ml-2">/&nbsp;user</span>
               </div>
-              <p className="bg-yellow-200 text-black rounded-md px-2 py-1 mb-2 inline-flex text-sm">One Time Payment</p>
-              <p className="text-sm">perpetual license with 2 years of updates</p>
+              <p className="bg-yellow-200 text-black rounded-md px-2 py-1 mb-2 inline-flex text-sm">{t('Sidebar_GoldenEdition.One_Time_Payment')}</p>
+              <p className="text-sm">{t('Sidebar_GoldenEdition.perpetual_license_with_2_years_of_updates')}</p>
             </div>
           )}
           <div
@@ -161,7 +163,7 @@ const GoldenEdition = ({ onClose }) => {
               }`}
               onClick={() => handlePricingOptionChange('individuals')}
             >
-              <IconUser className="text-gray-500 mr-2 icon" size={16} strokeWidth={1.5} /> Individuals
+              <IconUser className="text-gray-500 mr-2 icon" size={16} strokeWidth={1.5} /> {t('Sidebar_GoldenEdition.Individuals')}
             </div>
             <div
               className={`cursor-pointer w-1/2 h-8 flex items-center justify-center rounded-full ${
@@ -169,13 +171,13 @@ const GoldenEdition = ({ onClose }) => {
               }`}
               onClick={() => handlePricingOptionChange('organizations')}
             >
-              <IconUsers className="text-gray-500 mr-2 icon" size={16} strokeWidth={1.5} /> Organizations
+              <IconUsers className="text-gray-500 mr-2 icon" size={16} strokeWidth={1.5} /> {t('Sidebar_GoldenEdition.Organizations')}
             </div>
           </div>
           <ul role="list" className="space-y-3 text-left">
             <li className="flex items-center space-x-3">
               <HeartIcon />
-              <span>Support Bruno's Development</span>
+              <span>{t('Sidebar_GoldenEdition.LongDescriptions2')}</span>
             </li>
             {pricingOption === 'individuals' ? (
               <>
@@ -190,7 +192,7 @@ const GoldenEdition = ({ onClose }) => {
               <>
                 <li className="flex items-center space-x-3 pb-4">
                   <IconPlus size={16} strokeWidth={1.5} style={{ marginLeft: '2px' }} />
-                  <span>Everything in the Individual Plan</span>
+                  <span>{t('Sidebar_GoldenEdition.Everything_in_the_Individual_Plan')}</span>
                 </li>
                 {goldenEditionOrganizations.map((item, index) => (
                   <li className="flex items-center space-x-3" key={index}>

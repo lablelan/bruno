@@ -5,9 +5,11 @@ import * as Yup from 'yup';
 import { browseDirectory } from 'providers/ReduxStore/slices/collections/actions';
 import Modal from 'components/Modal';
 import Help from 'components/Help';
+import { useTranslation } from 'react-i18next';
 
 
 const ImportCollectionLocation = ({ onClose, handleSubmit, collectionName }) => {
+  const { t } = useTranslation();
   const inputRef = useRef();
   const dispatch = useDispatch();
 
@@ -51,19 +53,18 @@ const ImportCollectionLocation = ({ onClose, handleSubmit, collectionName }) => 
     <Modal size="sm" title="Import Collection" confirmText="Import" handleConfirm={onSubmit} handleCancel={onClose}>
       <form className="bruno-form" onSubmit={e => e.preventDefault()}>
         <div>
-          <label htmlFor="collectionName" className="block font-semibold">
-            Name
-          </label>
+          <label htmlFor="collectionName" className="block font-semibold">{t('Sidebar_ImportCollectionLocation.Name')}</label>
           <div className="mt-2">{collectionName}</div>
           <>
             <label htmlFor="collectionLocation" className="block font-semibold mt-3 flex items-center">
-              Location
+              {t('Sidebar_ImportCollectionLocation.Location')}
               <Help>
                 <p>
-                  Bruno stores your collections on your computer's filesystem.
+                  {t('Sidebar_ImportCollectionLocation.LongDescriptions1')}
                 </p>
                 <p className="mt-2">
-                  Choose the location where you want to store this collection.
+                  {t('Sidebar_ImportCollectionLocation.LongDescriptions2')}
+                  
                 </p>
               </Help>
             </label>
@@ -88,9 +89,7 @@ const ImportCollectionLocation = ({ onClose, handleSubmit, collectionName }) => 
           ) : null}
 
           <div className="mt-1">
-            <span className="text-link cursor-pointer hover:underline" onClick={browse}>
-              Browse
-            </span>
+            <span className="text-link cursor-pointer hover:underline" onClick={browse}>{t('Sidebar_ImportCollectionLocation.Browse')}</span>
           </div>
         </div>
       </form>

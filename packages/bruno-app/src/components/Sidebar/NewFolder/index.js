@@ -13,8 +13,10 @@ import Help from 'components/Help';
 import Dropdown from "components/Dropdown";
 import { IconCaretDown } from "@tabler/icons";
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const NewFolder = ({ collectionUid, item, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inputRef = useRef();
   const [isEditing, toggleEditing] = useState(false);
@@ -73,9 +75,7 @@ const NewFolder = ({ collectionUid, item, onClose }) => {
         <button
           className="btn-advanced"
           type="button"
-        >
-          Options
-        </button>
+        >{t('Sidebar_NewFolder.Options')}</button>
         <IconCaretDown className="caret ml-1" size={14} strokeWidth={2}/>
       </div>
     );
@@ -86,9 +86,7 @@ const NewFolder = ({ collectionUid, item, onClose }) => {
       <StyledWrapper>
         <Modal size="md" title="New Folder" hideFooter={true} handleCancel={onClose}>
           <form className="bruno-form" onSubmit={formik.handleSubmit}>
-            <label htmlFor="folderName" className="block font-semibold">
-              Folder Name
-            </label>
+            <label htmlFor="folderName" className="block font-semibold">{t('Sidebar_NewFolder.Folder_Name')}</label>
             <input
               id="collection-name"
               type="text"
@@ -113,10 +111,10 @@ const NewFolder = ({ collectionUid, item, onClose }) => {
               <div className="mt-4">
                 <div className="flex items-center justify-between">
                   <label htmlFor="directoryName" className="flex items-center font-semibold">
-                    Folder Name <small className='font-normal text-muted ml-1'>(on filesystem)</small>
+                    {t('Sidebar_NewFolder.Folder_Name')} <small className='font-normal text-muted ml-1'>(on filesystem)</small>
                     <Help width="300">
                       <p>
-                        You can choose to save the folder as a different name on your file system versus what is displayed in the app.
+                        {t('Sidebar_NewFolder.LongDescriptions1')}
                       </p>
                     </Help>
                   </label>
@@ -182,17 +180,13 @@ const NewFolder = ({ collectionUid, item, onClose }) => {
               </div>
               <div className='flex justify-end'>
                 <span className='mr-2'>
-                  <button type="button" onClick={onClose} className="btn btn-md btn-close">
-                    Cancel
-                  </button>
+                  <button type="button" onClick={onClose} className="btn btn-md btn-close">{t('Sidebar_NewFolder.Cancel')}</button>
                 </span>
                 <span>
                   <button
                     type="submit"
                     className="submit btn btn-md btn-secondary"
-                  >
-                    Create
-                  </button>
+                  >{t('Sidebar_NewFolder.Create')}</button>
                 </span>
               </div>
             </div>
