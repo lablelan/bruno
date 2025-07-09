@@ -9,8 +9,10 @@ import { cloneDeep } from 'lodash';
 import { transformCollectionToSaveToExportAsFile } from 'utils/collections/index';
 import { useSelector } from 'react-redux';
 import { findCollectionByUid } from 'utils/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const ShareCollection = ({ onClose, collectionUid }) => {
+  const { t } = useTranslation();
   const collection = useSelector(state => findCollectionByUid(state.collections.collections, collectionUid));
   const handleExportBrunoCollection = () => {
     const collectionCopy = cloneDeep(collection);
@@ -40,8 +42,8 @@ const ShareCollection = ({ onClose, collectionUid }) => {
                 <Bruno width={28} />
               </div>
               <div className="flex-1">
-                <div className="font-medium">Bruno Collection</div>
-                <div className="text-xs">Export in Bruno format</div>
+                <div className="font-medium">{t('ShareCollection.Bruno_Collection')}</div>
+                <div className="text-xs">{t('ShareCollection.Export_in_Bruno_format')}</div>
               </div>
             </div>
             
@@ -50,8 +52,8 @@ const ShareCollection = ({ onClose, collectionUid }) => {
                 <IconDownload size={28} strokeWidth={1} className="" />
               </div>
               <div className="flex-1">
-                <div className="font-medium">Postman Collection</div>
-                <div className="text-xs">Export in Postman format</div>
+                <div className="font-medium">{t('ShareCollection.Postman_Collection')}</div>
+                <div className="text-xs">{t('ShareCollection.Export_in_Postman_format')}</div>
               </div>
             </div>
           </div>

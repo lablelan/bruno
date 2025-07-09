@@ -9,8 +9,10 @@ import Display from './Display';
 import Keybindings from './Keybindings';
 
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const Preferences = ({ onClose }) => {
+  const { t } = useTranslation();
   const [tab, setTab] = useState('general');
 
   const getTabClassname = (tabName) => {
@@ -49,20 +51,12 @@ const Preferences = ({ onClose }) => {
         <div className='flex flex-row gap-2 mx-[-1rem] !my-[-1.5rem] py-2'>
           <div className="flex flex-col items-center tabs" role="tablist">
             <div className={getTabClassname('general')} role="tab" onClick={() => setTab('general')}>
-              General
+              {t('Preferences.General')}
             </div>
-            <div className={getTabClassname('display')} role="tab" onClick={() => setTab('display')}>
-              Display
-            </div>
-            <div className={getTabClassname('proxy')} role="tab" onClick={() => setTab('proxy')}>
-              Proxy
-            </div>
-            <div className={getTabClassname('keybindings')} role="tab" onClick={() => setTab('keybindings')}>
-              Keybindings
-            </div>
-            <div className={getTabClassname('support')} role="tab" onClick={() => setTab('support')}>
-              Support
-            </div>
+            <div className={getTabClassname('display')} role="tab" onClick={() => setTab('display')}>{t('Preferences.Display')}</div>
+            <div className={getTabClassname('proxy')} role="tab" onClick={() => setTab('proxy')}>{t('Preferences.Proxy')}</div>
+            <div className={getTabClassname('keybindings')} role="tab" onClick={() => setTab('keybindings')}>{t('Preferences.Keybindings')}</div>
+            <div className={getTabClassname('support')} role="tab" onClick={() => setTab('support')}>{t('Preferences.Support')}</div>
           </div>
           <section className="flex flex-grow px-2 pt-2 pb-6 tab-panel">{getTabPanel(tab)}</section>
         </div>

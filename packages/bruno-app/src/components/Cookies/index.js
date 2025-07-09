@@ -9,58 +9,58 @@ import ModifyCookieModal from 'components/Cookies/ModifyCookieModal/index';
 import StyledWrapper from './StyledWrapper';
 import moment from 'moment';
 import { Tooltip } from 'react-tooltip';
+import { useTranslation } from 'react-i18next';
 
-const ClearDomainCookiesModal = ({ onClose, domain, onClear }) => (
+const ClearDomainCookiesModal = ({ onClose, domain, onClear }) => {
+  const { t } = useTranslation();
+  return (
   <Modal onClose={onClose} handleCancel={onClose} title="Clear Domain Cookies" hideFooter={true}>
     <div className="flex items-center font-normal">
       <IconAlertTriangle size={32} strokeWidth={1.5} className="text-yellow-600" />
       <h1 className="ml-2 text-lg font-semibold">Hold on..</h1>
     </div>
     <div className="font-normal mt-4">
-      Are you sure you want to clear all cookies for the domain {domain}?
+      {t('Cookies.LongDescriptions1')} {domain}?
     </div>
 
     <div className="flex justify-between mt-6">
       <div>
-        <button className="btn btn-sm btn-close" onClick={onClose}>
-          Close
-        </button>
+        <button className="btn btn-sm btn-close" onClick={onClose}>{t('Cookies.Close')}</button>
       </div>
       <div>
-        <button className="btn btn-sm btn-danger" onClick={onClear}>
-          Clear All
-        </button>
+        <button className="btn btn-sm btn-danger" onClick={onClear}>{t('Cookies.Clear_All')}</button>
       </div>
     </div>
   </Modal>
 );
+};
 
-const DeleteCookieModal = ({ onClose, cookieName, onDelete }) => (
-  <Modal onClose={onClose} handleCancel={onClose} title="Delete Cookie" hideFooter={true}>
-    <div className="flex items-center font-normal">
-      <IconAlertTriangle size={32} strokeWidth={1.5} className="text-yellow-600" />
-      <h1 className="ml-2 text-lg font-semibold">Hold on..</h1>
-    </div>
-    <div className="font-normal mt-4">
-      Are you sure you want to delete the cookie {cookieName}?
-    </div>
+const DeleteCookieModal = ({ onClose, cookieName, onDelete }) => {
+  const { t } = useTranslation();
+  return (
+    <Modal onClose={onClose} handleCancel={onClose} title="Delete Cookie" hideFooter={true}>
+      <div className="flex items-center font-normal">
+        <IconAlertTriangle size={32} strokeWidth={1.5} className="text-yellow-600" />
+        <h1 className="ml-2 text-lg font-semibold">Hold on..</h1>
+      </div>
+      <div className="font-normal mt-4">
+        {t('Cookies.LongDescriptions2')} {cookieName}?
+      </div>
 
-    <div className="flex justify-between mt-6">
-      <div>
-        <button className="btn btn-sm btn-close" onClick={onClose}>
-          Close
-        </button>
+      <div className="flex justify-between mt-6">
+        <div>
+          <button className="btn btn-sm btn-close" onClick={onClose}>{t('Cookies.Close')}</button>
+        </div>
+        <div>
+          <button className="btn btn-sm btn-danger" onClick={onDelete}>{t('Cookies.Delete')}</button>
+        </div>
       </div>
-      <div>
-        <button className="btn btn-sm btn-danger" onClick={onDelete}>
-          Delete
-        </button>
-      </div>
-    </div>
-  </Modal>
-);
+    </Modal>
+  );
+};
 
 const CollectionProperties = ({ onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const cookies = useSelector((state) => state.app.cookies) || [];
   const [isModifyCookieModalOpen, setIsModifyCookieModalOpen] = useState(false);
@@ -130,7 +130,7 @@ const CollectionProperties = ({ onClose }) => {
         handleCancel={onClose}
         customHeader={shouldShowHeader ? (
           <StyledWrapper className="header flex items-center justify-between w-full">
-            <h2 className="text-xs font-medium">Cookies</h2>
+            <h2 className="text-xs font-medium">{t('Cookies.Cookies')}</h2>
             <input
               type="search"
               placeholder="Search by domain"
@@ -147,7 +147,7 @@ const CollectionProperties = ({ onClose }) => {
               }}
             >
               <IconCirclePlus strokeWidth={1.5} size={16} />
-              <span>Add Cookie</span>
+              <span>{t('Cookies.Add_Cookie')}</span>
             </button>
           </StyledWrapper>
         ) : null}
@@ -157,8 +157,8 @@ const CollectionProperties = ({ onClose }) => {
             // No cookies found
             <div className="flex items-center justify-center flex-col">
               <IconCookieOff size={48} strokeWidth={1.5} className="text-gray-500" />
-              <h2 className="text-lg font-semibold mt-4">No cookies found</h2>
-              <p className="text-gray-500 mt-2">Add cookies to get started</p>
+              <h2 className="text-lg font-semibold mt-4">{t('Cookies.No_cookies_found')}</h2>
+              <p className="text-gray-500 mt-2">{t('Cookies.Add_cookies_to_get_started')}</p>
               <button
                 type="submit"
                 className="submit btn btn-sm btn-secondary flex items-center gap-1 mt-8"
@@ -168,15 +168,15 @@ const CollectionProperties = ({ onClose }) => {
                 }}
               >
                 <IconCirclePlus strokeWidth={1.5} size={16} />
-                <span>Add Cookie</span>
+                <span>{t('Cookies.Add_Cookie')}</span>
               </button>
             </div>
           ) : cookies.length && !filteredCookies.length ? (
             // No search results
             <div className="flex items-center justify-center flex-col">
               <IconSearch size={48} />
-              <h2 className="text-lg font-semibold mt-4">No search results</h2>
-              <p className="text-gray-500 mt-2">Try a different search term</p>
+              <h2 className="text-lg font-semibold mt-4">{t('Cookies.No_search_results')}</h2>
+              <p className="text-gray-500 mt-2">{t('Cookies.Try_a_different_search_term')}</p>
             </div>
           ) : (
             // Show cookies list
@@ -219,13 +219,13 @@ const CollectionProperties = ({ onClose }) => {
                         <table className="w-full">
                           <thead>
                             <tr className="text-left border-b border-gray-200 dark:border-neutral-600 text-gray-700 dark:text-gray-300">
-                              <th className="py-2 px-4 font-semibold w-32">Name</th>
-                              <th className="py-2 px-4 font-semibold w-52">Value</th>
-                              <th className="py-2 px-4 font-semibold">Path</th>
-                              <th className="py-2 px-4 font-semibold">Expires</th>
-                              <th className="py-2 px-4 font-semibold text-center">Secure</th>
-                              <th className="py-2 px-4 font-semibold text-center">HTTP Only</th>
-                              <th className="py-2 px-4 font-semibold text-right w-24">Actions</th>
+                              <th className="py-2 px-4 font-semibold w-32">{t('Cookies.Name')}</th>
+                              <th className="py-2 px-4 font-semibold w-52">{t('Cookies.Value')}</th>
+                              <th className="py-2 px-4 font-semibold">{t('Cookies.Path')}</th>
+                              <th className="py-2 px-4 font-semibold">{t('Cookies.Expires')}</th>
+                              <th className="py-2 px-4 font-semibold text-center">{t('Cookies.Secure')}</th>
+                              <th className="py-2 px-4 font-semibold text-center">{t('Cookies.HTTP_Only')}</th>
+                              <th className="py-2 px-4 font-semibold text-right w-24">{t('Cookies.Actions')}</th>
                             </tr>
                           </thead>
                           <tbody>

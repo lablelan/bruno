@@ -22,8 +22,10 @@ import SkippedRequest from './SkippedRequest';
 import ClearTimeline from './ClearTimeline/index';
 import ResponseLayoutToggle from './ResponseLayoutToggle';
 import HeightBoundContainer from 'ui/HeightBoundContainer';
+import { useTranslation } from 'react-i18next';
 
 const ResponsePane = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const tabs = useSelector((state) => state.tabs.tabs);
   const activeTabUid = useSelector((state) => state.tabs.activeTabUid);
@@ -113,12 +115,12 @@ const ResponsePane = ({ item, collection }) => {
   }
 
   if (!activeTabUid) {
-    return <div>Something went wrong</div>;
+    return <div>{t('ResponsePane.Something_went_wrong')}</div>;
   }
 
   const focusedTab = find(tabs, (t) => t.uid === activeTabUid);
   if (!focusedTab || !focusedTab.uid || !focusedTab.responsePaneTab) {
-    return <div className="pb-4 px-4">An error occurred!</div>;
+    return <div className="pb-4 px-4">{t('ResponsePane.An_error_occurred')}!</div>;
   }
 
   const getTabClassname = (tabName) => {
@@ -135,15 +137,13 @@ const ResponsePane = ({ item, collection }) => {
     <StyledWrapper className="flex flex-col h-full relative">
       <div className="flex flex-wrap items-center px-4 tabs" role="tablist">
         <div className={getTabClassname('response')} role="tab" onClick={() => selectTab('response')}>
-          Response
+          {t('ResponsePane.Response')}
         </div>
         <div className={getTabClassname('headers')} role="tab" onClick={() => selectTab('headers')}>
-          Headers
+          {t('ResponsePane.Headers')}
           {responseHeadersCount > 0 && <sup className="ml-1 font-medium">{responseHeadersCount}</sup>}
         </div>
-        <div className={getTabClassname('timeline')} role="tab" onClick={() => selectTab('timeline')}>
-          Timeline
-        </div>
+        <div className={getTabClassname('timeline')} role="tab" onClick={() => selectTab('timeline')}>{t('ResponsePane.Timeline')}</div>
         <div className={getTabClassname('tests')} role="tab" onClick={() => selectTab('tests')}>
           <TestResultsLabel
             results={item.testResults}

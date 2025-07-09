@@ -11,8 +11,10 @@ import Documentation from './Documentation';
 import Auth from './Auth';
 import StatusDot from 'components/StatusDot';
 import get from 'lodash/get';
+import { useTranslation } from 'react-i18next';
 
 const FolderSettings = ({ collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   let tab = 'headers';
   const { folderLevelSettingsSelectedTab } = collection;
@@ -78,28 +80,26 @@ const FolderSettings = ({ collection, folder }) => {
       <div className="flex flex-col h-full relative px-4 py-4">
         <div className="flex flex-wrap items-center tabs" role="tablist">
           <div className={getTabClassname('headers')} role="tab" onClick={() => setTab('headers')}>
-            Headers
+            {t('FolderSettings.Headers')}
             {activeHeadersCount > 0 && <sup className="ml-1 font-medium">{activeHeadersCount}</sup>}
           </div>
           <div className={getTabClassname('script')} role="tab" onClick={() => setTab('script')}>
-            Script
+            {t('FolderSettings.Script')}
             {hasScripts && <StatusDot />}
           </div>
           <div className={getTabClassname('test')} role="tab" onClick={() => setTab('test')}>
-            Test
+            {t('FolderSettings.Test')}
             {hasTests && <StatusDot />}
           </div>
           <div className={getTabClassname('vars')} role="tab" onClick={() => setTab('vars')}>
-            Vars
+            {t('FolderSettings.Vars')}
             {activeVarsCount > 0 && <sup className="ml-1 font-medium">{activeVarsCount}</sup>}
           </div>
           <div className={getTabClassname('auth')} role="tab" onClick={() => setTab('auth')}>
-            Auth
+            {t('FolderSettings.Auth')}
             {hasAuth && <StatusDot />}
           </div>
-          <div className={getTabClassname('docs')} role="tab" onClick={() => setTab('docs')}>
-            Docs
-          </div>
+          <div className={getTabClassname('docs')} role="tab" onClick={() => setTab('docs')}>{t('FolderSettings.Docs')}</div>
         </div>
         <section className={`flex mt-4 h-full`}>{getTabPanel(tab)}</section>
       </div>

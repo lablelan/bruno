@@ -1,8 +1,10 @@
 import React from 'react';
 import { IconAlertTriangle } from '@tabler/icons';
 import Modal from 'components/Modal';
+import { useTranslation } from 'react-i18next';
 
 const ConfirmRequestClose = ({ item, onCancel, onCloseWithoutSave, onSaveAndClose }) => {
+  const { t } = useTranslation();
   return (
     <Modal
       size="md"
@@ -24,22 +26,18 @@ const ConfirmRequestClose = ({ item, onCancel, onCloseWithoutSave, onSaveAndClos
         <h1 className="ml-2 text-lg font-semibold">Hold on..</h1>
       </div>
       <div className="font-normal mt-4">
-        You have unsaved changes in request <span className="font-semibold">{item.name}</span>.
+        {t('RequestTabs_RequestTab_ConfirmRequestClose.Dont_Save')} <span className="font-semibold">{item.name}</span>.
       </div>
 
       <div className="flex justify-between mt-6">
         <div>
           <button className="btn btn-sm btn-danger" onClick={onCloseWithoutSave}>
-            Don't Save
+            {t('RequestTabs_RequestTab_ConfirmRequestClose.Dont_Save')}
           </button>
         </div>
         <div>
-          <button className="btn btn-close btn-sm mr-2" onClick={onCancel}>
-            Cancel
-          </button>
-          <button className="btn btn-secondary btn-sm" onClick={onSaveAndClose}>
-            Save
-          </button>
+          <button className="btn btn-close btn-sm mr-2" onClick={onCancel}>{t('RequestTabs_RequestTab_ConfirmRequestClose.Cancel')}</button>
+          <button className="btn btn-secondary btn-sm" onClick={onSaveAndClose}>{t('RequestTabs_RequestTab_ConfirmRequestClose.Save')}</button>
         </div>
       </div>
     </Modal>

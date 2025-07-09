@@ -11,12 +11,15 @@ import moment from 'moment';
 import 'moment-timezone';
 import { Tooltip } from 'react-tooltip';
 import { isEmpty } from 'lodash';
+import { useTranslation } from 'react-i18next';
 
 const removeEmptyValues = (obj) => {
+  const { t } = useTranslation();
   return Object.fromEntries(Object.entries(obj).filter(([_, value]) => value !== null && value !== undefined));
 };
 
 const ModifyCookieModal = ({ onClose, domain, cookie }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isRawMode, setIsRawMode] = useState(false);
   const [cookieString, setCookieString] = useState('');
@@ -220,7 +223,7 @@ const ModifyCookieModal = ({ onClose, domain, cookie }) => {
                 setIsRawMode(e.target.checked);
               }}
             />
-            <label className="text-sm font-normal mr-4 normal-case">Edit Raw</label>
+            <label className="text-sm font-normal mr-4 normal-case">{t('Cookies_ModifyCookieModal.Edit_Raw')}</label>
           </div>
         </div>
       }
@@ -229,7 +232,7 @@ const ModifyCookieModal = ({ onClose, domain, cookie }) => {
         {isRawMode ? (
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <label className="block text-sm">Set-Cookie String</label>
+              <label className="block text-sm">{t('Cookies_ModifyCookieModal.Set-Cookie_String')}</label>
               <IconInfoCircle id="cookie-raw-info" size={16} strokeWidth={1.5} className="text-gray-400" />
               <Tooltip
                 anchorId="cookie-raw-info"
@@ -266,7 +269,7 @@ const ModifyCookieModal = ({ onClose, domain, cookie }) => {
                 )}
               </div>
               <div>
-                <label className="block text-sm mb-1">Path</label>
+                <label className="block text-sm mb-1">{t('Cookies_ModifyCookieModal.Path')}</label>
                 <input
                   type="text"
                   name="path"
@@ -320,7 +323,7 @@ const ModifyCookieModal = ({ onClose, domain, cookie }) => {
             {/* Date Picker */}
             <div className="w-full flex items-end">
               <div>
-                <label className="block text-sm mb-1">Expiration ({moment.tz.guess()})</label>
+                <label className="block text-sm mb-1">{t('Cookies_ModifyCookieModal.Expiration')} ({moment.tz.guess()})</label>
                 <input
                   type="datetime-local"
                   name="expires"
@@ -346,7 +349,7 @@ const ModifyCookieModal = ({ onClose, domain, cookie }) => {
                     onChange={formik.handleChange}
                     className="mr-2"
                   />
-                  <span className="text-sm">Secure</span>
+                  <span className="text-sm">{t('Cookies_ModifyCookieModal.Secure')}</span>
                 </label>
 
                 <label className="flex items-center">
@@ -357,7 +360,7 @@ const ModifyCookieModal = ({ onClose, domain, cookie }) => {
                     onChange={formik.handleChange}
                     className="mr-2"
                   />
-                  <span className="text-sm">HTTP Only</span>
+                  <span className="text-sm">{t('Cookies_ModifyCookieModal.HTTP_Only')}</span>
                 </label>
               </div>
             </div>

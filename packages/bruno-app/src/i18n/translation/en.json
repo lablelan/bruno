@@ -170,6 +170,7 @@
     "Save": "Save"
   },
   "CollectionSettings_Vars_VarsTable": {
+    "Name": "Name",
     "Value": "Value",
     "Expr": "Expr"
   },
@@ -536,5 +537,230 @@
   },
   "GlobalEnvironments_EnvironmentSettings_RenameEnvironment": {
     "Environment_Name": "Environment Name"
+  },
+  "BrunoSupport": {
+    "Documentation": "Documentation",
+    "Report_Issues": "Report Issues",
+    "Discord": "Discord",
+    "GitHub": "GitHub",
+    "Twitter": "Twitter"
+  },
+  "Cookies": {
+    "Add_Cookie": "Add Cookie",
+    "Close": "Close",
+    "Clear_All": "Clear All",
+    "Delete": "Delete",
+    "Cookies": "Cookies",
+    "No_cookies_found": "No cookies found",
+    "No_search_results": "No search results",
+    "Add_cookies_to_get_started": "Add cookies to get started",
+    "Try_a_different_search_term": "Try a different search term",
+    "LongDescriptions1": "Are you sure you want to clear all cookies for the domain",
+    "LongDescriptions2": "Are you sure you want to delete the cookie",
+    "Name": "Name",
+    "Value": "Value",
+    "Path": "Path",
+    "Expires": "Expires",
+    "Secure": "Secure",
+    "HTTP_Only": "HTTP Only",
+    "Actions": "Actions"
+  },
+  "Cookies_ModifyCookieModal": {
+    "Secure": "Secure",
+    "HTTP_Only": "HTTP Only",
+    "Edit_Raw": "Edit Raw",
+    "Path": "Path",
+    "Expiration": "Expiration",
+    "Set-Cookie_String": "Set-Cookie String"
+  },
+  "FolderSettings_Auth": {
+    "Inherit": "Inherit",
+    "Auth": "Auth",
+    "TBD": "TBD",
+    "Save": "Save",
+    "option_in_the": "option in the",
+    "tab": "tab",
+    "LongDescriptions1": "Configures authentication for the entire folder. This applies to all requests using the"
+  },
+  "FolderSettings_Documentation": {
+    "Save": "Save"
+  },
+  "FolderSettings_Headers": {
+    "Save": "Save",
+    "Add_Header": "+ Add Header",
+    "LongDescriptions1": "Request headers that will be sent with every request inside this folder."
+  },
+  "FolderSettings": {
+    "Docs": "Docs",
+    "Headers": "Headers",
+    "Script": "Script",
+    "Test": "Test",
+    "Vars": "Vars",
+    "Auth": "Auth"
+  },
+  "FolderSettings_Script": {
+    "Save": "Save",
+    "Post_Response": "Post Response",
+    "Pre_Request": "Pre Request",
+    "LongDescriptions1": "Pre and post-request scripts that will run before and after any request inside this folder is sent."
+  },
+  "FolderSettings_Tests": {
+    "Save": "Save",
+    "LongDescriptions1": "These tests will run any time a request in this collection is sent."
+  },
+  "FolderSettings_Vars": {
+    "Save": "Save",
+    "Pre_Request": "Pre Request",
+    "Post_Response": "Post Response"
+  },
+  "FolderSettings_Vars_VarsTable": {
+    "Name": "Name",
+    "Value": "Value",
+    "Expr": "Expr",
+    "Add": "+ Add"
+  },
+  "Notifications": {
+    "unread_notifications": "unread notifications",
+    "No_Notifications": "No Notifications"
+  },
+  "Preferences_Display_Font": {
+    "Code_Editor_Font": "Code Editor Font",
+    "Font_Size": "Font Size",
+    "Save": "Save"
+  },
+  "Preferences_Display": {
+    "Theme": "Theme"
+  },
+  "Preferences_Display_Theme": {
+    "Light": "Light",
+    "Dark": "Dark",
+    "System": "System"
+  },
+  "Preferences_General": {
+    "Use_Custom_CA_Certificate": "Use Custom CA Certificate",
+    "Store_Cookies_automatically": "Store Cookies automatically",
+    "Send_Cookies_automatically": "Send Cookies automatically",
+    "Save": "Save",
+    "Request_Timeout": "Request Timeout",
+    "Keep_Default_CA_Certificates": "Keep Default CA Certificates",
+    "select_file": "select file",
+    "SSL/TLS_Certificate_Verification": "SSL/TLS Certificate Verification"
+  },
+  "Preferences": {
+    "General": "General",
+    "Display": "Display",
+    "Proxy": "Proxy",
+    "Keybindings": "Keybindings",
+    "Support": "Support"
+  },
+  "Preferences_ProxySettings": {
+    "Mode": "Mode",
+    "Protocol": "Protocol",
+    "Hostname": "Hostname",
+    "Port": "Port",
+    "Auth": "Auth",
+    "Username": "Username",
+    "Password": "Password",
+    "Proxy_Bypass": "Proxy Bypass",
+    "Save": "Save"
+  },
+  "RequestTabPanel_FolderNotFound": {
+    "Close_Tab": "Close Tab",
+    "LongDescriptions2": "Folder no longer exists.",
+    "LongDescriptions1": "This can happen when the folder was renamed or deleted on your filesystem."
+  },
+  "RequestTabPanel_RequestNotFound": {
+    "Close_Tab": "Close Tab",
+    "LongDescriptions2": "Request no longer exists.",
+    "LongDescriptions1": "This can happen when the .bru file associated with this request was deleted on your filesystem."
+  },
+  "RequestTabs_RequestTab_ConfirmRequestClose": {
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "Dont_Save": "Don't Save",
+    "LongDescriptions1": "You have unsaved changes in request"
+  },
+  "RequestTabs_RequestTab": {
+    "New_Request": "New Request",
+    "Clone_Request": "Clone Request",
+    "Close": "Close",
+    "Close_Others": "Close Others",
+    "Close_to_the_Left": "Close to the Left",
+    "Close_to_the_Right": "Close to the Right",
+    "Close_Saved": "Close Saved",
+    "Close_All": "Close All",
+    "Not_Found": "Not Found",
+    "Collection": "Collection",
+    "Security": "Security",
+    "Variables": "Variables",
+    "Runner": "Runner"
+  },
+  "ResponsePane_ClearTimeline": {
+    "Clear_Timeline": "Clear Timeline"
+  },
+  "ResponsePane": {
+    "Something_went_wrong": "Something went wrong",
+    "Timeline": "Timeline",
+    "An_error_occurred": "An error occurred",
+    "Response": "Response",
+    "Headers": "Headers"
+  },
+  "ResponsePane_NetworkError": {
+    "Close": "Close",
+    "Network_Error": "Network Error"
+  },
+  "ResponsePane_Overlay": {
+    "Cancel_Request": "Cancel Request"
+  },
+  "ResponsePane_TestResults": {
+    "No_tests_found": "No tests found"
+  },
+  "ResponsePane_Timeline_TimelineItem_Common_Body": {
+    "No_Body_found": "No Body found"
+  },
+  "RunnerResults": {
+    "Delay": "Delay",
+    "Runner": "Runner",
+    "Run_Collection": "Run Collection",
+    "Reset": "Reset",
+    "Cancel_Execution": "Cancel Execution",
+    "Run_Again": "Run Again"
+  },
+  "RunnerResults_ResponsePane": {
+    "Response": "Response",
+    "Headers": "Headers",
+    "Timeline": "Timeline"
+  },
+  "SecuritySettings": {
+    "Safe_Mode": "Safe Mode",
+    "JavaScript_Sandbox": "JavaScript Sandbox",
+    "Save": "Save",
+    "Developer_Mode": "Developer Mode",
+    "LongDescriptions4": "JavaScript code has access to the filesystem, can execute system commands and access sensitive information.",
+    "LongDescriptions3": "use only if you trust the authors of the collection",
+    "LongDescriptions2": "JavaScript code is executed in a secure sandbox and cannot access your filesystem or execute system commands.",
+    "LongDescriptions1": "The collection might include JavaScript code in Variables, Scripts, Tests, and Assertions."
+  },
+  "SecuritySettings_JsSandboxMode": {
+    "Safe_Mode": "Safe Mode",
+    "Developer_Mode": "Developer Mode"
+  },
+  "SecuritySettings_JsSandboxModeModal": {
+    "Safe_Mode": "Safe Mode",
+    "Developer_Mode": "Developer Mode",
+    "LongDescriptions1": "JavaScript code has access to the filesystem, can execute system commands and access sensitive information.",
+    "LongDescriptions2": "use only if you trust the authors of the collection",
+    "LongDescriptions3": "JavaScript code is executed in a secure sandbox and cannot access your filesystem or execute system commands.",
+    "LongDescriptions4": "Please choose the security level for the JavaScript code execution.",
+    "LongDescriptions5": "The collection might include JavaScript code in Variables, Scripts, Tests, and Assertions."
+  },
+  "ShareCollection": {
+    "Bruno_Collection": "Bruno Collection",
+    "Postman_Collection": "Postman Collection",
+    "Export_in_Bruno_format": "Export in Bruno format",
+    "Export_in_Postman_format": "Export in Postman format"
+  },
+  "Welcome": {
+    "bruno": "bruno"
   }
 }

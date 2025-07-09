@@ -8,8 +8,10 @@ import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 import path from 'utils/common/path';
 import { IconTrash } from '@tabler/icons';
+import { useTranslation } from 'react-i18next';
 
 const General = ({ close }) => {
+  const { t } = useTranslation();
   const preferences = useSelector((state) => state.app.preferences);
   const dispatch = useDispatch();
   const inputFileCaCertificateRef = useRef();
@@ -112,7 +114,7 @@ const General = ({ close }) => {
             className="mousetrap mr-0"
           />
           <label className="block ml-2 select-none" htmlFor="sslVerification">
-            SSL/TLS Certificate Verification
+            {t('Preferences_General.SSL/TLS_Certificate_Verification')}
           </label>
         </div>
         <div className="flex items-center mt-2">
@@ -124,9 +126,7 @@ const General = ({ close }) => {
             onChange={formik.handleChange}
             className="mousetrap mr-0"
           />
-          <label className="block ml-2 select-none" htmlFor="customCaCertificateEnabled">
-            Use Custom CA Certificate
-          </label>
+          <label className="block ml-2 select-none" htmlFor="customCaCertificateEnabled">{t('Preferences_General.Use_Custom_CA_Certificate')}</label>
         </div>
         {formik.values.customCaCertificate.filePath ? (
           <div
@@ -156,7 +156,7 @@ const General = ({ close }) => {
               disabled={formik.values.customCaCertificate.enabled ? false : true}
               onClick={() => inputFileCaCertificateRef.current.click()}
             >
-              select file
+              {t('Preferences_General.select_file')}
               <input
                 id="caCertFilePath"
                 type="file"
@@ -183,7 +183,8 @@ const General = ({ close }) => {
             className={`block ml-2 select-none ${formik.values.customCaCertificate.enabled ? '' : 'opacity-25'}`}
             htmlFor="keepDefaultCaCertificatesEnabled"
           >
-            Keep Default CA Certificates
+            
+            {t('Preferences_General.Keep_Default_CA_Certificates')}
           </label>
         </div>
         <div className="flex items-center mt-2">
@@ -195,9 +196,7 @@ const General = ({ close }) => {
             onChange={formik.handleChange}
             className="mousetrap mr-0"
           />
-          <label className="block ml-2 select-none" htmlFor="storeCookies">
-            Store Cookies automatically
-          </label>
+          <label className="block ml-2 select-none" htmlFor="storeCookies">{t('Preferences_General.Store_Cookies_automatically')}</label>
         </div>
         <div className="flex items-center mt-2">
           <input
@@ -208,13 +207,11 @@ const General = ({ close }) => {
             onChange={formik.handleChange}
             className="mousetrap mr-0"
           />
-          <label className="block ml-2 select-none" htmlFor="sendCookies">
-            Send Cookies automatically
-          </label>
+          <label className="block ml-2 select-none" htmlFor="sendCookies">{t('Preferences_General.Send_Cookies_automatically')}</label>
         </div>
         <div className="flex flex-col mt-6">
           <label className="block select-none" htmlFor="timeout">
-            Request Timeout (in ms)
+            {t('Preferences_General.Request_Timeout')} (in ms)
           </label>
           <input
             type="text"
@@ -232,9 +229,7 @@ const General = ({ close }) => {
           <div className="text-red-500">{formik.errors.timeout}</div>
         ) : null}
         <div className="mt-10">
-          <button type="submit" className="submit btn btn-sm btn-secondary">
-            Save
-          </button>
+          <button type="submit" className="submit btn btn-sm btn-secondary">{t('Preferences_General.Save')}</button>
         </div>
       </form>
     </StyledWrapper>

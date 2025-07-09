@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 let posthogClient = null;
 const posthogApiKey = process.env.NEXT_PUBLIC_POSTHOG_API_KEY;
 const getPosthogClient = () => {
-  const { t } = useTranslation();
   if (posthogClient) {
     return posthogClient;
   }
@@ -61,6 +60,7 @@ const CheckIcon = () => {
 };
 
 const GoldenEdition = ({ onClose }) => {
+  const { t } = useTranslation();
   const { displayedTheme } = useTheme();
 
   useEffect(() => {

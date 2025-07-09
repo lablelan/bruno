@@ -1,15 +1,17 @@
 import React from 'react';
 import CloseTabIcon from './CloseTabIcon';
 import { IconVariable, IconSettings, IconRun, IconFolder, IconShieldLock } from '@tabler/icons';
+import { useTranslation } from 'react-i18next';
 
 const SpecialTab = ({ handleCloseClick, type, tabName, handleDoubleClick }) => {
+  const { t } = useTranslation();
   const getTabInfo = (type, tabName) => {
     switch (type) {
       case 'collection-settings': {
         return (
           <div onDoubleClick={handleDoubleClick} className="flex items-center flex-nowrap overflow-hidden">
             <IconSettings size={18} strokeWidth={1.5} className="text-yellow-600" />
-            <span className="ml-1 leading-6">Collection</span>
+            <span className="ml-1 leading-6">{t('RequestTabs_RequestTab.Collection')}</span>
           </div>
         );
       }
@@ -17,7 +19,7 @@ const SpecialTab = ({ handleCloseClick, type, tabName, handleDoubleClick }) => {
         return (
           <>
             <IconSettings size={18} strokeWidth={1.5} className="text-yellow-600" />
-            <span className="ml-1 leading-6">Collection</span>
+            <span className="ml-1 leading-6">{t('RequestTabs_RequestTab.Collection')}</span>
           </>
         );
       }
@@ -25,7 +27,7 @@ const SpecialTab = ({ handleCloseClick, type, tabName, handleDoubleClick }) => {
         return (
           <>
             <IconShieldLock size={18} strokeWidth={1.5} className="text-yellow-600" />
-            <span className="ml-1">Security</span>
+            <span className="ml-1">{t('RequestTabs_RequestTab.Security')}</span>
           </>
         )
       }
@@ -41,7 +43,7 @@ const SpecialTab = ({ handleCloseClick, type, tabName, handleDoubleClick }) => {
         return (
           <>
             <IconVariable size={18} strokeWidth={1.5} className="text-yellow-600" />
-            <span className="ml-1 leading-6">Variables</span>
+            <span className="ml-1 leading-6">{t('RequestTabs_RequestTab.Variables')}</span>
           </>
         );
       }
@@ -49,7 +51,7 @@ const SpecialTab = ({ handleCloseClick, type, tabName, handleDoubleClick }) => {
         return (
           <>
             <IconRun size={18} strokeWidth={1.5} className="text-yellow-600" />
-            <span className="ml-1 leading-6">Runner</span>
+            <span className="ml-1 leading-6">{t('RequestTabs_RequestTab.Runner')}</span>
           </>
         );
       }

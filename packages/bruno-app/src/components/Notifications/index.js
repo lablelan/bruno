@@ -13,10 +13,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { humanizeDate, relativeDate } from 'utils/common';
 import ToolHint from 'components/ToolHint';
 import DOMPurify from 'dompurify';
+import { useTranslation } from 'react-i18next';
 
 const PAGE_SIZE = 5;
 
 const Notifications = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { version } = useApp();
   const notifications = useSelector((state) => state.notifications.notifications);
@@ -82,7 +84,7 @@ const Notifications = () => {
       {unreadNotifications.length > 0 && (
         <>
           <div className="normal-case font-normal">
-            {unreadNotifications.length} <span>unread notifications</span>
+            {unreadNotifications.length} <span>{t('Notifications.unread_notifications')}</span>
           </div>
           <button
             className={`select-none ${1 == 2 ? 'opacity-50' : 'text-link mark-as-read cursor-pointer hover:underline'}`}
@@ -199,7 +201,7 @@ const Notifications = () => {
                 </div>
               </div>
             ) : (
-              <div className="opacity-50 italic text-xs p-12 flex justify-center">No Notifications</div>
+              <div className="opacity-50 italic text-xs p-12 flex justify-center">{t('Notifications.No_Notifications')}</div>
             )}
           </div>
         </Modal>

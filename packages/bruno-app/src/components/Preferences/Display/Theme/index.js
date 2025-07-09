@@ -3,8 +3,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import StyledWrapper from './StyledWrapper';
 import { useTheme } from 'providers/Theme';
+import { useTranslation } from 'react-i18next';
 
 const Theme = () => {
+  const { t } = useTranslation();
   const { storedTheme, setStoredTheme } = useTheme();
 
   const formik = useFormik({
@@ -36,9 +38,7 @@ const Theme = () => {
             value="light"
             checked={formik.values.theme === 'light'}
           />
-          <label htmlFor="light-theme" className="ml-1 cursor-pointer select-none">
-            Light
-          </label>
+          <label htmlFor="light-theme" className="ml-1 cursor-pointer select-none">{t('Preferences_Display_Theme.Light')}</label>
 
           <input
             id="dark-theme"
@@ -52,9 +52,7 @@ const Theme = () => {
             value="dark"
             checked={formik.values.theme === 'dark'}
           />
-          <label htmlFor="dark-theme" className="ml-1 cursor-pointer select-none">
-            Dark
-          </label>
+          <label htmlFor="dark-theme" className="ml-1 cursor-pointer select-none">{t('Preferences_Display_Theme.Dark')}</label>
 
           <input
             id="system-theme"
@@ -68,9 +66,7 @@ const Theme = () => {
             value="system"
             checked={formik.values.theme === 'system'}
           />
-          <label htmlFor="system-theme" className="ml-1 cursor-pointer select-none">
-            System
-          </label>
+          <label htmlFor="system-theme" className="ml-1 cursor-pointer select-none">{t('Preferences_Display_Theme.System')}</label>
         </div>
       </div>
     </StyledWrapper>

@@ -8,8 +8,10 @@ import { saveFolderRoot } from 'providers/ReduxStore/slices/collections/actions'
 import Markdown from 'components/MarkDown';
 import CodeEditor from 'components/CodeEditor';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const Documentation = ({ collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { displayedTheme } = useTheme();
   const preferences = useSelector((state) => state.app.preferences);
@@ -52,9 +54,7 @@ const Documentation = ({ collection, folder }) => {
             onSave={onSave}
             mode="application/text"
           />
-          <button type="submit" className="submit btn btn-sm btn-secondary my-6" onClick={onSave}>
-            Save
-          </button>
+          <button type="submit" className="submit btn btn-sm btn-secondary my-6" onClick={onSave}>{t('FolderSettings_Documentation.Save')}</button>
         </div>
       ) : (
         <Markdown collectionPath={collection.pathname} onDoubleClick={toggleViewMode} content={docs} />

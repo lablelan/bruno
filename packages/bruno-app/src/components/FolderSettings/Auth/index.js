@@ -17,8 +17,10 @@ import WsseAuth from 'components/RequestPane/Auth/WsseAuth';
 import ApiKeyAuth from 'components/RequestPane/Auth/ApiKeyAuth';
 import AwsV4Auth from 'components/RequestPane/Auth/AwsV4Auth';
 import { findItemInCollection, findParentItemInCollection, humanizeRequestAuthMode } from 'utils/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const GrantTypeComponentMap = ({ collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const save = () => {
@@ -36,11 +38,12 @@ const GrantTypeComponentMap = ({ collection, folder }) => {
     case 'client_credentials':
       return <OAuth2ClientCredentials save={save} item={folder} request={request} updateAuth={updateFolderAuth} collection={collection} folder={folder} />;
     default:
-      return <div>TBD</div>;
+      return <div>{t('FolderSettings_Auth.TBD')}</div>;
   }
 };
 
 const Auth = ({ collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   let request = get(folder, 'root.request', {});
   const authMode = get(folder, 'root.request.auth.mode');
@@ -207,17 +210,15 @@ const Auth = ({ collection, folder }) => {
   return (
     <StyledWrapper className="w-full">
       <div className="text-xs mb-4 text-muted">
-        Configures authentication for the entire folder. This applies to all requests using the{' '}
-        <span className="font-medium">Inherit</span> option in the <span className="font-medium">Auth</span> tab.
+        {t('FolderSettings_Auth.LongDescriptions1')}{' '}
+        <span className="font-medium">{t('FolderSettings_Auth.Inherit')}</span> {t('FolderSettings_Auth.option_in_the')} <span className="font-medium">{t('FolderSettings_Auth.Auth')}</span> {t('FolderSettings_Auth.tab')}.
       </div>
       <div className="flex flex-grow justify-start items-center mb-4">
         <AuthMode collection={collection} folder={folder} />
       </div>
       {getAuthView()}
       <div className="mt-6">
-        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>
-          Save
-        </button>
+        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>{t('FolderSettings_Auth.Save')}</button>
       </div>
     </StyledWrapper>
   );

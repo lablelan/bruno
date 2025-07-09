@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 import {
   IconChevronDown,
   IconChevronRight,
@@ -46,6 +47,7 @@ const TestSection = ({
   onToggle,
   type = 'test'
 }) => {
+  const { t } = useTranslation();
   const passedResults = results.filter((result) => result.status === 'pass');
   const failedResults = results.filter((result) => result.status === 'fail');
 
@@ -81,6 +83,7 @@ const TestSection = ({
 };
 
 const TestResults = ({ results, assertionResults, preRequestTestResults, postResponseTestResults }) => {
+  const { t } = useTranslation();
   results = results || [];
   assertionResults = assertionResults || [];
   preRequestTestResults = preRequestTestResults || [];
@@ -110,7 +113,7 @@ const TestResults = ({ results, assertionResults, preRequestTestResults, postRes
   };
 
   if (!results.length && !assertionResults.length && !preRequestTestResults.length && !postResponseTestResults.length) {
-    return <div className="px-3">No tests found</div>;
+    return <div className="px-3">{t('ResponsePane_TestResults.No_tests_found')}</div>;
   }
 
   return (

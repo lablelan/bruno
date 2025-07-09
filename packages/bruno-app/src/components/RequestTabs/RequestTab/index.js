@@ -18,8 +18,10 @@ import NewRequest from 'components/Sidebar/NewRequest/index';
 import CloseTabIcon from './CloseTabIcon';
 import DraftTabIcon from './DraftTabIcon';
 import { flattenItems } from 'utils/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const RequestTab = ({ tab, collection, tabIndex, collectionRequestTabs, folderUid }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const [showConfirmClose, setShowConfirmClose] = useState(false);
@@ -196,6 +198,7 @@ const RequestTab = ({ tab, collection, tabIndex, collectionRequestTabs, folderUi
 };
 
 function RequestTabMenu({ onDropdownCreate, collectionRequestTabs, tabIndex, collection, dropdownTippyRef, dispatch }) {
+  const { t } = useTranslation();
   const [showCloneRequestModal, setShowCloneRequestModal] = useState(false);
   const [showAddNewRequestModal, setShowAddNewRequestModal] = useState(false);
 
@@ -282,7 +285,7 @@ function RequestTabMenu({ onDropdownCreate, collectionRequestTabs, tabIndex, col
             setShowAddNewRequestModal(true);
           }}
         >
-          New Request
+          {t('RequestTabs_RequestTab.New_Request')}
         </button>
         <button
           className="dropdown-item w-full"
@@ -291,26 +294,14 @@ function RequestTabMenu({ onDropdownCreate, collectionRequestTabs, tabIndex, col
             setShowCloneRequestModal(true);
           }}
         >
-          Clone Request
+          {t('RequestTabs_RequestTab.Clone_Request')}
         </button>
-        <button className="dropdown-item w-full" onClick={(e) => handleCloseTab(e, currentTabUid)}>
-          Close
-        </button>
-        <button disabled={!hasOtherTabs} className="dropdown-item w-full" onClick={handleCloseOtherTabs}>
-          Close Others
-        </button>
-        <button disabled={!hasLeftTabs} className="dropdown-item w-full" onClick={handleCloseTabsToTheLeft}>
-          Close to the Left
-        </button>
-        <button disabled={!hasRightTabs} className="dropdown-item w-full" onClick={handleCloseTabsToTheRight}>
-          Close to the Right
-        </button>
-        <button className="dropdown-item w-full" onClick={handleCloseSavedTabs}>
-          Close Saved
-        </button>
-        <button className="dropdown-item w-full" onClick={handleCloseAllTabs}>
-          Close All
-        </button>
+        <button className="dropdown-item w-full" onClick={(e) => handleCloseTab(e, currentTabUid)}>{t('RequestTabs_RequestTab.Close')}</button>
+        <button disabled={!hasOtherTabs} className="dropdown-item w-full" onClick={handleCloseOtherTabs}>{t('RequestTabs_RequestTab.Close_Others')}</button>
+        <button disabled={!hasLeftTabs} className="dropdown-item w-full" onClick={handleCloseTabsToTheLeft}>{t('RequestTabs_RequestTab.Close_to_the_Left')}</button>
+        <button disabled={!hasRightTabs} className="dropdown-item w-full" onClick={handleCloseTabsToTheRight}>{t('RequestTabs_RequestTab.Close_to_the_Right')}</button>
+        <button className="dropdown-item w-full" onClick={handleCloseSavedTabs}>{t('RequestTabs_RequestTab.Close_Saved')}</button>
+        <button className="dropdown-item w-full" onClick={handleCloseAllTabs}>{t('RequestTabs_RequestTab.Close_All')}</button>
       </Dropdown>
     </Fragment>
   );

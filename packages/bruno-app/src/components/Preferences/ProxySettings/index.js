@@ -8,8 +8,10 @@ import StyledWrapper from './StyledWrapper';
 import { useDispatch, useSelector } from 'react-redux';
 import { IconEye, IconEyeOff } from '@tabler/icons';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ProxySettings = ({ close }) => {
+  const { t } = useTranslation();
   const preferences = useSelector((state) => state.app.preferences);
   const systemProxyEnvVariables = useSelector((state) => state.app.systemProxyEnvVariables);
   const { http_proxy, https_proxy, no_proxy } = systemProxyEnvVariables || {};
@@ -117,9 +119,7 @@ const ProxySettings = ({ close }) => {
     <StyledWrapper>
       <form className="bruno-form" onSubmit={formik.handleSubmit}>
         <div className="mb-3 flex items-center mt-2">
-          <label className="settings-label" htmlFor="protocol">
-            Mode
-          </label>
+          <label className="settings-label" htmlFor="protocol">{t('Preferences_ProxySettings.Mode')}</label>
           <div className="flex items-center">
             <label className="flex items-center cursor-pointer">
               <input
@@ -191,9 +191,7 @@ const ProxySettings = ({ close }) => {
         {formik?.values?.mode === 'on' ? (
           <>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="protocol">
-                Protocol
-              </label>
+              <label className="settings-label" htmlFor="protocol">{t('Preferences_ProxySettings.Protocol')}</label>
               <div className="flex items-center">
                 <label className="flex items-center">
                   <input
@@ -242,9 +240,7 @@ const ProxySettings = ({ close }) => {
               </div>
             </div>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="hostname">
-                Hostname
-              </label>
+              <label className="settings-label" htmlFor="hostname">{t('Preferences_ProxySettings.Hostname')}</label>
               <input
                 id="hostname"
                 type="text"
@@ -262,9 +258,7 @@ const ProxySettings = ({ close }) => {
               ) : null}
             </div>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="port">
-                Port
-              </label>
+              <label className="settings-label" htmlFor="port">{t('Preferences_ProxySettings.Port')}</label>
               <input
                 id="port"
                 type="number"
@@ -282,9 +276,7 @@ const ProxySettings = ({ close }) => {
               ) : null}
             </div>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="auth.enabled">
-                Auth
-              </label>
+              <label className="settings-label" htmlFor="auth.enabled">{t('Preferences_ProxySettings.Auth')}</label>
               <input
                 type="checkbox"
                 name="auth.enabled"
@@ -294,9 +286,7 @@ const ProxySettings = ({ close }) => {
             </div>
             <div>
               <div className="mb-3 flex items-center">
-                <label className="settings-label" htmlFor="auth.username">
-                  Username
-                </label>
+                <label className="settings-label" htmlFor="auth.username">{t('Preferences_ProxySettings.Username')}</label>
                 <input
                   id="auth.username"
                   type="text"
@@ -314,9 +304,7 @@ const ProxySettings = ({ close }) => {
                 ) : null}
               </div>
               <div className="mb-3 flex items-center">
-                <label className="settings-label" htmlFor="auth.password">
-                  Password
-                </label>
+                <label className="settings-label" htmlFor="auth.password">{t('Preferences_ProxySettings.Password')}</label>
                 <div className="textbox flex flex-row items-center w-[13.2rem] h-[2.25rem] relative">
                   <input
                     id="auth.password"
@@ -344,9 +332,7 @@ const ProxySettings = ({ close }) => {
               </div>
             </div>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="bypassProxy">
-                Proxy Bypass
-              </label>
+              <label className="settings-label" htmlFor="bypassProxy">{t('Preferences_ProxySettings.Proxy_Bypass')}</label>
               <input
                 id="bypassProxy"
                 type="text"
@@ -366,9 +352,7 @@ const ProxySettings = ({ close }) => {
           </>
         ) : null}
         <div className="mt-6">
-          <button type="submit" className="submit btn btn-md btn-secondary">
-            Save
-          </button>
+          <button type="submit" className="submit btn btn-md btn-secondary">{t('Preferences_ProxySettings.Save')}</button>
         </div>
       </form>
     </StyledWrapper>

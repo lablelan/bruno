@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { savePreferences } from 'providers/ReduxStore/slices/app';
 import StyledWrapper from './StyledWrapper';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 const Font = ({ close }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const preferences = useSelector((state) => state.app.preferences);
 
@@ -43,7 +45,7 @@ const Font = ({ close }) => {
     <StyledWrapper>
       <div className="flex flex-row gap-2 w-full">
         <div className="w-4/5">
-          <label className="block">Code Editor Font</label>
+          <label className="block">{t('Preferences_Display_Font.Code_Editor_Font')}</label>
           <input
             type="text"
             className="block textbox mt-2 w-full"
@@ -56,7 +58,7 @@ const Font = ({ close }) => {
           />
         </div>
         <div className="w-1/5">
-          <label className="block">Font Size</label>
+          <label className="block">{t('Preferences_Display_Font.Font_Size')}</label>
           <input
             type="number"
             className="block textbox mt-2 w-full"
@@ -70,9 +72,7 @@ const Font = ({ close }) => {
       </div>
 
       <div className="mt-10">
-        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>
-          Save
-        </button>
+        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>{t('Preferences_Display_Font.Save')}</button>
       </div>
     </StyledWrapper>
   );

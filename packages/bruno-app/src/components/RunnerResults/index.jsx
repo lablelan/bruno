@@ -9,8 +9,10 @@ import { IconRefresh, IconCircleCheck, IconCircleX, IconCircleOff, IconCheck, Ic
 import ResponsePane from './ResponsePane';
 import StyledWrapper from './StyledWrapper';
 import { areItemsLoading } from 'utils/collections';
+import { useTranslation } from 'react-i18next';
 
 const getDisplayName = (fullPath, pathname, name = '') => {
+  const { t } = useTranslation();
   let relativePath = path.relative(fullPath, pathname);
   const { dir = '' } = path.parse(relativePath);
   return path.join(dir, name);
@@ -39,6 +41,7 @@ const anyTestFailed = (item) => {
 };
 
 export default function RunnerResults({ collection }) {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [selectedItem, setSelectedItem] = useState(null);
   const [delay, setDelay] = useState(null);
@@ -120,7 +123,7 @@ export default function RunnerResults({ collection }) {
     return (
       <StyledWrapper className="px-4 pb-4">
         <div className="font-medium mt-6 title flex items-center">
-          Runner
+          {t('RunnerResults.Runner')}
           <IconRun size={20} strokeWidth={1.5} className="ml-2" />
         </div>
         <div className="mt-6">
@@ -128,7 +131,7 @@ export default function RunnerResults({ collection }) {
         </div>
         {isCollectionLoading ? <div className='my-1 danger'>Requests in this collection are still loading.</div> : null}
         <div className="mt-6">
-          <label>Delay (in ms)</label>
+          <label>{t('RunnerResults.Delay')} (in ms)</label>
           <input
             type="number"
             className="block textbox mt-2 py-5"
@@ -141,13 +144,9 @@ export default function RunnerResults({ collection }) {
           />
         </div>
 
-        <button type="submit" className="submit btn btn-sm btn-secondary mt-6" onClick={runCollection}>
-          Run Collection
-        </button>
+        <button type="submit" className="submit btn btn-sm btn-secondary mt-6" onClick={runCollection}>{t('RunnerResults.Run_Collection')}</button>
 
-        <button className="submit btn btn-sm btn-close mt-6 ml-3" onClick={resetRunner}>
-          Reset
-        </button>
+        <button className="submit btn btn-sm btn-close mt-6 ml-3" onClick={resetRunner}>{t('RunnerResults.Reset')}</button>
       </StyledWrapper>
     );
   }
@@ -156,13 +155,11 @@ export default function RunnerResults({ collection }) {
     <StyledWrapper className="px-4 pb-4 flex flex-grow flex-col relative">
       <div className="flex flex-row">
         <div className="font-medium my-6 title flex items-center">
-          Runner
+          {t('RunnerResults.Runner')}
           <IconRun size={20} strokeWidth={1.5} className="ml-2" />
         </div>
         {runnerInfo.status !== 'ended' && runnerInfo.cancelTokenUid && (
-          <button className="btn ml-6 my-4 btn-sm btn-danger" onClick={cancelExecution}>
-            Cancel Execution
-          </button>
+          <button className="btn ml-6 my-4 btn-sm btn-danger" onClick={cancelExecution}>{t('RunnerResults.Cancel_Execution')}</button>
         )}
       </div>
       <div className="flex flex-row gap-4">
@@ -302,15 +299,9 @@ export default function RunnerResults({ collection }) {
           })}
           {runnerInfo.status === 'ended' ? (
             <div className="mt-2 mb-4">
-              <button type="submit" className="submit btn btn-sm btn-secondary mt-6" onClick={runAgain}>
-                Run Again
-              </button>
-              <button type="submit" className="submit btn btn-sm btn-secondary mt-6 ml-3" onClick={runCollection}>
-                Run Collection
-              </button>
-              <button className="btn btn-sm btn-close mt-6 ml-3" onClick={resetRunner}>
-                Reset
-              </button>
+              <button type="submit" className="submit btn btn-sm btn-secondary mt-6" onClick={runAgain}>{t('RunnerResults.Run_Again')}</button>
+              <button type="submit" className="submit btn btn-sm btn-secondary mt-6 ml-3" onClick={runCollection}>{t('RunnerResults.Run_Collection')}</button>
+              <button className="btn btn-sm btn-close mt-6 ml-3" onClick={resetRunner}>{t('RunnerResults.Reset')}</button>
             </div>
           ) : null}
         </div>

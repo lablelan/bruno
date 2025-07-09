@@ -3,8 +3,10 @@ import { saveCollectionSecurityConfig } from 'providers/ReduxStore/slices/collec
 import toast from 'react-hot-toast';
 import StyledWrapper from './StyledWrapper';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const SecuritySettings = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [jsSandboxMode, setJsSandboxMode] = useState(collection?.securityConfig?.jsSandboxMode || 'safe');
 
@@ -26,10 +28,10 @@ const SecuritySettings = ({ collection }) => {
 
   return (
     <StyledWrapper className="flex flex-col h-full relative px-4 py-4">
-      <div className='font-semibold mt-2'>JavaScript Sandbox</div>
+      <div className='font-semibold mt-2'>{t('SecuritySettings.JavaScript_Sandbox')}</div>
 
       <div className='mt-4'>
-      The collection might include JavaScript code in Variables, Scripts, Tests, and Assertions.
+      {t('SecuritySettings.LongDescriptions1')}
       </div>
 
       <div className="flex flex-col mt-4">
@@ -44,12 +46,10 @@ const SecuritySettings = ({ collection }) => {
               onChange={handleChange}
               className="cursor-pointer"
             />
-            <span className={jsSandboxMode === 'safe' ? 'font-medium' : 'font-normal'}>
-              Safe Mode
-            </span>
+            <span className={jsSandboxMode === 'safe' ? 'font-medium' : 'font-normal'}>{t('SecuritySettings.Safe_Mode')}</span>
           </label>
           <p className='text-sm text-muted mt-1'>
-            JavaScript code is executed in a secure sandbox and cannot access your filesystem or execute system commands.
+            {t('SecuritySettings.LongDescriptions2')}
           </p>
 
           <label htmlFor="developer" className="flex flex-row gap-2 mt-6 cursor-pointer">
@@ -63,17 +63,15 @@ const SecuritySettings = ({ collection }) => {
               className="cursor-pointer"
             />
             <span className={jsSandboxMode === 'developer' ? 'font-medium' : 'font-normal'}>
-              Developer Mode
-              <span className='ml-1 developer-mode-warning'>(use only if you trust the authors of the collection)</span>
+              {t('SecuritySettings.Developer_Mode')}
+              <span className='ml-1 developer-mode-warning'>({t('SecuritySettings.LongDescriptions3')})</span>
             </span>
           </label>
           <p className='text-sm text-muted mt-1'>
-            JavaScript code has access to the filesystem, can execute system commands and access sensitive information.
+            {t('SecuritySettings.LongDescriptions4')}
           </p>
         </div>
-        <button onClick={handleSave} className="submit btn btn-sm btn-secondary w-fit mt-6">
-          Save
-        </button>
+        <button onClick={handleSave} className="submit btn btn-sm btn-secondary w-fit mt-6">{t('SecuritySettings.Save')}</button>
       </div>
     </StyledWrapper>
   );

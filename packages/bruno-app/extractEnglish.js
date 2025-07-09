@@ -41,9 +41,9 @@ async function extractEnglishTexts() {
   }
 
   async function processFile(filePath) {
-    if (!filePath.includes("Environments")) {
-      return;
-    }
+    // if (!filePath.includes("Environments")) {
+    //   return;
+    // }
     try {
       const content = await fs.readFile(filePath, 'utf8');
       const $ = cheerio.load(content, {

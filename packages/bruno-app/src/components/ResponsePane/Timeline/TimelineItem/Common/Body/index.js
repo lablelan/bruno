@@ -1,7 +1,9 @@
 import QueryResult from "components/ResponsePane/QueryResult/index";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 const BodyBlock = ({ collection, data, dataBuffer, headers, error, item }) => {
+  const { t } = useTranslation();
   const [isBodyCollapsed, toggleBody] = useState(true);
   return (
     <div className="collapsible-section">
@@ -25,7 +27,7 @@ const BodyBlock = ({ collection, data, dataBuffer, headers, error, item }) => {
             />
           </div>
         ) : (
-          <div className="text-gray-500">No Body found</div>
+          <div className="text-gray-500">{t('ResponsePane_Timeline_TimelineItem_Common_Body.No_Body_found')}</div>
         )}
       </div>
     )}

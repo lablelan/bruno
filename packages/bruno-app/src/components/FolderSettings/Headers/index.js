@@ -10,9 +10,11 @@ import SingleLineEditor from 'components/SingleLineEditor';
 import StyledWrapper from './StyledWrapper';
 import { headers as StandardHTTPHeaders } from 'know-your-http-well';
 import { MimeTypes } from 'utils/codemirror/autocompleteConstants';
+import { useTranslation } from 'react-i18next';
 const headerAutoCompleteList = StandardHTTPHeaders.map((e) => e.header);
 
 const Headers = ({ collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const headers = get(folder, 'root.request.headers', []);
@@ -65,7 +67,7 @@ const Headers = ({ collection, folder }) => {
   return (
     <StyledWrapper className="w-full">
       <div className="text-xs mb-4 text-muted">
-        Request headers that will be sent with every request inside this folder.
+        {t('FolderSettings_Headers.LongDescriptions1')}
       </div>
       <table>
         <thead>
@@ -142,13 +144,11 @@ const Headers = ({ collection, folder }) => {
         </tbody>
       </table>
       <button className="btn-add-header text-link pr-2 py-3 mt-2 select-none" onClick={addHeader}>
-        + Add Header
+        {t('FolderSettings_Headers.Add_Header')}
       </button>
 
       <div className="mt-6">
-        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>
-          Save
-        </button>
+        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>{t('FolderSettings_Headers.Save')}</button>
       </div>
     </StyledWrapper>
   );

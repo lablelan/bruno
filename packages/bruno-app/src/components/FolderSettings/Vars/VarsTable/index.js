@@ -10,8 +10,10 @@ import StyledWrapper from './StyledWrapper';
 import toast from 'react-hot-toast';
 import { variableNameRegex } from 'utils/common/regex';
 import { addFolderVar, deleteFolderVar, updateFolderVar } from 'providers/ReduxStore/slices/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const VarsTable = ({ folder, collection, vars, varType }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
 
@@ -77,17 +79,17 @@ const VarsTable = ({ folder, collection, vars, varType }) => {
       <table>
         <thead>
           <tr>
-            <td>Name</td>
+            <td>{t('FolderSettings_Vars_VarsTable.Name')}</td>
             {varType === 'request' ? (
               <td>
                 <div className="flex items-center">
-                  <span>Value</span>
+                  <span>{t('FolderSettings_Vars_VarsTable.Value')}</span>
                 </div>
               </td>
             ) : (
               <td>
                 <div className="flex items-center">
-                  <span>Expr</span>
+                  <span>{t('FolderSettings_Vars_VarsTable.Expr')}</span>
                   <InfoTip content="You can write any valid JS expression here" infotipId="response-var" />
                 </div>
               </td>
@@ -153,7 +155,7 @@ const VarsTable = ({ folder, collection, vars, varType }) => {
         </tbody>
       </table>
       <button className="btn-add-var text-link pr-2 py-3 mt-2 select-none" onClick={addVar}>
-        + Add
+        {t('FolderSettings_Vars_VarsTable.Add')}
       </button>
     </StyledWrapper>
   );

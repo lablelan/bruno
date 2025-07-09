@@ -6,8 +6,10 @@ import { updateFolderRequestScript, updateFolderResponseScript } from 'providers
 import { saveFolderRoot } from 'providers/ReduxStore/slices/collections/actions';
 import { useTheme } from 'providers/Theme';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const Script = ({ collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const requestScript = get(folder, 'root.request.script.req', '');
   const responseScript = get(folder, 'root.request.script.res', '');
@@ -42,10 +44,11 @@ const Script = ({ collection, folder }) => {
   return (
     <StyledWrapper className="w-full flex flex-col h-full">
       <div className="text-xs mb-4 text-muted">
-        Pre and post-request scripts that will run before and after any request inside this folder is sent.
+        {t('FolderSettings_Script.Pre_Request')}
+        
       </div>
       <div className="flex flex-col flex-1 mt-2 gap-y-2">
-        <div className="title text-xs">Pre Request</div>
+        <div className="title text-xs">{t('FolderSettings_Script.Pre_Request')}</div>
         <CodeEditor
           collection={collection}
           value={requestScript || ''}
@@ -59,7 +62,7 @@ const Script = ({ collection, folder }) => {
         />
       </div>
       <div className="flex flex-col flex-1 mt-2 gap-y-2">
-        <div className="title text-xs">Post Response</div>
+        <div className="title text-xs">{t('FolderSettings_Script.Post_Response')}</div>
         <CodeEditor
           collection={collection}
           value={responseScript || ''}
@@ -74,9 +77,7 @@ const Script = ({ collection, folder }) => {
       </div>
 
       <div className="mt-12">
-        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>
-          Save
-        </button>
+        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>{t('FolderSettings_Script.Save')}</button>
       </div>
     </StyledWrapper>
   );

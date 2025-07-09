@@ -9,6 +9,7 @@ import InfoTip from 'components/InfoTip';
 import StyledWrapper from './StyledWrapper';
 import toast from 'react-hot-toast';
 import { variableNameRegex } from 'utils/common/regex';
+import { useTranslation } from 'react-i18next';
 import {
   addCollectionVar,
   deleteCollectionVar,
@@ -16,6 +17,7 @@ import {
 } from 'providers/ReduxStore/slices/collections/index';
 
 const VarsTable = ({ collection, vars, varType }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
 
@@ -78,17 +80,17 @@ const VarsTable = ({ collection, vars, varType }) => {
       <table>
         <thead>
           <tr>
-            <td>Name</td>
+            <td>{t('CollectionSettings_Vars_VarsTable.Name')}</td>
             {varType === 'request' ? (
               <td>
                 <div className="flex items-center">
-                  <span>Value</span>
+                  <span>{t('CollectionSettings_Vars_VarsTable.Value')}</span>
                 </div>
               </td>
             ) : (
               <td>
                 <div className="flex items-center">
-                  <span>Expr</span>
+                  <span>{t('CollectionSettings_Vars_VarsTable.Expr')}</span>
                   <InfoTip content="You can write any valid JS Template Literal here" infotipId="request-var" />
                 </div>
               </td>
