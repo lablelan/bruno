@@ -9,8 +9,10 @@ import Markdown from 'components/MarkDown';
 import CodeEditor from 'components/CodeEditor';
 import StyledWrapper from './StyledWrapper';
 import { IconEdit, IconX, IconFileText } from '@tabler/icons';
+import { useTranslation } from 'react-i18next';
 
 const Docs = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { displayedTheme } = useTheme();
   const [isEditing, setIsEditing] = useState(false);
@@ -50,7 +52,7 @@ const Docs = ({ collection }) => {
       <div className='flex flex-row w-full justify-between items-center mb-4'>
         <div className='text-lg font-medium flex items-center gap-2'>
           <IconFileText size={20} strokeWidth={1.5} />
-          Documentation
+          {t('CollectionSettings_Docs.Documentation')}
         </div>
         <div className='flex flex-row gap-2 items-center justify-center'>
           {isEditing ? (
@@ -58,9 +60,7 @@ const Docs = ({ collection }) => {
               <div className="editing-mode" role="tab" onClick={handleDiscardChanges}>
                 <IconX className="cursor-pointer" size={20} strokeWidth={1.5} />
               </div>
-              <button type="submit" className="submit btn btn-sm btn-secondary" onClick={onSave}>
-                Save
-              </button>
+              <button type="submit" className="submit btn btn-sm btn-secondary" onClick={onSave}>{t('CollectionSettings_Docs.Save')}</button>
             </>
           ) : (
             <div className="editing-mode" role="tab" onClick={toggleViewMode}>

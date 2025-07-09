@@ -6,8 +6,10 @@ import { updateCollectionTests } from 'providers/ReduxStore/slices/collections';
 import { saveCollectionRoot } from 'providers/ReduxStore/slices/collections/actions';
 import { useTheme } from 'providers/Theme';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const Tests = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const tests = get(collection, 'root.request.tests', '');
 
@@ -27,7 +29,7 @@ const Tests = ({ collection }) => {
 
   return (
     <StyledWrapper className="w-full flex flex-col h-full">
-      <div className="text-xs mb-4 text-muted">These tests will run any time a request in this collection is sent.</div>
+      <div className="text-xs mb-4 text-muted">{t('CollectionSettings_Tests.LongDescriptions')}</div>
       <CodeEditor
         collection={collection}
         value={tests || ''}
@@ -41,9 +43,7 @@ const Tests = ({ collection }) => {
       />
 
       <div className="mt-6">
-        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>
-          Save
-        </button>
+        <button type="submit" className="submit btn btn-sm btn-secondary" onClick={handleSave}>{t('CollectionSettings_Tests.Save')}</button>
       </div>
     </StyledWrapper>
   );

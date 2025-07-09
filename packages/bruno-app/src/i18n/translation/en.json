@@ -32,5 +32,143 @@
     "And": "and",
     "HIDE_SECRET_VALUES": "Hide secret variable values",
     "SHOW_SECRET_VALUES": "Show secret variable values"
+  },
+  "FormUrlEncodedParams": {
+    "Add_Param": "+ Add Param"
+  },
+  "MultipartFormParams": {
+    "Add_Param": "+ Add Param",
+    "Add_File": "+ Add File"
+  },
+  "CollectionSettings_Auth_ApiKeyAuth": {
+    "Key": "Key",
+    "Value": "Value",
+    "Add_To": "Add To",
+    "Header": "Header",
+    "Query_Params": "Query Params"
+  },
+  "CollectionSettings_Auth_AwsV4Auth": {
+    "Access_Key_ID": "Access Key ID",
+    "Secret_Access_Key": "Secret Access Key",
+    "Session_Token": "Session Token",
+    "Service": "Service",
+    "Region": "Region",
+    "Profile_Name": "Profile Name"
+  },
+  "CollectionSettings_Auth_BasicAuth": {
+    "Username": "Username",
+    "Password": "Password"
+  },
+  "CollectionSettings_Auth_BearerAuth": {
+    "Token": "Token"
+  },
+  "CollectionSettings_Auth_DigestAuth": {
+    "Username": "Username",
+    "Password": "Password"
+  },
+  "CollectionSettings_Auth": {
+    "Inherit": "Inherit",
+    "Auth": "Auth",
+    "Save": "Save",
+    "OptionInThe": "option in the",
+    "Tab": "tab",
+    "ConfiguresDescription": "Configures authentication for the entire collection. This applies to all requests using the"
+  },
+  "CollectionSettings_Auth_NTLMAuth": {
+    "Username": "Username",
+    "Password": "Password",
+    "Domain": "Domain"
+  },
+  "CollectionSettings_Auth_OAuth2": {
+    "TBD": "TBD"
+  },
+  "CollectionSettings_Auth_WsseAuth": {
+    "Username": "Username",
+    "Password": "Password"
+  },
+  "CollectionSettings_ClientCertSettings": {
+    "LongDescriptions": "Add client certificates to be used for specific domains.",
+    "Domain": "Domain",
+    "Type": "Type",
+    "Cert_file": "Cert file",
+    "Key_file": "Key file",
+    "PFX_file": "PFX file",
+    "Passphrase": "Passphrase",
+    "Add": "Add",
+    "Client_Certificates": "Client Certificates",
+    "Add_Client_Certificate": "Add Client Certificate"
+  },
+  "CollectionSettings_Docs": {
+    "Save": "Save",
+    "Documentation": "Documentation"
+  },
+  "CollectionSettings_Headers": {
+    "Add_Header_Description": "Add request headers that will be sent with every request in this collection.",
+    "Add_Header": "+ Add Header",
+    "Save": "Save"
+  },
+  "CollectionSettings": {
+    "Overview": "Overview",
+    "Headers": "Headers",
+    "Vars": "Vars",
+    "Auth": "Auth",
+    "Script": "Script",
+    "Tests": "Tests",
+    "Proxy": "Proxy",
+    "Client_Certificates": "Client Certificates",
+    "Presets": "Presets"
+  },
+  "CollectionSettings_Overview_Info": {
+    "Location": "Location",
+    "environment": "environment",
+    "Environments": "Environments",
+    "Requests": "Requests",
+    "Share": "Share",
+    "Share_Collection": "Share Collection"
+  },
+  "CollectionSettings_Overview_RequestsNotLoaded": {
+    "Following_requests_were_not_loaded": "Following requests were not loaded"
+  },
+  "CollectionSettings_Presets": {
+    "LongDescriptions": "These presets will be used as the default values for new requests in this collection.",
+    "Request_Type": "Request Type",
+    "HTTP": "HTTP",
+    "GraphQL": "GraphQL",
+    "Base_URL": "Base URL",
+    "Save": "Save"
+  },
+  "CollectionSettings_ProxySettings": {
+    "LongDescriptions": "Configure proxy settings for this collection.",
+    "Config": "Config",
+    "global": "global",
+    "enabled": "enabled",
+    "disabled": "disabled",
+    "Protocol": "Protocol",
+    "Hostname": "Hostname",
+    "Port": "Port",
+    "Auth": "Auth",
+    "Username": "Username",
+    "Password": "Password",
+    "Proxy_Bypass": "Proxy Bypass",
+    "Save": "Save"
+  },
+  "CollectionSettings_Script": {
+    "LongDescriptions": "Write pre and post-request scripts that will run before and after any request in this collection is sent.",
+    "Pre_Request": "Pre Request",
+    "Post_Response": "Post Response",
+    "Save": "Save"
+  },
+  "CollectionSettings_Tests": {
+    "LongDescriptions": "These tests will run any time a request in this collection is sent.",
+    "Save": "Save"
+  },
+  "CollectionSettings_Vars": {
+    "Pre_Request": "Pre Request",
+    "Post_Response": "Post Response",
+    "Save": "Save"
+  },
+  "CollectionSettings_Vars_VarsTable": {
+    "Value": "Value",
+    "Expr": "Expr"
   }
 }

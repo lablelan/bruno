@@ -33,6 +33,7 @@ const FormUrlEncodedParams = ({ item, collection }) => {
   const onSave = () => dispatch(saveRequest(item.uid, collection.uid));
   const handleRun = () => dispatch(sendRequest(item, collection.uid));
   const handleParamChange = (e, _param, type) => {
+    const { t } = useTranslation();
     const param = cloneDeep(_param);
     switch (type) {
       case 'name': {
@@ -146,7 +147,7 @@ const FormUrlEncodedParams = ({ item, collection }) => {
         </ReorderTable>
       </Table>
       <button className="btn-add-param text-link pr-2 py-3 mt-2 select-none" onClick={addParam}>
-        + Add Param
+        t('FormUrlEncodedParams.Add_Param')
       </button>
     </StyledWrapper>
   );

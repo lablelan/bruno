@@ -18,6 +18,7 @@ import Table from 'components/Table/index';
 import ReorderTable from 'components/ReorderTable/index';
 
 const MultipartFormParams = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const params = item.draft ? get(item, 'draft.request.body.multipartForm') : get(item, 'request.body.multipartForm');
@@ -205,12 +206,12 @@ const MultipartFormParams = ({ item, collection }) => {
       </Table>
       <div>
         <button className="btn-add-param text-link pr-2 pt-3 mt-2 select-none" onClick={addParam}>
-          + Add Param
+          t('MultipartFormParams.Add_Param')
         </button>
       </div>
       <div>
         <button className="btn-add-param text-link pr-2 pt-3 select-none" onClick={addFile}>
-          + Add File
+          t('MultipartFormParams.Add_File')
         </button>
       </div>
     </StyledWrapper>

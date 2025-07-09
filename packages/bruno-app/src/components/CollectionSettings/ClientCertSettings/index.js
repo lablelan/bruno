@@ -9,8 +9,10 @@ import { useState } from 'react';
 import StyledWrapper from './StyledWrapper';
 import { useRef } from 'react';
 import path from 'utils/common/path';
+import { useTranslation } from 'react-i18next';
 
 const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
+  const { t } = useTranslation();
   const certFilePathInputRef = useRef();
   const keyFilePathInputRef = useRef();
   const pfxFilePathInputRef = useRef();
@@ -99,9 +101,9 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
 
   return (
     <StyledWrapper className="w-full h-full">
-      <div className="text-xs mb-4 text-muted">Add client certificates to be used for specific domains.</div>
+      <div className="text-xs mb-4 text-muted">{t('CollectionSettings_ClientCertSettings.LongDescriptions')}</div>
 
-      <h1 className="font-semibold">Client Certificates</h1>
+      <h1 className="font-semibold">{t('CollectionSettings_ClientCertSettings.Client_Certificates')}</h1>
       <ul className="mt-4">
         {!clientCertConfig.length
           ? 'No client certificates added'
@@ -124,12 +126,10 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
           ))}
       </ul>
 
-      <h1 className="font-semibold mt-8 mb-2">Add Client Certificate</h1>
+      <h1 className="font-semibold mt-8 mb-2">{t('CollectionSettings_ClientCertSettings.Add_Client_Certificate')}</h1>
       <form className="bruno-form" onSubmit={formik.handleSubmit}>
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="domain">
-            Domain
-          </label>
+          <label className="settings-label" htmlFor="domain">{t('CollectionSettings_ClientCertSettings.Domain')}</label>
           <div className="relative flex items-center">
             <div className="absolute left-0 pl-2 text-gray-400 pointer-events-none flex items-center h-full">
               https://
@@ -149,9 +149,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
           ) : null}
         </div>
         <div className="mb-3 flex items-center">
-          <label id="type-label" className="settings-label">
-            Type
-          </label>
+          <label id="type-label" className="settings-label">{t('CollectionSettings_ClientCertSettings.Type')}</label>
           <div className="flex items-center" aria-labelledby="type-label">
             <label className="flex items-center cursor-pointer" htmlFor="cert">
               <input
@@ -182,9 +180,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
         {formik.values.type === 'cert' ? (
           <>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="certFilePath">
-                Cert file
-              </label>
+              <label className="settings-label" htmlFor="certFilePath">{t('CollectionSettings_ClientCertSettings.Cert_file')}</label>
               <div className="flex flex-row gap-2 justify-start">
                 <input
                   key="certFilePath"
@@ -222,9 +218,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
               ) : null}
             </div>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="keyFilePath">
-                Key file
-              </label>
+              <label className="settings-label" htmlFor="keyFilePath">{t('CollectionSettings_ClientCertSettings.Key_file')}</label>
               <div className="flex flex-row gap-2">
                 <input
                   key="keyFilePath"
@@ -265,9 +259,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
         ) : (
           <>
             <div className="mb-3 flex items-center">
-              <label className="settings-label" htmlFor="pfxFilePath">
-                PFX file
-              </label>
+              <label className="settings-label" htmlFor="pfxFilePath">{t('CollectionSettings_ClientCertSettings.PFX_file')}</label>
               <div className="flex flex-row gap-2">
                 <input
                   key="pfxFilePath"
@@ -307,9 +299,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
           </>
         )}
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="passphrase">
-            Passphrase
-          </label>
+          <label className="settings-label" htmlFor="passphrase">{t('CollectionSettings_ClientCertSettings.Passphrase')}</label>
           <div className="textbox flex flex-row items-center w-[300px] h-[1.70rem] relative">
             <input
               id="passphrase"
@@ -332,9 +322,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
           ) : null}
         </div>
         <div className="mt-6">
-          <button type="submit" className="submit btn btn-sm btn-secondary">
-            Add
-          </button>
+          <button type="submit" className="submit btn btn-sm btn-secondary">{t('CollectionSettings_ClientCertSettings.Add')}</button>
         </div>
       </form>
     </StyledWrapper>

@@ -4,8 +4,10 @@ import { IconFolder, IconWorld, IconApi, IconShare } from '@tabler/icons';
 import { areItemsLoading, getItemsLoadStats } from "utils/collections/index";
 import { useState } from "react";
 import ShareCollection from "components/ShareCollection/index";
+import { useTranslation } from 'react-i18next';
 
 const Info = ({ collection }) => {
+  const { t } = useTranslation();
   const totalRequestsInCollection = getTotalRequestCountInCollection(collection);
 
   const isCollectionLoading = areItemsLoading(collection);
@@ -26,7 +28,7 @@ const Info = ({ collection }) => {
               <IconFolder className="w-5 h-5 text-blue-500" stroke={1.5} />
             </div>
             <div className="ml-4">
-              <div className="font-semibold text-sm">Location</div>
+              <div className="font-semibold text-sm">{t('CollectionSettings_Overview_Info.Location')}</div>
               <div className="mt-1 text-sm text-muted break-all">
                 {collection.pathname}
               </div>
@@ -39,9 +41,9 @@ const Info = ({ collection }) => {
               <IconWorld className="w-5 h-5 text-green-500" stroke={1.5} />
             </div>
             <div className="ml-4">
-              <div className="font-semibold text-sm">Environments</div>
+              <div className="font-semibold text-sm">{t('CollectionSettings_Overview_Info.Environments')}</div>
               <div className="mt-1 text-sm text-muted">
-                {collection.environments?.length || 0} environment{collection.environments?.length !== 1 ? 's' : ''} configured
+                {collection.environments?.length || 0} {t('CollectionSettings_Overview_Info.environment')}{collection.environments?.length !== 1 ? 's' : ''} configured
               </div>
             </div>
           </div>
@@ -52,7 +54,7 @@ const Info = ({ collection }) => {
               <IconApi className="w-5 h-5 text-purple-500" stroke={1.5} />
             </div>
             <div className="ml-4">
-              <div className="font-semibold text-sm">Requests</div>
+              <div className="font-semibold text-sm">{t('CollectionSettings_Overview_Info.Requests')}</div>
               <div className="mt-1 text-sm text-muted">
                 {
                   isCollectionLoading? `${totalItems - itemsLoadingCount} out of ${totalItems} requests in the collection loaded` : `${totalRequestsInCollection} request${totalRequestsInCollection !== 1 ? 's' : ''} in collection`
@@ -66,10 +68,8 @@ const Info = ({ collection }) => {
               <IconShare className="w-5 h-5 text-indigo-500" stroke={1.5} />
             </div>
             <div className="ml-4 h-full flex flex-col justify-start">
-              <div className="font-semibold text-sm h-fit my-auto">Share</div>
-              <div className="mt-1 text-sm group-hover:underline text-link">
-                Share Collection
-              </div>
+              <div className="font-semibold text-sm h-fit my-auto">{t('CollectionSettings_Overview_Info.Share')}</div>
+              <div className="mt-1 text-sm group-hover:underline text-link">{t('CollectionSettings_Overview_Info.Share_Collection')}</div>
             </div>
           </div>
           {showShareCollectionModal && <ShareCollection collectionUid={collection.uid} onClose={handleToggleShowShareCollectionModal(false)} />}

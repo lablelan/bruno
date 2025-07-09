@@ -8,8 +8,10 @@ import { useDispatch } from 'react-redux';
 import OAuth2PasswordCredentials from 'components/RequestPane/Auth/OAuth2/PasswordCredentials/index';
 import OAuth2ClientCredentials from 'components/RequestPane/Auth/OAuth2/ClientCredentials/index';
 import GrantTypeSelector from 'components/RequestPane/Auth/OAuth2/GrantTypeSelector/index';
+import { useTranslation } from 'react-i18next';
 
 const GrantTypeComponentMap = ({collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const save = () => {
@@ -30,7 +32,7 @@ const GrantTypeComponentMap = ({collection }) => {
       return <OAuth2ClientCredentials save={save} request={request} updateAuth={updateCollectionAuth} collection={collection} />;
       break;
     default:
-      return <div>TBD</div>;
+      return <div>{t('CollectionSettings_Auth_OAuth2.TBD')}</div>;
       break;
   }
 };

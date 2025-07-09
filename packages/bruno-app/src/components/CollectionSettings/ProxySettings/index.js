@@ -6,8 +6,10 @@ import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 import { IconEye, IconEyeOff } from '@tabler/icons';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ProxySettings = ({ proxyConfig, onUpdate }) => {
+  const { t } = useTranslation();
   const proxySchema = Yup.object({
     enabled: Yup.string().oneOf(['global', 'true', 'false']),
     protocol: Yup.string().oneOf(['http', 'https', 'socks4', 'socks5']),
@@ -99,17 +101,17 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
 
   return (
     <StyledWrapper className="h-full w-full">
-      <div className="text-xs mb-4 text-muted">Configure proxy settings for this collection.</div>
+      <div className="text-xs mb-4 text-muted">{t('CollectionSettings_ProxySettings.LongDescriptions')}</div>
       <form className="bruno-form" onSubmit={formik.handleSubmit}>
         <div className="mb-3 flex items-center">
           <label className="settings-label flex items-center" htmlFor="enabled">
-            Config
+            {t('CollectionSettings_ProxySettings.Config')}
             <InfoTip infotipId="request-var">
               <div>
                 <ul>
-                  <li><span style={{width: "50px", display: "inline-block"}}>global</span> - use global proxy config</li>
-                  <li><span style={{width: "50px", display: "inline-block"}}>enabled</span> - use collection proxy config</li>
-                  <li><span style={{width: "50px", display: "inline-block"}}>disable</span> - disable proxy</li>
+                  <li><span style={{width: "50px", display: "inline-block"}}>{t('CollectionSettings_ProxySettings.global')}</span> - use global proxy config</li>
+                  <li><span style={{width: "50px", display: "inline-block"}}>{t('CollectionSettings_ProxySettings.enabled')}</span> - use collection proxy config</li>
+                  <li><span style={{width: "50px", display: "inline-block"}}>{t('CollectionSettings_ProxySettings.disabled')}</span> - disable proxy</li>
                 </ul>
               </div>
             </InfoTip>
@@ -124,7 +126,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
                 onChange={formik.handleChange}
                 className="mr-1"
               />
-              global
+              {t('CollectionSettings_ProxySettings.global')}
             </label>
             <label className="flex items-center ml-4">
               <input
@@ -135,7 +137,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
                 onChange={formik.handleChange}
                 className="mr-1"
               />
-              enabled
+              {t('CollectionSettings_ProxySettings.enabled')}
             </label>
             <label className="flex items-center ml-4">
               <input
@@ -146,14 +148,12 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
                 onChange={formik.handleChange}
                 className="mr-1"
               />
-              disabled
+              {t('CollectionSettings_ProxySettings.disabled')}
             </label>
           </div>
         </div>
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="protocol">
-            Protocol
-          </label>
+          <label className="settings-label" htmlFor="protocol">{t('CollectionSettings_ProxySettings.Protocol')}</label>
           <div className="flex items-center">
             <label className="flex items-center">
               <input
@@ -202,9 +202,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
           </div>
         </div>
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="hostname">
-            Hostname
-          </label>
+          <label className="settings-label" htmlFor="hostname">{t('CollectionSettings_ProxySettings.Hostname')}</label>
           <input
             id="hostname"
             type="text"
@@ -222,9 +220,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
           ) : null}
         </div>
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="port">
-            Port
-          </label>
+          <label className="settings-label" htmlFor="port">{t('CollectionSettings_ProxySettings.Port')}</label>
           <input
             id="port"
             type="number"
@@ -242,9 +238,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
           ) : null}
         </div>
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="auth.enabled">
-            Auth
-          </label>
+          <label className="settings-label" htmlFor="auth.enabled">{t('CollectionSettings_ProxySettings.Auth')}</label>
           <input
             type="checkbox"
             name="auth.enabled"
@@ -254,9 +248,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
         </div>
         <div>
           <div className="mb-3 flex items-center">
-            <label className="settings-label" htmlFor="auth.username">
-              Username
-            </label>
+            <label className="settings-label" htmlFor="auth.username">{t('CollectionSettings_ProxySettings.Username')}</label>
             <input
               id="auth.username"
               type="text"
@@ -274,9 +266,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
             ) : null}
           </div>
           <div className="mb-3 flex items-center">
-            <label className="settings-label" htmlFor="auth.password">
-              Password
-            </label>
+            <label className="settings-label" htmlFor="auth.password">{t('CollectionSettings_ProxySettings.Password')}</label>
             <div className="textbox flex flex-row items-center w-[13.2rem] h-[1.70rem] relative">
               <input
                 id="auth.password"
@@ -304,9 +294,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
           </div>
         </div>
         <div className="mb-3 flex items-center">
-          <label className="settings-label" htmlFor="bypassProxy">
-            Proxy Bypass
-          </label>
+          <label className="settings-label" htmlFor="bypassProxy">{t('CollectionSettings_ProxySettings.Proxy_Bypass')}</label>
           <input
             id="bypassProxy"
             type="text"
@@ -324,9 +312,7 @@ const ProxySettings = ({ proxyConfig, onUpdate }) => {
           ) : null}
         </div>
         <div className="mt-6">
-          <button type="submit" className="submit btn btn-sm btn-secondary">
-            Save
-          </button>
+          <button type="submit" className="submit btn btn-sm btn-secondary">{t('CollectionSettings_ProxySettings.Save')}</button>
         </div>
       </form>
     </StyledWrapper>

@@ -41,9 +41,9 @@ async function extractEnglishTexts() {
   }
 
   async function processFile(filePath) {
-    // if (filePath.indexOf('VariablesEditor\\index.js')==-1) {
-    //   return;
-    // }
+    if (!filePath.includes("TitleBar")) {
+      return;
+    }
     try {
       const content = await fs.readFile(filePath, 'utf8');
       const $ = cheerio.load(content, {

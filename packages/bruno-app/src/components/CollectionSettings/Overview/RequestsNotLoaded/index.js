@@ -7,8 +7,10 @@ import { isItemARequest, itemIsOpenedInTabs } from 'utils/tabs/index';
 import { getDefaultRequestPaneTab } from 'utils/collections/index';
 import { addTab, focusTab } from 'providers/ReduxStore/slices/tabs';
 import { hideHomePage } from 'providers/ReduxStore/slices/app';
+import { useTranslation } from 'react-i18next';
 
 const RequestsNotLoaded = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const tabs = useSelector((state) => state.tabs.tabs);
   const flattenedItems = flattenItems(collection.items);
@@ -45,7 +47,7 @@ const RequestsNotLoaded = ({ collection }) => {
     <StyledWrapper className="w-full card my-2">
       <div className="flex items-center gap-2 px-3 py-2 title bg-yellow-50 dark:bg-yellow-900/20">
         <IconAlertTriangle size={16} className="text-yellow-500" />
-        <span className="font-medium">Following requests were not loaded</span>
+        <span className="font-medium">{t('CollectionSettings_Overview_RequestsNotLoaded.Following_requests_were_not_loaded')}</span>
       </div>
       <table className="w-full border-collapse">
         <thead>

@@ -17,8 +17,10 @@ import StyledWrapper from './StyledWrapper';
 import Vars from './Vars/index';
 import StatusDot from 'components/StatusDot';
 import Overview from './Overview/index';
+import { useTranslation } from 'react-i18next';
 
 const CollectionSettings = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const tab = collection.settingsSelectedTab;
   const setTab = (tab) => {
@@ -135,37 +137,35 @@ const CollectionSettings = ({ collection }) => {
     <StyledWrapper className="flex flex-col h-full relative px-4 py-4">
       <div className="flex flex-wrap items-center tabs" role="tablist">
       <div className={getTabClassname('overview')} role="tab" onClick={() => setTab('overview')}>
-          Overview
+          {t('CollectionSettings.Overview')}
         </div>
         <div className={getTabClassname('headers')} role="tab" onClick={() => setTab('headers')}>
-          Headers
+          {t('CollectionSettings.Headers')}
           {activeHeadersCount > 0 && <sup className="ml-1 font-medium">{activeHeadersCount}</sup>}
         </div>
         <div className={getTabClassname('vars')} role="tab" onClick={() => setTab('vars')}>
-          Vars
+          {t('CollectionSettings.Vars')}
           {activeVarsCount > 0 && <sup className="ml-1 font-medium">{activeVarsCount}</sup>}
         </div>
         <div className={getTabClassname('auth')} role="tab" onClick={() => setTab('auth')}>
-          Auth
+          {t('CollectionSettings.Auth')}
           {authMode !== 'none' && <StatusDot />}
         </div>
         <div className={getTabClassname('script')} role="tab" onClick={() => setTab('script')}>
-          Script
+          {t('CollectionSettings.Script')}
           {hasScripts && <StatusDot />}
         </div>
         <div className={getTabClassname('tests')} role="tab" onClick={() => setTab('tests')}>
-          Tests
+          {t('CollectionSettings.Tests')}
           {hasTests && <StatusDot />}
         </div>
-        <div className={getTabClassname('presets')} role="tab" onClick={() => setTab('presets')}>
-          Presets
-        </div>
+        <div className={getTabClassname('presets')} role="tab" onClick={() => setTab('presets')}>{t('CollectionSettings.Presets')}</div>
         <div className={getTabClassname('proxy')} role="tab" onClick={() => setTab('proxy')}>
-          Proxy
+          {t('CollectionSettings.Proxy')}
           {Object.keys(proxyConfig).length > 0  && <StatusDot />}
         </div>
         <div className={getTabClassname('clientCert')} role="tab" onClick={() => setTab('clientCert')}>
-          Client Certificates
+          {t('CollectionSettings.Client_Certificates')}
           {clientCertConfig.length > 0 && <StatusDot />}
         </div>
       </div>
