@@ -6,8 +6,10 @@ import { useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 
 const CopyEnvironment = ({ collection, environment, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inputRef = useRef();
   const formik = useFormik({
@@ -46,9 +48,7 @@ const CopyEnvironment = ({ collection, environment, onClose }) => {
       <Modal size="sm" title={'Copy Environment'} confirmText="Copy" handleConfirm={onSubmit} handleCancel={onClose}>
         <form className="bruno-form" onSubmit={e => e.preventDefault()}>
           <div>
-            <label htmlFor="name" className="block font-semibold">
-              New Environment Name
-            </label>
+            <label htmlFor="name" className="block font-semibold">{t('Environments_EnvironmentSettings_CopyEnvironment.New_Environment_Name')}</label>
             <input
               id="environment-name"
               type="text"

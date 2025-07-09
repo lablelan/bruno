@@ -9,8 +9,10 @@ import ManageSecrets from 'components/Environments/EnvironmentSettings/ManageSec
 import ImportEnvironment from '../ImportEnvironment';
 import { isEqual } from 'lodash';
 import ToolHint from 'components/ToolHint/index';
+import { useTranslation } from 'react-i18next';
 
 const EnvironmentList = ({ environments, activeEnvironmentUid, selectedEnvironment, setSelectedEnvironment, isModified, setIsModified }) => {
+  const { t } = useTranslation();
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [openImportModal, setOpenImportModal] = useState(false);
   const [openManageSecretsModal, setOpenManageSecretsModal] = useState(false);
@@ -124,17 +126,17 @@ const EnvironmentList = ({ environments, activeEnvironmentUid, selectedEnvironme
                 </ToolHint>
               ))}
             <div className="btn-create-environment" onClick={() => handleCreateEnvClick()}>
-              + <span>Create</span>
+              + <span>{t('GlobalEnvironments_EnvironmentSettings_EnvironmentList.Create')}</span>
             </div>
 
             <div className="mt-auto btn-import-environment">
               <div className="flex items-center" onClick={() => handleImportClick()}>
                 <IconDownload size={12} strokeWidth={2} />
-                <span className="label ml-1 text-xs">Import</span>
+                <span className="label ml-1 text-xs">{t('GlobalEnvironments_EnvironmentSettings_EnvironmentList.Import')}</span>
               </div>
               <div className="flex items-center mt-2" onClick={() => handleSecretsClick()}>
                 <IconShieldLock size={12} strokeWidth={2} />
-                <span className="label ml-1 text-xs">Managing Secrets</span>
+                <span className="label ml-1 text-xs">{t('GlobalEnvironments_EnvironmentSettings_EnvironmentList.Managing_Secrets')}</span>
               </div>
             </div>
           </div>

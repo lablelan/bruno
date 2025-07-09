@@ -7,8 +7,10 @@ import { useDispatch } from 'react-redux';
 import Portal from 'components/Portal';
 import Modal from 'components/Modal';
 import { validateName, validateNameError } from 'utils/common/regex';
+import { useTranslation } from 'react-i18next';
 
 const CreateEnvironment = ({ collection, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inputRef = useRef();
 
@@ -63,9 +65,7 @@ const CreateEnvironment = ({ collection, onClose }) => {
       >
         <form className="bruno-form" onSubmit={e => e.preventDefault()}>
           <div>
-            <label htmlFor="name" className="block font-semibold">
-              Environment Name
-            </label>
+            <label htmlFor="name" className="block font-semibold">{t('Environments_EnvironmentSettings_CreateEnvironment.Environment_Name')}</label>
             <div className="flex items-center mt-2">
               <input
                 id="environment-name"

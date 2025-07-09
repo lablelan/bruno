@@ -7,8 +7,10 @@ import { renameEnvironment } from 'providers/ReduxStore/slices/collections/actio
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { validateName, validateNameError } from 'utils/common/regex';
+import { useTranslation } from 'react-i18next';
 
 const RenameEnvironment = ({ onClose, environment, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inputRef = useRef();
   const formik = useFormik({
@@ -60,9 +62,7 @@ const RenameEnvironment = ({ onClose, environment, collection }) => {
       >
         <form className="bruno-form" onSubmit={e => e.preventDefault()}>
           <div>
-            <label htmlFor="name" className="block font-semibold">
-              Environment Name
-            </label>
+            <label htmlFor="name" className="block font-semibold">{t('Environments_EnvironmentSettings_RenameEnvironment.Environment_Name')}</label>
             <input
               id="environment-name"
               type="text"

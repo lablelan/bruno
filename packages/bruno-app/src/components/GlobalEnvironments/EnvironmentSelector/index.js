@@ -8,8 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import StyledWrapper from './StyledWrapper';
 import { selectGlobalEnvironment } from 'providers/ReduxStore/slices/global-environments';
 import ToolHint from 'components/ToolHint/index';
+import { useTranslation } from 'react-i18next';
 
 const EnvironmentSelector = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const dropdownTippyRef = useRef();
   const globalEnvironments = useSelector((state) => state.globalEnvironments.globalEnvironments);
@@ -79,7 +81,7 @@ const EnvironmentSelector = () => {
             }}
           >
             <IconDatabaseOff size={18} strokeWidth={1.5} />
-            <span className="ml-2">No Environment</span>
+            <span className="ml-2">{t('GlobalEnvironments_EnvironmentSelector.No_Environment')}</span>
           </div>
           <div className="dropdown-item border-top" onClick={() => {
             handleSettingsIconClick();
@@ -88,7 +90,7 @@ const EnvironmentSelector = () => {
             <div className="pr-2 text-gray-600">
               <IconSettings size={18} strokeWidth={1.5} />
             </div>
-            <span>Configure</span>
+            <span>{t('GlobalEnvironments_EnvironmentSelector.Configure')}</span>
           </div>
         </Dropdown>
       </div>

@@ -7,8 +7,10 @@ import importPostmanEnvironment from 'utils/importers/postman-environment';
 import { importEnvironment } from 'providers/ReduxStore/slices/collections/actions';
 import { toastError } from 'utils/common/error';
 import { IconDatabaseImport } from '@tabler/icons';
+import { useTranslation } from 'react-i18next';
 
 const ImportEnvironment = ({ collection, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const handleImportPostmanEnvironment = () => {
@@ -49,7 +51,7 @@ const ImportEnvironment = ({ collection, onClose }) => {
           className="flex justify-center flex-col items-center w-full dark:bg-zinc-700 rounded-lg border-2 border-dashed border-zinc-300 dark:border-zinc-400 p-12 text-center hover:border-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
         >
           <IconDatabaseImport size={64} />
-          <span className="mt-2 block text-sm font-semibold">Import your Postman environments</span>
+          <span className="mt-2 block text-sm font-semibold">{t('Environments_EnvironmentSettings_ImportEnvironment.Import_your_Postman_environments')}</span>
         </button>
       </Modal>
     </Portal>

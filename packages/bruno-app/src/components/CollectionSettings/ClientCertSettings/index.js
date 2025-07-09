@@ -106,7 +106,7 @@ const ClientCertSettings = ({ root, clientCertConfig, onUpdate, onRemove }) => {
       <h1 className="font-semibold">{t('CollectionSettings_ClientCertSettings.Client_Certificates')}</h1>
       <ul className="mt-4">
         {!clientCertConfig.length
-          ? 'No client certificates added'
+          ? t('CollectionSettings_ClientCertSettings.No_client_certificates_added')
           : clientCertConfig.map((clientCert, index) => (
             <li key={`client-cert-${index}`} className="flex items-center available-certificates p-2 rounded-lg mb-2">
               <div className="flex items-center w-full justify-between">

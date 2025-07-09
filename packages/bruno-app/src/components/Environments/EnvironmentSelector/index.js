@@ -8,8 +8,10 @@ import EnvironmentSettings from '../EnvironmentSettings';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const EnvironmentSelector = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const dropdownTippyRef = useRef();
   const [openSettingsModal, setOpenSettingsModal] = useState(false);
@@ -76,7 +78,7 @@ const EnvironmentSelector = ({ collection }) => {
             }}
           >
             <IconDatabaseOff size={18} strokeWidth={1.5} />
-            <span className="ml-2">No Environment</span>
+            <span className="ml-2">{t('Environments_EnvironmentSelector.No_Environment')}</span>
           </div>
           <div className="dropdown-item border-top" onClick={() => {
             handleSettingsIconClick();
@@ -85,7 +87,7 @@ const EnvironmentSelector = ({ collection }) => {
             <div className="pr-2 text-gray-600">
               <IconSettings size={18} strokeWidth={1.5} />
             </div>
-            <span>Configure</span>
+            <span>{t('Environments_EnvironmentSelector.Configure')}</span>
           </div>
         </Dropdown>
       </div>

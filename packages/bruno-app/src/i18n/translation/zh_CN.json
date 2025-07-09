@@ -1,468 +1,538 @@
 {
-  "COMMON": {
-    "COLLECTIONS": "集合",
-    "DOCUMENTATION": "文档",
-    "REPORT_ISSUES": "报告问题",
-    "GITHUB": "GitHub",
-    "DISCORD": "Discord",
-    "TWITTER": "Twitter"
-  },
-  "WELCOME": {
-    "ABOUT_BRUNO": "用于探索和测试 API 的开源集成开发环境",
-    "LINKS": "链接",
-    "CREATE_COLLECTION": "创建集合",
-    "OPEN_COLLECTION": "打开集合",
-    "IMPORT_COLLECTION": "导入集合",
-    "COLLECTION_IMPORT_SUCCESS": "集合导入成功",
-    "COLLECTION_IMPORT_ERROR": "导入集合时发生错误。请查看日志以获取更多信息。",
-    "COLLECTION_OPEN_ERROR": "打开集合时发生错误"
-  },
-  "ResponsePane_Placeholder": {
-    "Send_Request": "发送请求",
-    "New_Request": "新请求",
-    "Edit_Environments": "编辑环境"
-  },
-  "VariablesEditor": {
-    "No_environment_selected": "未选择环境",
-    "No_environment_variables_found": "未找到环境变量",
-    "No_runtime_variables_found": "未找到运行时变量",
-    "Environment_Variables": "环境变量",
-    "Runtime_Variables": "运行时变量",
-    "Note": "注意：截至目前，运行时变量只能通过 API 设置",
-    "And": "和",
-    "HIDE_SECRET_VALUES": "隐藏秘密变量值",
-    "SHOW_SECRET_VALUES": "显示秘密变量值"
-  },
-  "FormUrlEncodedParams": {
-    "Add_Param": "+ 添加参数"
-  },
-  "MultipartFormParams": {
-    "Add_Param": "+ 添加参数",
-    "Add_File": "+ 添加文件"
-  },
-  "CollectionSettings_Auth_ApiKeyAuth": {
-    "Key": "密钥",
-    "Value": "值",
-    "Add_To": "添加到",
-    "Header": "请求头",
-    "Query_Params": "查询参数"
-  },
-  "CollectionSettings_Auth_AwsV4Auth": {
-    "Access_Key_ID": "访问密钥 ID",
-    "Secret_Access_Key": "秘密访问密钥",
-    "Session_Token": "会话令牌",
-    "Service": "服务",
-    "Region": "区域",
-    "Profile_Name": "配置文件名称"
-  },
-  "CollectionSettings_Auth_BasicAuth": {
-    "Username": "用户名",
-    "Password": "密码"
-  },
-  "CollectionSettings_Auth_BearerAuth": {
-    "Token": "令牌"
-  },
-  "CollectionSettings_Auth_DigestAuth": {
-    "Username": "用户名",
-    "Password": "密码"
-  },
-  "CollectionSettings_Auth": {
-    "Inherit": "继承",
-    "Auth": "认证",
-    "Save": "保存",
-    "OptionInThe": "选项在",
-    "Tab": "标签页",
-    "ConfiguresDescription": "为整个集合配置认证。这适用于使用该集合的所有请求"
-  },
-  "CollectionSettings_Auth_NTLMAuth": {
-    "Username": "用户名",
-    "Password": "密码",
-    "Domain": "域"
-  },
-  "CollectionSettings_Auth_OAuth2": {
-    "TBD": "待确定"
-  },
-  "CollectionSettings_Auth_WsseAuth": {
-    "Username": "用户名",
-    "Password": "密码"
-  },
-  "CollectionSettings_ClientCertSettings": {
-    "LongDescriptions": "添加用于特定域名的客户端证书。",
-    "Domain": "域名",
-    "Type": "类型",
-    "Cert_file": "证书文件",
-    "Key_file": "密钥文件",
-    "PFX_file": "PFX 文件",
-    "Passphrase": "密码短语",
-    "Add": "添加",
-    "Client_Certificates": "客户端证书",
-    "Add_Client_Certificate": "添加客户端证书"
-  },
-  "CollectionSettings_Docs": {
-    "Save": "保存",
-    "Documentation": "文档",
-    "LongDescriptions": "欢迎使用您的集合文档！此空间旨在帮助您有效地记录 API 集合。\n\n## 概述\n使用此部分提供集合的高级概述。您可以描述：\n- 这些 API 端点的用途\n- 关键特性和功能\n- 目标受众或用户\n\n## 最佳实践\n- 保持文档更新\n- 包含请求/响应示例\n- 记录错误场景\n- 添加相关链接和参考资料\n\n## Markdown 支持\n此文档支持 Markdown 格式！您可以使用：\n- 粗体和斜体文本\n- 代码块和语法高亮\n- 表格和列表\n- 链接\n- 等等！"
-  },
-  "CollectionSettings_Headers": {
-    "Add_Header_Description": "添加将随此集合中的每个请求一起发送的请求头。",
-    "Add_Header": "+ 添加请求头",
-    "Save": "保存"
-  },
-  "CollectionSettings": {
-    "Overview": "概述",
-    "Headers": "请求头",
-    "Vars": "变量",
-    "Auth": "认证",
-    "Script": "脚本",
-    "Tests": "测试",
-    "Proxy": "代理",
-    "Client_Certificates": "客户端证书",
-    "Presets": "预设"
-  },
-  "CollectionSettings_Overview_Info": {
-    "Location": "位置",
-    "environment": "环境",
-    "Environments": "环境",
-    "Requests": "请求",
-    "Share": "分享",
-    "Share_Collection": "分享集合"
-  },
-  "CollectionSettings_Overview_RequestsNotLoaded": {
-    "Following_requests_were_not_loaded": "以下请求未加载"
-  },
-  "CollectionSettings_Presets": {
-    "LongDescriptions": "这些预设将用作此集合中新请求的默认值。",
-    "Request_Type": "请求类型",
-    "HTTP": "HTTP",
-    "GraphQL": "GraphQL",
-    "Base_URL": "基础 URL",
-    "Save": "保存"
-  },
-  "CollectionSettings_ProxySettings": {
-    "LongDescriptions": "为此集合配置代理设置。",
-    "Config": "配置",
-    "global": "全局",
-    "enabled": "启用",
-    "disabled": "禁用",
-    "Protocol": "协议",
-    "Hostname": "主机名",
-    "Port": "端口",
-    "Auth": "认证",
-    "Username": "用户名",
-    "Password": "密码",
-    "Proxy_Bypass": "代理绕过",
-    "Save": "保存"
-  },
-  "CollectionSettings_Script": {
-    "LongDescriptions": "编写将在发送此集合中的任何请求之前和之后运行的预请求和后响应脚本。",
-    "Pre_Request": "预请求",
-    "Post_Response": "后响应",
-    "Save": "保存"
-  },
-  "CollectionSettings_Tests": {
-    "LongDescriptions": "每当发送此集合中的请求时，这些测试将运行。",
-    "Save": "保存"
-  },
-  "CollectionSettings_Vars": {
-    "Pre_Request": "预请求",
-    "Post_Response": "后响应",
-    "Save": "保存"
-  },
-  "CollectionSettings_Vars_VarsTable": {
-    "Value": "值",
-    "Expr": "表达式"
-  },
-  "RequestPane_Auth_ApiKeyAuth": {
-    "Key": "密钥",
-    "Value": "值",
-    "Add_To": "添加到",
-    "Header": "请求头",
-    "Query_Param": "查询参数"
-  },
-  "RequestPane_Auth_AwsV4Auth": {
-    "Access_Key_ID": "访问密钥 ID",
-    "Secret_Access_Key": "秘密访问密钥",
-    "Session_Token": "会话令牌",
-    "Service": "服务",
-    "Region": "区域",
-    "Profile_Name": "配置文件名称"
-  },
-  "RequestPane_Auth_BasicAuth": {
-    "Username": "用户名",
-    "Password": "密码"
-  },
-  "RequestPane_Auth_BearerAuth": {
-    "Token": "令牌"
-  },
-  "RequestPane_Auth_DigestAuth": {
-    "Username": "用户名",
-    "Password": "密码"
-  },
-  "RequestPane_Auth_NTLMAuth": {
-    "Username": "用户名",
-    "Password": "密码",
-    "Domain": "域"
-  },
-  "RequestPane_Auth_OAuth2_AuthorizationCode": {
-    "Configuration": "配置",
-    "Token": "令牌",
-    "Advanced_Settings": "高级设置",
-    "Settings": "设置",
-    "Add_Credentials_to": "添加凭证到",
-    "Use_PKCE": "使用 PKCE",
-    "Token_ID": "令牌 ID",
-    "Add_token_to": "添加令牌到",
-    "Header_Prefix": "请求头前缀",
-    "Query_Param_Key": "查询参数键",
-    "Refresh_Token_URL": "刷新令牌 URL",
-    "Automatically_fetch_token_if_not_found": "如果未找到令牌，则自动获取",
-    "Request_Body": "请求体",
-    "Basic_Auth_Header": "基本认证请求头",
-    "LongDescriptions2": "当您尝试访问资源但没有令牌时，自动获取新令牌。",
-    "LongDescriptions1": "当令牌过期时，使用刷新 URL 自动刷新令牌。"
-  },
-  "RequestPane_Auth_OAuth2_ClientCredentials": {
-    "Configuration": "配置",
-    "Token": "令牌",
-    "Advanced_Settings": "高级设置",
-    "Settings": "设置",
-    "Add_Credentials_to": "添加凭证到",
-    "Token_ID": "令牌 ID",
-    "Add_token_to": "添加令牌到",
-    "Header_Prefix": "请求头前缀",
-    "Query_Param_Key": "查询参数键",
-    "Refresh_Token_URL": "刷新令牌 URL",
-    "Automatically_fetch_token_if_not_found": "如果未找到令牌，则自动获取",
-    "Request_Body": "请求体",
-    "Basic_Auth_Header": "基本认证请求头",
-    "Header": "请求头",
-    "URL": "URL",
-    "LongDescriptions2": "当您尝试访问资源但没有令牌时，自动获取新令牌。",
-    "LongDescriptions1": "当令牌过期时，使用刷新 URL 自动刷新令牌。"
-  },
-  "RequestPane_Auth_OAuth2_GrantTypeSelector": {
-    "Grant_Type": "授权类型",
-    "Password_Credentials": "密码凭证",
-    "Authorization_Code": "授权码",
-    "Client_Credentials": "客户端凭证"
-  },
-  "RequestPane_Auth_OAuth2": {
-    "TBD": "待确定"
-  },
-  "RequestPane_Auth_OAuth2_Oauth2ActionButtons": {
-    "Get_Access_Token": "获取访问令牌",
-    "Refresh_Token": "刷新令牌",
-    "Clear_Cache": "清除缓存"
-  },
-  "RequestPane_Auth_OAuth2_Oauth2TokenViewer": {
-    "Token_Type": "令牌类型",
-    "Scope": "作用域",
-    "Decoded_Payload": "解码后的负载",
-    "No_token_found": "未找到令牌",
-    "LongDescriptions": "获取令牌时出错。请查看网络日志以获取更多详细信息。"
-  },
-  "RequestPane_Auth_OAuth2_PasswordCredentials": {
-    "Configuration": "配置",
-    "Token": "令牌",
-    "Advanced_Settings": "高级设置",
-    "Settings": "设置",
-    "Add_Credentials_to": "添加凭证到",
-    "Token_ID": "令牌 ID",
-    "Add_token_to": "添加令牌到",
-    "Header_Prefix": "请求头前缀",
-    "Query_Param_Key": "查询参数键",
-    "Refresh_Token_URL": "刷新令牌 URL",
-    "Automatically_fetch_token_if_not_found": "如果未找到令牌，则自动获取",
-    "Request_Body": "请求体",
-    "Basic_Auth_Header": "基本认证请求头",
-    "Header": "请求头",
-    "LongDescriptions2": "当您尝试访问资源但没有令牌时，自动获取新令牌。",
-    "LongDescriptions1": "当令牌过期时，使用刷新 URL 自动刷新令牌。"
-  },
-  "RequestPane_Auth_WsseAuth": {
-    "Username": "用户名",
-    "Password": "密码"
-  },
-  "RequestPane_FileBody": {
-    "File": "文件",
-    "Selected": "已选择",
-    "Add_File": "+ 添加文件"
-  },
-  "RequestPane_GraphQLRequestPane": {
-    "Something_went_wrong": "出了点问题",
-    "Variables": "变量",
-    "Headers": "请求头",
-    "Auth": "认证",
-    "Vars": "变量",
-    "Script": "脚本",
-    "Assert": "断言",
-    "Tests": "测试",
-    "Docs": "文档"
-  },
-  "RequestPane_GraphQLSchemaActions": {
-    "Schema": "模式",
-    "Docs": "文档",
-    "Load_from_File": "从文件加载"
-  },
-  "RequestPane_HttpRequestPane": {
-    "Params": "参数",
-    "Body": "请求体",
-    "Headers": "请求头",
-    "Auth": "认证",
-    "Vars": "变量",
-    "Script": "脚本",
-    "Assert": "断言",
-    "Tests": "测试",
-    "Docs": "文档",
-    "Something_went_wrong": "出了点问题"
-  },
-  "RequestPane_QueryEditor": {
-    "Deprecated": "已弃用"
-  },
-  "RequestPane_QueryParams": {
-    "Add_Param": "添加参数",
-    "Path": "路径",
-    "Bulk_Edit": "批量编辑"
-  },
-  "RequestPane_QueryUrl": {
-    "Generate_Code": "生成代码",
-    "Save": "保存"
-  },
-  "RequestPane_RequestBody_RequestBodyMode": {
-    "Raw": "原始",
-    "Other": "其他",
-    "Prettify": "美化",
-    "Multipart_Form": "多部分表单",
-    "Form_URL_Encoded": "表单 URL 编码"
-  },
-  "RequestPane_RequestHeaders": {
-    "Add_Header": "+ 添加请求头",
-    "Bulk_Edit": "批量编辑"
-  },
-  "RequestPane_Vars_VarsTable": {
-    "Value": "值",
-    "Expr": "表达式",
-    "Add": "+ 添加"
-  },
-  "RequestPane_Assertions": {
-    "Add_Assertion": "+ 添加断言",
-    "Expr": "表达式",
-    "Operator": "运算符",
-    "Value": "值"
-  },
-  "Sidebar_Collections_Collection_CloneCollection": {
-    "Name": "名称",
-    "Location": "位置",
-    "Folder_Name": "文件夹名称",
-    "Browse": "浏览",
-    "LongDescriptions2": "用于存储集合的文件夹名称。",
-    "LongDescriptions1": "您可以选择与集合名称不同的文件夹名称，或选择符合文件系统规则的名称。"
-  },
-  "Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem": {
-    "Options": "选项",
-    "Cancel": "取消",
-    "Clone": "克隆",
-    "FolderName": "文件夹名称",
-    "RequestName": "请求名称"
-  },
-  "Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem_CodeViewToolbar": {
-    "Interpolate_Variables": "插入变量"
-  },
-  "Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem": {
-    "Invalid_URL": "无效的 URL",
-    "Please_check_the_URL_and_try_again": "请检查 URL 并重试"
-  },
-  "Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem": {
-    "Options": "选项",
-    "Cancel": "取消",
-    "Rename": "重命名",
-    "FolderName": "文件夹名称",
-    "FileName": "文件名称",
-    "RequestName": "请求名称",
-    "LongDescriptions3": "您可以选择在文件系统上以不同的名称保存文件夹，而不是应用中显示的名称。",
-    "LongDescriptions2": "Bruno 将每个请求保存为集合文件夹中的一个文件。",
-    "LongDescriptions1": "您可以选择与请求名称不同的文件名称，或选择符合文件系统规则的名称。"
-  },
-  "Sidebar_Collections_Collection_CollectionItem_RunCollectionItem": {
-    "Run": "运行",
-    "Recursive_Run": "递归运行",
-    "Cancel": "取消",
-    "LongDescriptions1": "此文件夹中未找到请求。",
-    "LongDescriptions2": "这将仅运行此文件夹中的请求。",
-    "LongDescriptions3": "这将运行此文件夹及其所有子文件夹中的所有请求。",
-    "LongDescriptions4": "此文件夹中的请求仍在加载中。",
-    "LongDescriptions5": "集合运行正在进行中。",
-    "View_Run": "查看运行结果"
-  },
-  "Sidebar_Collections_Collection_ExportCollection": {
-    "Postman_Collection": "Postman 集合",
-    "Bruno_Collection": "Bruno 集合"
-  },
-  "Sidebar_Collections_Collection_RenameCollection": {
-    "Name": "名称"
-  },
-  "Sidebar_Collections": {
-    "Collections": "集合"
-  },
-  "Sidebar_Collections_SelectCollection": {
-    "No_collections_found": "未找到集合"
-  },
-  "Sidebar_CreateCollection": {
-    "Name": "名称",
-    "Location": "位置",
-    "Browse": "浏览",
-    "Folder_Name": "文件夹名称",
-    "LongDescriptions1":"Bruno 将您的集合存储在计算机的文件系统中。",
-    "LongDescriptions2":"选择您要存储此集合的位置。",
-    "LongDescriptions3":"用于存储集合的文件夹名称。",
-    "LongDescriptions4":"您可以选择与集合名称不同的文件夹名称，或选择符合文件系统规则的名称。"
-  },
-  "Sidebar_GoldenEdition": {
-    "Buy": "购买",
-    "Everything_in_the_Individual_Plan": "个人计划中的所有内容",
-    "Golden_Edition": "黄金版",
-    "One_Time_Payment": "一次性付款",
-    "Individuals": "个人",
-    "Organizations": "组织",
-    "perpetual_license_with_2_years_of_updates": "带有 2 年更新的永久许可证",
-    "LongDescriptions1": "适用于 2 台设备的永久许可证，带有 2 年更新",
-    "LongDescriptions2": "支持 Bruno 的开发"
-  },
-  "Sidebar_ImportCollection": {
-    "Bruno_Collection": "Bruno 集合",
-    "Postman_Collection": "Postman 集合",
-    "Insomnia_Collection": "Insomnia 集合",
-    "OpenAPI_V3_Spec": "OpenAPI V3 规范",
-    "LongDescriptions1":"选择您现有集合的类型：",
-    "This_may_take_a_moment_depending_on_the_collection_size": "根据集合大小，这可能需要一些时间"
-  },
-  "Sidebar_ImportCollectionLocation": {
-    "Browse": "浏览",
-    "Name": "名称",
-    "Location": "位置",
-    "LongDescriptions1": "Bruno 将您的集合存储在计算机的文件系统中。",
-    "LongDescriptions2": "选择您要存储此集合的位置。"
-  },
-  "Sidebar_NewFolder": {
-    "Folder_Name": "文件夹名称",
-    "Options": "选项",
-    "Cancel": "取消",
-    "Create": "创建",
-    "LongDescriptions1": "您可以选择在文件系统上以不同的名称保存文件夹，而不是应用中显示的名称。"
-  },
-  "Sidebar_NewRequest": {
-    "Type": "类型",
-    "HTTP": "HTTP",
-    "GraphQL": "GraphQL",
-    "From_cURL": "从 cURL",
-    "Request_Name": "请求名称",
-    "URL": "URL",
-    "cURL_Command": "cURL 命令",
-    "Options": "选项",
-    "Cancel": "取消",
-    "Create": "创建",
-    "File_Name": "文件名称",
-    "LongDescriptions1": "Bruno 将每个请求保存为集合文件夹中的一个文件。",
-    "LongDescriptions2": "您可以选择与请求名称不同的文件名称，或选择符合文件系统规则的名称。"
-  }
+    "COMMON": {
+        "COLLECTIONS": "集合",
+        "DOCUMENTATION": "文档",
+        "REPORT_ISSUES": "报告问题",
+        "GITHUB": "GitHub",
+        "DISCORD": "Discord",
+        "TWITTER": "Twitter"
+    },
+    "WELCOME": {
+        "ABOUT_BRUNO": "用于探索和测试 API 的开源集成开发环境",
+        "LINKS": "链接",
+        "CREATE_COLLECTION": "创建集合",
+        "OPEN_COLLECTION": "打开集合",
+        "IMPORT_COLLECTION": "导入集合",
+        "COLLECTION_IMPORT_SUCCESS": "集合导入成功",
+        "COLLECTION_IMPORT_ERROR": "导入集合时发生错误。请查看日志以获取更多信息。",
+        "COLLECTION_OPEN_ERROR": "打开集合时发生错误"
+    },
+    "ResponsePane_Placeholder": {
+        "Send_Request": "发送请求",
+        "New_Request": "新请求",
+        "Edit_Environments": "编辑环境"
+    },
+    "VariablesEditor": {
+        "No_environment_selected": "未选择环境",
+        "No_environment_variables_found": "未找到环境变量",
+        "No_runtime_variables_found": "未找到运行时变量",
+        "Environment_Variables": "环境变量",
+        "Runtime_Variables": "运行时变量",
+        "Note": "注意：截至目前，运行时变量只能通过 API 设置",
+        "And": "和",
+        "HIDE_SECRET_VALUES": "隐藏秘密变量值",
+        "SHOW_SECRET_VALUES": "显示秘密变量值"
+    },
+    "FormUrlEncodedParams": {
+        "Add_Param": "+ 添加参数"
+    },
+    "MultipartFormParams": {
+        "Add_Param": "+ 添加参数",
+        "Add_File": "+ 添加文件"
+    },
+    "CollectionSettings_Auth_ApiKeyAuth": {
+        "Key": "键",
+        "Value": "值",
+        "Add_To": "添加到",
+        "Header": "请求头",
+        "Query_Params": "查询参数"
+    },
+    "CollectionSettings_Auth_AwsV4Auth": {
+        "Access_Key_ID": "访问密钥 ID",
+        "Secret_Access_Key": "秘密访问密钥",
+        "Session_Token": "会话令牌",
+        "Service": "服务",
+        "Region": "区域",
+        "Profile_Name": "配置文件名称"
+    },
+    "CollectionSettings_Auth_BasicAuth": {
+        "Username": "用户名",
+        "Password": "密码"
+    },
+    "CollectionSettings_Auth_BearerAuth": {
+        "Token": "令牌"
+    },
+    "CollectionSettings_Auth_DigestAuth": {
+        "Username": "用户名",
+        "Password": "密码"
+    },
+    "CollectionSettings_Auth": {
+        "Inherit": "继承",
+        "Auth": "认证",
+        "Save": "保存",
+        "OptionInThe": "选项在",
+        "Tab": "标签页",
+        "ConfiguresDescription": "为整个集合配置认证。这适用于使用该集合的所有请求"
+    },
+    "CollectionSettings_Auth_NTLMAuth": {
+        "Username": "用户名",
+        "Password": "密码",
+        "Domain": "域"
+    },
+    "CollectionSettings_Auth_OAuth2": {
+        "TBD": "待确定"
+    },
+    "CollectionSettings_Auth_WsseAuth": {
+        "Username": "用户名",
+        "Password": "密码"
+    },
+    "CollectionSettings_ClientCertSettings": {
+        "LongDescriptions": "添加用于特定域名的客户端证书。",
+        "Domain": "域名",
+        "Type": "类型",
+        "Cert_file": "证书文件",
+        "Key_file": "密钥文件",
+        "PFX_file": "PFX 文件",
+        "Passphrase": "密码短语",
+        "Add": "添加",
+        "Client_Certificates": "客户端证书",
+        "Add_Client_Certificate": "添加客户端证书",
+        "No_client_certificates_added": "未添加客户端证书"
+    },
+    "CollectionSettings_Docs": {
+        "Save": "保存",
+        "Documentation": "文档",
+        "LongDescriptions": "欢迎使用您的集合文档！此空间旨在帮助您有效地记录 API 集合。\n\n## 概述\n使用此部分提供集合的高级概述。您可以描述：\n- 这些 API 端点的用途\n- 关键特性和功能\n- 目标受众或用户\n\n## 最佳实践\n- 保持文档更新\n- 包含请求/响应示例\n- 记录错误场景\n- 添加相关链接和参考资料\n\n## Markdown 支持\n此文档支持 Markdown 格式！您可以使用：\n- 粗体和斜体文本\n- 代码块和语法高亮\n- 表格和列表\n- 链接\n- 等等！"
+    },
+    "CollectionSettings_Headers": {
+        "Add_Header_Description": "添加将随此集合中的每个请求一起发送的请求头。",
+        "Add_Header": "+ 添加请求头",
+        "Save": "保存"
+    },
+    "CollectionSettings": {
+        "Overview": "概述",
+        "Headers": "请求头",
+        "Vars": "变量",
+        "Auth": "认证",
+        "Script": "脚本",
+        "Tests": "测试",
+        "Proxy": "代理",
+        "Client_Certificates": "客户端证书",
+        "Presets": "预设"
+    },
+    "CollectionSettings_Overview_Info": {
+        "Location": "位置",
+        "environment": "环境",
+        "Environments": "环境",
+        "Requests": "请求",
+        "Share": "共享",
+        "Share_Collection": "共享集合"
+    },
+    "CollectionSettings_Overview_RequestsNotLoaded": {
+        "Following_requests_were_not_loaded": "以下请求未加载"
+    },
+    "CollectionSettings_Presets": {
+        "LongDescriptions": "这些预设将用作此集合中新请求的默认值。",
+        "Request_Type": "请求类型",
+        "HTTP": "HTTP",
+        "GraphQL": "GraphQL",
+        "Base_URL": "基础 URL",
+        "Save": "保存"
+    },
+    "CollectionSettings_ProxySettings": {
+        "LongDescriptions": "为此集合配置代理设置。",
+        "Config": "配置",
+        "global": "全局",
+        "enabled": "已启用",
+        "disabled": "已禁用",
+        "Protocol": "协议",
+        "Hostname": "主机名",
+        "Port": "端口",
+        "Auth": "认证",
+        "Username": "用户名",
+        "Password": "密码",
+        "Proxy_Bypass": "代理绕过",
+        "Save": "保存"
+    },
+    "CollectionSettings_Script": {
+        "LongDescriptions": "编写在发送此集合中的任何请求之前和之后运行的预请求和后响应脚本。",
+        "Pre_Request": "预请求",
+        "Post_Response": "后响应",
+        "Save": "保存"
+    },
+    "CollectionSettings_Tests": {
+        "LongDescriptions": "每当发送此集合中的请求时，这些测试将运行。",
+        "Save": "保存"
+    },
+    "CollectionSettings_Vars": {
+        "Pre_Request": "预请求",
+        "Post_Response": "后响应",
+        "Save": "保存"
+    },
+    "CollectionSettings_Vars_VarsTable": {
+        "Value": "值",
+        "Expr": "表达式"
+    },
+    "RequestPane_Auth_ApiKeyAuth": {
+        "Key": "键",
+        "Value": "值",
+        "Add_To": "添加到",
+        "Header": "请求头",
+        "Query_Param": "查询参数"
+    },
+    "RequestPane_Auth_AwsV4Auth": {
+        "Access_Key_ID": "访问密钥 ID",
+        "Secret_Access_Key": "秘密访问密钥",
+        "Session_Token": "会话令牌",
+        "Service": "服务",
+        "Region": "区域",
+        "Profile_Name": "配置文件名称"
+    },
+    "RequestPane_Auth_BasicAuth": {
+        "Username": "用户名",
+        "Password": "密码"
+    },
+    "RequestPane_Auth_BearerAuth": {
+        "Token": "令牌"
+    },
+    "RequestPane_Auth_DigestAuth": {
+        "Username": "用户名",
+        "Password": "密码"
+    },
+    "RequestPane_Auth_NTLMAuth": {
+        "Username": "用户名",
+        "Password": "密码",
+        "Domain": "域"
+    },
+    "RequestPane_Auth_OAuth2_AuthorizationCode": {
+        "Configuration": "配置",
+        "Token": "令牌",
+        "Advanced_Settings": "高级设置",
+        "Settings": "设置",
+        "Add_Credentials_to": "添加凭证到",
+        "Use_PKCE": "使用 PKCE",
+        "Token_ID": "令牌 ID",
+        "Add_token_to": "添加令牌到",
+        "Header_Prefix": "请求头前缀",
+        "Query_Param_Key": "查询参数键",
+        "Refresh_Token_URL": "刷新令牌 URL",
+        "Automatically_fetch_token_if_not_found": "如果未找到令牌，自动获取",
+        "Request_Body": "请求体",
+        "Basic_Auth_Header": "基本认证请求头",
+        "LongDescriptions2": "当您尝试访问资源但没有令牌时，自动获取新令牌。",
+        "LongDescriptions1": "当令牌过期时，使用刷新 URL 自动刷新令牌。"
+    },
+    "RequestPane_Auth_OAuth2_ClientCredentials": {
+        "Configuration": "配置",
+        "Token": "令牌",
+        "Advanced_Settings": "高级设置",
+        "Settings": "设置",
+        "Add_Credentials_to": "添加凭证到",
+        "Token_ID": "令牌 ID",
+        "Add_token_to": "添加令牌到",
+        "Header_Prefix": "请求头前缀",
+        "Query_Param_Key": "查询参数键",
+        "Refresh_Token_URL": "刷新令牌 URL",
+        "Automatically_fetch_token_if_not_found": "如果未找到令牌，自动获取",
+        "Request_Body": "请求体",
+        "Basic_Auth_Header": "基本认证请求头",
+        "Header": "请求头",
+        "URL": "URL",
+        "LongDescriptions2": "当您尝试访问资源但没有令牌时，自动获取新令牌。",
+        "LongDescriptions1": "当令牌过期时，使用刷新 URL 自动刷新令牌。"
+    },
+    "RequestPane_Auth_OAuth2_GrantTypeSelector": {
+        "Grant_Type": "授权类型",
+        "Password_Credentials": "密码凭证",
+        "Authorization_Code": "授权码",
+        "Client_Credentials": "客户端凭证"
+    },
+    "RequestPane_Auth_OAuth2": {
+        "TBD": "待确定"
+    },
+    "RequestPane_Auth_OAuth2_Oauth2ActionButtons": {
+        "Get_Access_Token": "获取访问令牌",
+        "Refresh_Token": "刷新令牌",
+        "Clear_Cache": "清除缓存"
+    },
+    "RequestPane_Auth_OAuth2_Oauth2TokenViewer": {
+        "Token_Type": "令牌类型",
+        "Scope": "作用域",
+        "Decoded_Payload": "解码后的负载",
+        "No_token_found": "未找到令牌",
+        "LongDescriptions": "获取令牌时出错。请查看网络日志以获取更多详细信息。"
+    },
+    "RequestPane_Auth_OAuth2_PasswordCredentials": {
+        "Configuration": "配置",
+        "Token": "令牌",
+        "Advanced_Settings": "高级设置",
+        "Settings": "设置",
+        "Add_Credentials_to": "添加凭证到",
+        "Token_ID": "令牌 ID",
+        "Add_token_to": "添加令牌到",
+        "Header_Prefix": "请求头前缀",
+        "Query_Param_Key": "查询参数键",
+        "Refresh_Token_URL": "刷新令牌 URL",
+        "Automatically_fetch_token_if_not_found": "如果未找到令牌，自动获取",
+        "Request_Body": "请求体",
+        "Basic_Auth_Header": "基本认证请求头",
+        "Header": "请求头",
+        "LongDescriptions2": "当您尝试访问资源但没有令牌时，自动获取新令牌。",
+        "LongDescriptions1": "当令牌过期时，使用刷新 URL 自动刷新令牌。"
+    },
+    "RequestPane_Auth_WsseAuth": {
+        "Username": "用户名",
+        "Password": "密码"
+    },
+    "RequestPane_FileBody": {
+        "File": "文件",
+        "Selected": "已选择",
+        "Add_File": "+ 添加文件"
+    },
+    "RequestPane_GraphQLRequestPane": {
+        "Something_went_wrong": "出了点问题",
+        "Variables": "变量",
+        "Headers": "请求头",
+        "Auth": "认证",
+        "Vars": "变量",
+        "Script": "脚本",
+        "Assert": "断言",
+        "Tests": "测试",
+        "Docs": "文档"
+    },
+    "RequestPane_GraphQLSchemaActions": {
+        "Schema": "模式",
+        "Docs": "文档",
+        "Load_from_File": "从文件加载"
+    },
+    "RequestPane_HttpRequestPane": {
+        "Params": "参数",
+        "Body": "请求体",
+        "Headers": "请求头",
+        "Auth": "认证",
+        "Vars": "变量",
+        "Script": "脚本",
+        "Assert": "断言",
+        "Tests": "测试",
+        "Docs": "文档",
+        "Something_went_wrong": "出了点问题"
+    },
+    "RequestPane_QueryEditor": {
+        "Deprecated": "已弃用"
+    },
+    "RequestPane_QueryParams": {
+        "Add_Param": "添加参数",
+        "Path": "路径",
+        "Bulk_Edit": "批量编辑"
+    },
+    "RequestPane_QueryUrl": {
+        "Generate_Code": "生成代码",
+        "Save": "保存"
+    },
+    "RequestPane_RequestBody_RequestBodyMode": {
+        "Raw": "原始数据",
+        "Other": "其他",
+        "Prettify": "美化",
+        "Multipart_Form": "多部分表单",
+        "Form_URL_Encoded": "表单 URL 编码"
+    },
+    "RequestPane_RequestHeaders": {
+        "Add_Header": "+ 添加请求头",
+        "Bulk_Edit": "批量编辑"
+    },
+    "RequestPane_Vars_VarsTable": {
+        "Value": "值",
+        "Expr": "表达式",
+        "Add": "+ 添加"
+    },
+    "RequestPane_Assertions": {
+        "Add_Assertion": "+ 添加断言",
+        "Expr": "表达式",
+        "Operator": "运算符",
+        "Value": "值"
+    },
+    "Sidebar_Collections_Collection_CloneCollection": {
+        "Name": "名称",
+        "Location": "位置",
+        "Folder_Name": "文件夹名称",
+        "Browse": "浏览",
+        "LongDescriptions2": "用于存储集合的文件夹名称。",
+        "LongDescriptions1": "您可以选择与集合名称不同的文件夹名称，或者选择符合文件系统规则的名称。"
+    },
+    "Sidebar_Collections_Collection_CollectionItem_CloneCollectionItem": {
+        "Options": "选项",
+        "Cancel": "取消",
+        "Clone": "克隆",
+        "FolderName": "文件夹名称",
+        "RequestName": "请求名称"
+    },
+    "Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem_CodeViewToolbar": {
+        "Interpolate_Variables": "插入变量"
+    },
+    "Sidebar_Collections_Collection_CollectionItem_GenerateCodeItem": {
+        "Invalid_URL": "无效的 URL",
+        "Please_check_the_URL_and_try_again": "请检查 URL 并再次尝试"
+    },
+    "Sidebar_Collections_Collection_CollectionItem_RenameCollectionItem": {
+        "Options": "选项",
+        "Cancel": "取消",
+        "Rename": "重命名",
+        "FolderName": "文件夹名称",
+        "FileName": "文件名",
+        "RequestName": "请求名称",
+        "LongDescriptions3": "您可以选择在文件系统中以与应用中显示的不同名称保存文件夹。",
+        "LongDescriptions2": "Bruno 将每个请求保存为集合文件夹中的一个文件。",
+        "LongDescriptions1": "您可以选择与请求名称不同的文件名，或者选择符合文件系统规则的名称。"
+    },
+    "Sidebar_Collections_Collection_CollectionItem_RunCollectionItem": {
+        "Run": "运行",
+        "Recursive_Run": "递归运行",
+        "Cancel": "取消",
+        "LongDescriptions1": "此文件夹中未找到请求。",
+        "LongDescriptions2": "这将仅运行此文件夹中的请求。",
+        "LongDescriptions3": "这将运行此文件夹及其所有子文件夹中的所有请求。",
+        "LongDescriptions4": "此文件夹中的请求仍在加载中。",
+        "LongDescriptions5": "集合运行正在进行中。",
+        "View_Run": "查看运行结果"
+    },
+    "Sidebar_Collections_Collection_ExportCollection": {
+        "Postman_Collection": "Postman 集合",
+        "Bruno_Collection": "Bruno 集合"
+    },
+    "Sidebar_Collections_Collection_RenameCollection": {
+        "Name": "名称"
+    },
+    "Sidebar_Collections": {
+        "Collections": "集合"
+    },
+    "Sidebar_Collections_SelectCollection": {
+        "No_collections_found": "未找到集合"
+    },
+    "Sidebar_CreateCollection": {
+        "Name": "名称",
+        "Location": "位置",
+        "Browse": "浏览",
+        "Folder_Name": "文件夹名称",
+        "LongDescriptions1": "Bruno 将您的集合存储在计算机的文件系统中。",
+        "LongDescriptions2": "选择您要存储此集合的位置。",
+        "LongDescriptions3": "用于存储集合的文件夹名称。",
+        "LongDescriptions4": "您可以选择与集合名称不同的文件夹名称，或者选择符合文件系统规则的名称。"
+    },
+    "Sidebar_GoldenEdition": {
+        "Buy": "购买",
+        "Everything_in_the_Individual_Plan": "个人计划中的所有内容",
+        "Golden_Edition": "黄金版",
+        "One_Time_Payment": "一次性付款",
+        "Individuals": "个人",
+        "Organizations": "组织",
+        "perpetual_license_with_2_years_of_updates": "拥有 2 年更新的永久许可证",
+        "LongDescriptions1": "2 台设备的永久许可证，包含 2 年更新",
+        "LongDescriptions2": "支持 Bruno 的开发"
+    },
+    "Sidebar_ImportCollection": {
+        "Bruno_Collection": "Bruno 集合",
+        "Postman_Collection": "Postman 集合",
+        "Insomnia_Collection": "Insomnia 集合",
+        "OpenAPI_V3_Spec": "OpenAPI V3 规范",
+        "LongDescriptions1": "选择您现有集合的类型：",
+        "This_may_take_a_moment_depending_on_the_collection_size": "根据集合大小，这可能需要一些时间"
+    },
+    "Sidebar_ImportCollectionLocation": {
+        "Browse": "浏览",
+        "Name": "名称",
+        "Location": "位置",
+        "LongDescriptions1": "Bruno 将您的集合存储在计算机的文件系统中。",
+        "LongDescriptions2": "选择您要存储此集合的位置。"
+    },
+    "Sidebar_NewFolder": {
+        "Folder_Name": "文件夹名称",
+        "Options": "选项",
+        "Cancel": "取消",
+        "Create": "创建",
+        "LongDescriptions1": "您可以选择在文件系统中以与应用中显示的不同名称保存文件夹。"
+    },
+    "Sidebar_NewRequest": {
+        "Type": "类型",
+        "HTTP": "HTTP",
+        "GraphQL": "GraphQL",
+        "From_cURL": "从 cURL 创建",
+        "Request_Name": "请求名称",
+        "URL": "URL",
+        "cURL_Command": "cURL 命令",
+        "Options": "选项",
+        "Cancel": "取消",
+        "Create": "创建",
+        "File_Name": "文件名",
+        "LongDescriptions1": "Bruno 将每个请求保存为集合文件夹中的一个文件。",
+        "LongDescriptions2": "您可以选择与请求名称不同的文件名，或者选择符合文件系统规则的名称。"
+    },
+    "Sidebar_TitleBar": {
+        "Create_Collection": "创建集合",
+        "Open_Collection": "打开集合",
+        "Import_Collection": "导入集合",
+        "Devtools": "开发者工具"
+    },
+    "Environments_EnvironmentSelector": {
+        "No_Environment": "无环境",
+        "Configure": "配置"
+    },
+    "Environments_EnvironmentSettings_CopyEnvironment": {
+        "New_Environment_Name": "新环境名称"
+    },
+    "Environments_EnvironmentSettings_CreateEnvironment": {
+        "Environment_Name": "环境名称"
+    },
+    "Environments_EnvironmentSettings_EnvironmentList": {
+        "Close": "关闭",
+        "Create": "创建",
+        "Import": "导入",
+        "Managing_Secrets": "管理秘密",
+        "LongDescriptions1": "此环境中有未保存的更改。"
+    },
+    "Environments_EnvironmentSettings_ImportEnvironment": {
+        "Import_your_Postman_environments": "导入您的 Postman 环境"
+    },
+    "Environments_EnvironmentSettings": {
+        "No_environments_found": "未找到环境",
+        "Create_Environment": "创建环境",
+        "Or": "或者",
+        "Import_Environment": "导入环境",
+        "LongDescriptions1": "使用以下按钮开始操作："
+    },
+    "Environments_EnvironmentSettings_RenameEnvironment": {
+        "Environment_Name": "环境名称"
+    },
+    "GlobalEnvironments_EnvironmentSelector": {
+        "No_Environment": "无环境",
+        "Configure": "配置"
+    },
+    "GlobalEnvironments_EnvironmentSettings_CopyEnvironment": {
+        "New_Environment_Name": "新环境名称"
+    },
+    "GlobalEnvironments_EnvironmentSettings_CreateEnvironment": {
+        "Environment_Name": "环境名称"
+    },
+    "GlobalEnvironments_EnvironmentSettings_EnvironmentList": {
+        "Close": "关闭",
+        "Create": "创建",
+        "Import": "导入",
+        "Managing_Secrets": "管理秘密"
+    },
+    "GlobalEnvironments_EnvironmentSettings_EnvironmentList_EnvironmentDetails_EnvironmentVariables": {
+        "Save": "保存",
+        "Reset": "重置",
+        "Add_Variable": "+ 添加变量"
+    },
+    "GlobalEnvironments_EnvironmentSettings_ImportEnvironment": {
+        "Import_your_Postman_environments": "导入您的 Postman 环境"
+    },
+    "GlobalEnvironments_EnvironmentSettings": {
+        "No_Global_Environments_found": "未找到全局环境",
+        "Create_Global_Environment": "创建全局环境",
+        "Or": "或者",
+        "Import_Environment": "导入环境"
+    },
+    "GlobalEnvironments_EnvironmentSettings_RenameEnvironment": {
+        "Environment_Name": "环境名称"
+    }
 }

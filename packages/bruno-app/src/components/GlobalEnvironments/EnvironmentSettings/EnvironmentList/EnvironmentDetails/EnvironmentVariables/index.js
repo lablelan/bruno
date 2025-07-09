@@ -12,8 +12,10 @@ import { variableNameRegex } from 'utils/common/regex';
 import toast from 'react-hot-toast';
 import { saveGlobalEnvironment } from 'providers/ReduxStore/slices/global-environments';
 import { Tooltip } from 'react-tooltip';
+import { useTranslation } from 'react-i18next';
 
 const EnvironmentVariables = ({ environment, setIsModified, originalEnvironmentVariables }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const addButtonRef = useRef(null);
@@ -180,18 +182,14 @@ const EnvironmentVariables = ({ environment, setIsModified, originalEnvironmentV
             className="btn-add-param text-link pr-2 py-3 mt-2 select-none"
             onClick={addVariable}
           >
-            + Add Variable
+            {t('GlobalEnvironments_EnvironmentSettings_EnvironmentList_EnvironmentDetails_EnvironmentVariables.Add_Variable')}
           </button>
         </div>
       </div>
 
       <div>
-        <button type="submit" className="submit btn btn-md btn-secondary mt-2" onClick={formik.handleSubmit}>
-          Save
-        </button>
-        <button type="submit" className="ml-2 px-1 submit btn btn-md btn-secondary mt-2" onClick={handleReset}>
-          Reset
-        </button>
+        <button type="submit" className="submit btn btn-md btn-secondary mt-2" onClick={formik.handleSubmit}>{t('GlobalEnvironments_EnvironmentSettings_EnvironmentList_EnvironmentDetails_EnvironmentVariables.Save')}</button>
+        <button type="submit" className="ml-2 px-1 submit btn btn-md btn-secondary mt-2" onClick={handleReset}>{t('GlobalEnvironments_EnvironmentSettings_EnvironmentList_EnvironmentDetails_EnvironmentVariables.Reset')}</button>
       </div>
     </StyledWrapper>
   );

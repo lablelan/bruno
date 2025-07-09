@@ -96,7 +96,8 @@
     "Passphrase": "Passphrase",
     "Add": "Add",
     "Client_Certificates": "Client Certificates",
-    "Add_Client_Certificate": "Add Client Certificate"
+    "Add_Client_Certificate": "Add Client Certificate",
+    "No_client_certificates_added": "No client certificates added"
   },
   "CollectionSettings_Docs": {
     "Save": "Save",
@@ -412,10 +413,10 @@
     "Location": "Location",
     "Browse": "Browse",
     "Folder_Name": "Folder Name",
-    "LongDescriptions1":"Bruno stores your collections on your computer's filesystem.",
-    "LongDescriptions2":"Choose the location where you want to store this collection.",
-    "LongDescriptions3":"The name of the folder used to store the collection.",
-    "LongDescriptions4":"You can choose a folder name different from your collection's name or one compatible with filesystem rules."
+    "LongDescriptions1": "Bruno stores your collections on your computer's filesystem.",
+    "LongDescriptions2": "Choose the location where you want to store this collection.",
+    "LongDescriptions3": "The name of the folder used to store the collection.",
+    "LongDescriptions4": "You can choose a folder name different from your collection's name or one compatible with filesystem rules."
   },
   "Sidebar_GoldenEdition": {
     "Buy": "Buy",
@@ -433,7 +434,7 @@
     "Postman_Collection": "Postman Collection",
     "Insomnia_Collection": "Insomnia Collection",
     "OpenAPI_V3_Spec": "OpenAPI V3 Spec",
-    "LongDescriptions1":"Select the type of your existing collection :",
+    "LongDescriptions1": "Select the type of your existing collection :",
     "This_may_take_a_moment_depending_on_the_collection_size": "This may take a moment depending on the collection size"
   },
   "Sidebar_ImportCollectionLocation": {
@@ -464,5 +465,76 @@
     "File_Name": "File Name",
     "LongDescriptions1": "Bruno saves each request as a file in your collection's folder.",
     "LongDescriptions2": "You can choose a file name different from your request's name or one compatible with filesystem rules."
+  },
+  "Sidebar_TitleBar": {
+    "Create_Collection": "Create Collection",
+    "Open_Collection": "Open Collection",
+    "Import_Collection": "Import Collection",
+    "Devtools": "Devtools"
+  },
+  "Environments_EnvironmentSelector": {
+    "No_Environment": "No Environment",
+    "Configure": "Configure"
+  },
+  "Environments_EnvironmentSettings_CopyEnvironment": {
+    "New_Environment_Name": "New Environment Name"
+  },
+  "Environments_EnvironmentSettings_CreateEnvironment": {
+    "Environment_Name": "Environment Name"
+  },
+  "Environments_EnvironmentSettings_EnvironmentList": {
+    "Close": "Close",
+    "Create": "Create",
+    "Import": "Import",
+    "Managing_Secrets": "Managing Secrets",
+    "LongDescriptions1": "You have unsaved changes in this environment."
+  },
+  "Environments_EnvironmentSettings_ImportEnvironment": {
+    "Import_your_Postman_environments": "Import your Postman environments"
+  },
+  "Environments_EnvironmentSettings": {
+    "No_environments_found": "No environments found",
+    "Create_Environment": "Create Environment",
+    "Or": "Or",
+    "Import_Environment": "Import Environment",
+    "LongDescriptions1": "Get started by using the following buttons :"
+  },
+  "Environments_EnvironmentSettings_RenameEnvironment": {
+    "Environment_Name": "Environment Name"
+  },
+  "GlobalEnvironments_EnvironmentSelector": {
+    "No_Environment": "No Environment",
+    "Configure": "Configure"
+  },
+  "GlobalEnvironments_EnvironmentSettings_CopyEnvironment": {
+    "New_Environment_Name": "New Environment Name"
+  },
+  "GlobalEnvironments_EnvironmentSettings_CreateEnvironment": {
+    "Environment_Name": "Environment Name"
+  },
+  "GlobalEnvironments_EnvironmentSettings_EnvironmentList": {
+    "Close": "Close",
+    "Create": "Create",
+    "Import": "Import",
+    "Managing_Secrets": "Managing Secrets",
+    "LongDescriptions1": "You have unsaved changes in this environment.",
+    "LongDescriptions2": "Hold on.."
+  },
+  "GlobalEnvironments_EnvironmentSettings_EnvironmentList_EnvironmentDetails_EnvironmentVariables": {
+    "Save": "Save",
+    "Reset": "Reset",
+    "Add_Variable": "+ Add Variable"
+  },
+  "GlobalEnvironments_EnvironmentSettings_ImportEnvironment": {
+    "Import_your_Postman_environments": "Import your Postman environments"
+  },
+  "GlobalEnvironments_EnvironmentSettings": {
+    "No_Global_Environments_found": "No Global Environments found",
+    "Create_Global_Environment": "Create Global Environment",
+    "Or": "Or",
+    "Import_Environment": "Import Environment"
+  },
+  "GlobalEnvironments_EnvironmentSettings_RenameEnvironment": {
+    "Environment_Name": "Environment Name"
   }
 }

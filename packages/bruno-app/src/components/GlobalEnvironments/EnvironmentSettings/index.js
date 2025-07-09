@@ -5,8 +5,10 @@ import EnvironmentList from './EnvironmentList';
 import StyledWrapper from './StyledWrapper';
 import { IconFileAlert } from '@tabler/icons';
 import ImportEnvironment from './ImportEnvironment/index';
+import { useTranslation } from 'react-i18next';
 
 export const SharedButton = ({ children, className, onClick }) => {
+  const { t } = useTranslation();
   return (
     <button
       type="button"
@@ -20,19 +22,20 @@ export const SharedButton = ({ children, className, onClick }) => {
 };
 
 const DefaultTab = ({ setTab }) => {
+  const { t } = useTranslation();
   return (
     <div className="text-center items-center flex flex-col">
       <IconFileAlert size={64} strokeWidth={1} />
-      <span className="font-semibold mt-2">No Global Environments found</span>
+      <span className="font-semibold mt-2">{t('GlobalEnvironments_EnvironmentSettings.No_Global_Environments_found')}</span>
       <div className="flex items-center justify-center mt-6">
         <SharedButton onClick={() => setTab('create')}>
-          <span>Create Global Environment</span>
+          <span>{t('GlobalEnvironments_EnvironmentSettings.Create_Global_Environment')}</span>
         </SharedButton>
 
-        <span className="mx-4">Or</span>
+        <span className="mx-4">{t('GlobalEnvironments_EnvironmentSettings.Or')}</span>
 
         <SharedButton onClick={() => setTab('import')}>
-          <span>Import Environment</span>
+          <span>{t('GlobalEnvironments_EnvironmentSettings.Import_Environment')}</span>
         </SharedButton>
       </div>
     </div>
@@ -40,6 +43,7 @@ const DefaultTab = ({ setTab }) => {
 };
 
 const EnvironmentSettings = ({ globalEnvironments, activeGlobalEnvironmentUid, onClose }) => {
+  const { t } = useTranslation();
   const [isModified, setIsModified] = useState(false);
   const environments = globalEnvironments;
   const [selectedEnvironment, setSelectedEnvironment] = useState(null);

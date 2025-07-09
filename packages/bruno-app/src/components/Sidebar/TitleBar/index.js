@@ -13,8 +13,10 @@ import { openCollection, importCollection } from 'providers/ReduxStore/slices/co
 import StyledWrapper from './StyledWrapper';
 import { multiLineMsg } from "utils/common";
 import { formatIpcError } from "utils/common/error";
+import { useTranslation } from 'react-i18next';
 
 const TitleBar = () => {
+  const { t } = useTranslation();
   const [importedCollection, setImportedCollection] = useState(null);
   const [createCollectionModalOpen, setCreateCollectionModalOpen] = useState(false);
   const [importCollectionModalOpen, setImportCollectionModalOpen] = useState(false);
@@ -93,7 +95,7 @@ const TitleBar = () => {
                 menuDropdownTippyRef.current.hide();
               }}
             >
-              Create Collection
+              {t('Sidebar_TitleBar.Create_Collection')}
             </div>
             <div
               className="dropdown-item"
@@ -102,7 +104,7 @@ const TitleBar = () => {
                 menuDropdownTippyRef.current.hide();
               }}
             >
-              Open Collection
+              {t('Sidebar_TitleBar.Open_Collection')}
             </div>
             <div
               className="dropdown-item"
@@ -111,7 +113,7 @@ const TitleBar = () => {
                 setImportCollectionModalOpen(true);
               }}
             >
-              Import Collection
+              {t('Sidebar_TitleBar.Import_Collection')}
             </div>
             <div
               className="dropdown-item"
@@ -120,7 +122,7 @@ const TitleBar = () => {
                 openDevTools();
               }}
             >
-              Devtools
+              {t('Sidebar_TitleBar.Devtools')}
             </div>
           </Dropdown>
         </div>

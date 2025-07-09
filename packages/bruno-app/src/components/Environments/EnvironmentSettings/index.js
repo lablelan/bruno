@@ -5,8 +5,10 @@ import EnvironmentList from './EnvironmentList';
 import StyledWrapper from './StyledWrapper';
 import ImportEnvironment from './ImportEnvironment';
 import { IconFileAlert } from '@tabler/icons';
+import { useTranslation } from 'react-i18next';
 
 export const SharedButton = ({ children, className, onClick }) => {
+  const { t } = useTranslation();
   return (
     <button
       type="button"
@@ -20,22 +22,23 @@ export const SharedButton = ({ children, className, onClick }) => {
 };
 
 const DefaultTab = ({ setTab }) => {
+  const { t } = useTranslation();
   return (
     <div className="text-center items-center flex flex-col">
       <IconFileAlert size={64} strokeWidth={1} />
-      <span className="font-semibold mt-2">No environments found</span>
+      <span className="font-semibold mt-2">{t('Environments_EnvironmentSettings.No_environments_found')}</span>
       <span className="font-extralight mt-2 text-zinc-500 dark:text-zinc-400">
-        Get started by using the following buttons :
+        {t('Environments_EnvironmentSettings.Create_Environment')}
       </span>
       <div className="flex items-center justify-center mt-6">
         <SharedButton onClick={() => setTab('create')}>
-          <span>Create Environment</span>
+          <span>{t('Environments_EnvironmentSettings.Create_Environment')}</span>
         </SharedButton>
 
-        <span className="mx-4">Or</span>
+        <span className="mx-4">{t('Environments_EnvironmentSettings.Or')}</span>
 
         <SharedButton onClick={() => setTab('import')}>
-          <span>Import Environment</span>
+          <span>{t('Environments_EnvironmentSettings.Import_Environment')}</span>
         </SharedButton>
       </div>
     </div>
@@ -43,6 +46,7 @@ const DefaultTab = ({ setTab }) => {
 };
 
 const EnvironmentSettings = ({ collection, onClose }) => {
+  const { t } = useTranslation();
   const [isModified, setIsModified] = useState(false);
   const { environments } = collection;
   const [selectedEnvironment, setSelectedEnvironment] = useState(null);
