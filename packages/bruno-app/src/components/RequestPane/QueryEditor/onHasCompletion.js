@@ -8,6 +8,7 @@ import escapeHTML from 'escape-html';
 import MD from 'markdown-it';
 
 import { GraphQLNonNull, GraphQLList } from 'graphql';
+import { useTranslation } from 'react-i18next';
 
 const md = new MD();
 
@@ -16,6 +17,7 @@ const md = new MD();
  * about the type and description for the selected context.
  */
 export default function onHasCompletion(_cm, data, onHintInformationRender) {
+  const { t } = useTranslation();
   const CodeMirror = require('codemirror');
 
   let information;
@@ -66,7 +68,7 @@ export default function onHasCompletion(_cm, data, onHintInformationRender) {
 
     if (ctx && deprecation && ctx.deprecationReason) {
       const reason = ctx.deprecationReason ? md.render(ctx.deprecationReason) : '';
-      deprecation.innerHTML = '<span className="deprecation-label">Deprecated</span>' + reason;
+      deprecation.innerHTML = `<span className="deprecation-label">${t('RequestPane_QueryEditor.Deprecated')}</span>` + reason;
       deprecation.style.display = 'block';
     } else if (deprecation) {
       deprecation.style.display = 'none';

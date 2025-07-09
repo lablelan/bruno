@@ -17,8 +17,10 @@ import Documentation from 'components/Documentation/index';
 import HeightBoundContainer from 'ui/HeightBoundContainer';
 import { useEffect } from 'react';
 import StatusDot from 'components/StatusDot';
+import { useTranslation } from 'react-i18next';
 
 const HttpRequestPane = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const tabs = useSelector((state) => state.tabs.tabs);
   const activeTabUid = useSelector((state) => state.tabs.activeTabUid);
@@ -68,7 +70,7 @@ const HttpRequestPane = ({ item, collection }) => {
   };
 
   if (!activeTabUid) {
-    return <div>Something went wrong</div>;
+    return <div>{t('RequestPane_HttpRequestPane.Something_went_wrong')}</div>;
   }
 
   const focusedTab = find(tabs, (t) => t.uid === activeTabUid);
@@ -115,27 +117,27 @@ const HttpRequestPane = ({ item, collection }) => {
     <StyledWrapper className="flex flex-col h-full relative">
       <div className="flex flex-wrap items-center tabs" role="tablist">
         <div className={getTabClassname('params')} role="tab" onClick={() => selectTab('params')}>
-          Params
+          {t('RequestPane_HttpRequestPane.Params')}
           {activeParamsLength > 0 && <sup className="ml-1 font-medium">{activeParamsLength}</sup>}
         </div>
         <div className={getTabClassname('body')} role="tab" onClick={() => selectTab('body')}>
-          Body
+          {t('RequestPane_HttpRequestPane.Body')}
           {body.mode !== 'none' && <StatusDot />}
         </div>
         <div className={getTabClassname('headers')} role="tab" onClick={() => selectTab('headers')}>
-          Headers
+          {t('RequestPane_HttpRequestPane.Headers')}
           {activeHeadersLength > 0 && <sup className="ml-[.125rem] font-medium">{activeHeadersLength}</sup>}
         </div>
         <div className={getTabClassname('auth')} role="tab" onClick={() => selectTab('auth')}>
-          Auth
+          {t('RequestPane_HttpRequestPane.Auth')}
           {auth.mode !== 'none' && <StatusDot />}
         </div>
         <div className={getTabClassname('vars')} role="tab" onClick={() => selectTab('vars')}>
-          Vars
+          {t('RequestPane_HttpRequestPane.Vars')}
           {activeVarsLength > 0 && <sup className="ml-1 font-medium">{activeVarsLength}</sup>}
         </div>
         <div className={getTabClassname('script')} role="tab" onClick={() => selectTab('script')}>
-          Script
+          {t('RequestPane_HttpRequestPane.Script')}
           {(script.req || script.res) && (
             item.preRequestScriptErrorMessage || item.postResponseScriptErrorMessage ?
             <StatusDot type="error" /> :
@@ -143,11 +145,11 @@ const HttpRequestPane = ({ item, collection }) => {
           )}
         </div>
         <div className={getTabClassname('assert')} role="tab" onClick={() => selectTab('assert')}>
-          Assert
+          {t('RequestPane_HttpRequestPane.Assert')}
           {activeAssertionsLength > 0 && <sup className="ml-1 font-medium">{activeAssertionsLength}</sup>}
         </div>
         <div className={getTabClassname('tests')} role="tab" onClick={() => selectTab('tests')}>
-          Tests
+          {t('RequestPane_HttpRequestPane.Tests')}
           {tests && tests.length > 0 && (
             item.testScriptErrorMessage ?
               <StatusDot type="error" /> :
@@ -155,7 +157,7 @@ const HttpRequestPane = ({ item, collection }) => {
           )}
         </div>
         <div className={getTabClassname('docs')} role="tab" onClick={() => selectTab('docs')}>
-          Docs
+          {t('RequestPane_HttpRequestPane.Docs')}
           {docs && docs.length > 0 && <StatusDot />}
         </div>
         {focusedTab.requestPaneTab === 'body' ? (

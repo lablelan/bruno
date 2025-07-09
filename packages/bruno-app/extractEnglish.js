@@ -41,7 +41,7 @@ async function extractEnglishTexts() {
   }
 
   async function processFile(filePath) {
-    if (!filePath.includes("TitleBar")) {
+    if (!filePath.includes("RequestPane")) {
       return;
     }
     try {

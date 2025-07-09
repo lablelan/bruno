@@ -7,8 +7,10 @@ import { updateAuth } from 'providers/ReduxStore/slices/collections';
 import { sendRequest, saveRequest } from 'providers/ReduxStore/slices/collections/actions';
 import StyledWrapper from './StyledWrapper';
 import { update } from 'lodash';
+import { useTranslation } from 'react-i18next';
 
 const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
 
@@ -130,7 +132,7 @@ const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
 
   return (
     <StyledWrapper className="mt-2 w-full">
-      <label className="block font-medium mb-2">Access Key ID</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_AwsV4Auth.Access_Key_ID')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={awsv4Auth.accessKeyId || ''}
@@ -143,7 +145,7 @@ const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Secret Access Key</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_AwsV4Auth.Secret_Access_Key')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={awsv4Auth.secretAccessKey || ''}
@@ -157,7 +159,7 @@ const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Session Token</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_AwsV4Auth.Session_Token')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={awsv4Auth.sessionToken || ''}
@@ -170,7 +172,7 @@ const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Service</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_AwsV4Auth.Service')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={awsv4Auth.service || ''}
@@ -183,7 +185,7 @@ const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Region</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_AwsV4Auth.Region')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={awsv4Auth.region || ''}
@@ -196,7 +198,7 @@ const AwsV4Auth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Profile Name</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_AwsV4Auth.Profile_Name')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={awsv4Auth.profileName || ''}

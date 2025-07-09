@@ -13,10 +13,12 @@ import { MimeTypes } from 'utils/codemirror/autocompleteConstants';
 import Table from 'components/Table/index';
 import ReorderTable from 'components/ReorderTable/index';
 import BulkEditor from '../../BulkEditor';
+import { useTranslation } from 'react-i18next';
 
 const headerAutoCompleteList = StandardHTTPHeaders.map((e) => e.header);
 
 const RequestHeaders = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const headers = item.draft ? get(item, 'draft.request.headers') : get(item, 'request.headers');
@@ -181,11 +183,9 @@ const RequestHeaders = ({ item, collection }) => {
       </Table>
       <div className="flex justify-between mt-2">
         <button className="btn-action text-link pr-2 py-3 select-none" onClick={addHeader}>
-          + Add Header
+          {t('RequestPane_RequestHeaders.Add_Header')}
         </button>
-        <button className="btn-action text-link select-none" onClick={toggleBulkEditMode}>
-          Bulk Edit
-        </button>
+        <button className="btn-action text-link select-none" onClick={toggleBulkEditMode}>{t('RequestPane_RequestHeaders.Bulk_Edit')}</button>
       </div>
     </StyledWrapper>
   );

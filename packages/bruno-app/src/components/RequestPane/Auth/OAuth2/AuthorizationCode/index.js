@@ -9,8 +9,10 @@ import StyledWrapper from './StyledWrapper';
 import { inputsConfig } from './inputsConfig';
 import Oauth2TokenViewer from '../Oauth2TokenViewer/index';
 import Oauth2ActionButtons from '../Oauth2ActionButtons/index';
+import { useTranslation } from 'react-i18next';
 
 const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAuth, collection, folder }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const dropdownTippyRef = useRef();
@@ -123,9 +125,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
         <div className="flex items-center px-2.5 py-1.5 bg-indigo-50/50 dark:bg-indigo-500/10 rounded-md">
           <IconSettings size={14} className="text-indigo-500 dark:text-indigo-400" />
         </div>
-        <span className="text-sm font-medium">
-          Configuration
-        </span>
+        <span className="text-sm font-medium">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Configuration')}</span>
       </div>
       {inputsConfig.map((input) => {
         const { key, label, isSecret } = input;
@@ -148,7 +148,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
         );
       })}
       <div className="flex items-center gap-4 w-full" key={`input-credentials-placement`}>
-        <label className="block min-w-[140px]">Add Credentials to</label>
+        <label className="block min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Add_Credentials_to')}</label>
         <div className="inline-flex items-center cursor-pointer token-placement-selector">
           <Dropdown onCreate={onDropdownCreate} icon={<CredentialsPlacementIcon />} placement="bottom-end">
             <div
@@ -158,7 +158,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
                 handleChange('credentialsPlacement', 'body');
               }}
             >
-              Request Body
+              {t('RequestPane_Auth_OAuth2_AuthorizationCode.Request_Body')}
             </div>
             <div
               className="dropdown-item"
@@ -167,13 +167,13 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
                 handleChange('credentialsPlacement', 'basic_auth_header');
               }}
             >
-              Basic Auth Header
+              {t('RequestPane_Auth_OAuth2_AuthorizationCode.Basic_Auth_Header')}
             </div>
           </Dropdown>
         </div>
       </div>
       <div className="flex flex-row w-full gap-4" key="pkce">
-        <label className="block">Use PKCE</label>
+        <label className="block">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Use_PKCE')}</label>
         <input
           className="cursor-pointer"
           type="checkbox"
@@ -185,12 +185,10 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
         <div className="flex items-center px-2.5 py-1.5 bg-indigo-50/50 dark:bg-indigo-500/10 rounded-md">
           <IconKey size={14} className="text-indigo-500 dark:text-indigo-400" />
         </div>
-        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
-          Token
-        </span>
+        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Token')}</span>
       </div>
       <div className="flex items-center gap-4 w-full" key={`input-token-name`}>
-        <label className="block min-w-[140px]">Token ID</label>
+        <label className="block min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Token_ID')}</label>
         <div className="single-line-editor-wrapper flex-1">
           <SingleLineEditor
             value={oAuth['credentialsId'] || ''}
@@ -204,7 +202,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
         </div>
       </div>
       <div className="flex items-center gap-4 w-full" key={`input-token-placement`}>
-        <label className="block min-w-[140px]">Add token to</label>
+        <label className="block min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Add_token_to')}</label>
         <div className="inline-flex items-center cursor-pointer token-placement-selector">
           <Dropdown onCreate={onDropdownCreate} icon={<TokenPlacementIcon />} placement="bottom-end">
             <div
@@ -231,7 +229,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
       {
         tokenPlacement === 'header' ?
           <div className="flex items-center gap-4 w-full" key={`input-token-prefix`}>
-            <label className="block min-w-[140px]">Header Prefix</label>
+            <label className="block min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Header_Prefix')}</label>
             <div className="single-line-editor-wrapper flex-1">
               <SingleLineEditor
                 value={oAuth['tokenHeaderPrefix'] || ''}
@@ -245,7 +243,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
           </div>
           :
           <div className="flex items-center gap-4 w-full" key={`input-token-query-param-key`}>
-            <label className="block font-medium min-w-[140px]">Query Param Key</label>
+            <label className="block font-medium min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Query_Param_Key')}</label>
             <div className="single-line-editor-wrapper flex-1">
               <SingleLineEditor
                 value={oAuth['tokenQueryKey'] || ''}
@@ -262,13 +260,11 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
         <div className="flex items-center px-2.5 py-1.5 bg-indigo-50/50 dark:bg-indigo-500/10 rounded-md">
           <IconAdjustmentsHorizontal size={14} className="text-indigo-500 dark:text-indigo-400" />
         </div>
-        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
-          Advanced Settings
-        </span>
+        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Advanced_Settings')}</span>
       </div>
 
       <div className="flex items-center gap-4 w-full mb-4">
-        <label className="block min-w-[140px]">Refresh Token URL</label>
+        <label className="block min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Refresh_Token_URL')}</label>
         <div className="single-line-editor-wrapper flex-1">
           <SingleLineEditor
             value={get(request, 'auth.oauth2.refreshTokenUrl', '')}
@@ -285,7 +281,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
         <div className="flex items-center px-2.5 py-1.5 bg-indigo-50/50 dark:bg-indigo-500/10 rounded-md">
           <IconSettings size={14} className="text-indigo-500 dark:text-indigo-400" />
         </div>
-        <span className="text-sm font-medium">Settings</span>
+        <span className="text-sm font-medium">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Settings')}</span>
       </div>
 
       {/* Automatically Fetch Token */}
@@ -296,12 +292,12 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
           onChange={(e) => handleChange('autoFetchToken', e.target.checked)}
           className="cursor-pointer ml-1"
         />
-        <label className="block min-w-[140px]">Automatically fetch token if not found</label>
+        <label className="block min-w-[140px]">{t('RequestPane_Auth_OAuth2_AuthorizationCode.Automatically_fetch_token_if_not_found')}</label>
         <div className="flex items-center gap-2">
           <div className="relative group cursor-pointer">
             <IconHelp size={16} className="text-gray-500" />
             <span className="group-hover:opacity-100 pointer-events-none opacity-0 max-w-60 absolute left-0 bottom-full mb-1 w-max p-2 bg-gray-700 text-white text-xs rounded-md transition-opacity duration-200">
-              Automatically fetch a new token when you try to access a resource and don't have one.
+              {t('RequestPane_Auth_OAuth2_AuthorizationCode.LongDescriptions2')}
             </span>
           </div>
         </div>
@@ -321,7 +317,7 @@ const OAuth2AuthorizationCode = ({ save, item = {}, request, handleRun, updateAu
           <div className="relative group cursor-pointer">
             <IconHelp size={16} className="text-gray-500" />
             <span className="group-hover:opacity-100 pointer-events-none opacity-0 max-w-60 absolute left-0 bottom-full mb-1 w-max p-2 bg-gray-700 text-white text-xs rounded-md transition-opacity duration-200">
-              Automatically refresh your token using the refresh URL when it expires.
+              {t('RequestPane_Auth_OAuth2_AuthorizationCode.LongDescriptions1')}
             </span>
           </div>
         </div>

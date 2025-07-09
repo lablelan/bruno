@@ -19,8 +19,10 @@ import StyledWrapper from './StyledWrapper';
 import Documentation from 'components/Documentation/index';
 import GraphQLSchemaActions from '../GraphQLSchemaActions/index';
 import HeightBoundContainer from 'ui/HeightBoundContainer';
+import { useTranslation } from 'react-i18next';
 
 const GraphQLRequestPane = ({ item, collection, onSchemaLoad, toggleDocs, handleGqlClickReference }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const tabs = useSelector((state) => state.tabs.tabs);
   const activeTabUid = useSelector((state) => state.tabs.activeTabUid);
@@ -108,7 +110,7 @@ const GraphQLRequestPane = ({ item, collection, onSchemaLoad, toggleDocs, handle
   };
 
   if (!activeTabUid) {
-    return <div>Something went wrong</div>;
+    return <div>{t('RequestPane_GraphQLRequestPane.Something_went_wrong')}</div>;
   }
 
   const focusedTab = find(tabs, (t) => t.uid === activeTabUid);
@@ -128,30 +130,14 @@ const GraphQLRequestPane = ({ item, collection, onSchemaLoad, toggleDocs, handle
         <div className={getTabClassname('query')} role="tab" onClick={() => selectTab('query')}>
           Query
         </div>
-        <div className={getTabClassname('variables')} role="tab" onClick={() => selectTab('variables')}>
-          Variables
-        </div>
-        <div className={getTabClassname('headers')} role="tab" onClick={() => selectTab('headers')}>
-          Headers
-        </div>
-        <div className={getTabClassname('auth')} role="tab" onClick={() => selectTab('auth')}>
-          Auth
-        </div>
-        <div className={getTabClassname('vars')} role="tab" onClick={() => selectTab('vars')}>
-          Vars
-        </div>
-        <div className={getTabClassname('script')} role="tab" onClick={() => selectTab('script')}>
-          Script
-        </div>
-        <div className={getTabClassname('assert')} role="tab" onClick={() => selectTab('assert')}>
-          Assert
-        </div>
-        <div className={getTabClassname('tests')} role="tab" onClick={() => selectTab('tests')}>
-          Tests
-        </div>
-        <div className={getTabClassname('docs')} role="tab" onClick={() => selectTab('docs')}>
-          Docs
-        </div>
+        <div className={getTabClassname('variables')} role="tab" onClick={() => selectTab('variables')}>{t('RequestPane_GraphQLRequestPane.Variables')}</div>
+        <div className={getTabClassname('headers')} role="tab" onClick={() => selectTab('headers')}>{t('RequestPane_GraphQLRequestPane.Headers')}</div>
+        <div className={getTabClassname('auth')} role="tab" onClick={() => selectTab('auth')}>{t('RequestPane_GraphQLRequestPane.Auth')}</div>
+        <div className={getTabClassname('vars')} role="tab" onClick={() => selectTab('vars')}>{t('RequestPane_GraphQLRequestPane.Vars')}</div>
+        <div className={getTabClassname('script')} role="tab" onClick={() => selectTab('script')}>{t('RequestPane_GraphQLRequestPane.Script')}</div>
+        <div className={getTabClassname('assert')} role="tab" onClick={() => selectTab('assert')}>{t('RequestPane_GraphQLRequestPane.Assert')}</div>
+        <div className={getTabClassname('tests')} role="tab" onClick={() => selectTab('tests')}>{t('RequestPane_GraphQLRequestPane.Tests')}</div>
+        <div className={getTabClassname('docs')} role="tab" onClick={() => selectTab('docs')}>{t('RequestPane_GraphQLRequestPane.Docs')}</div>
         <GraphQLSchemaActions item={item} collection={collection} onSchemaLoad={setSchema} toggleDocs={toggleDocs} />
       </div>
       <section className="flex w-full mt-5 flex-1 relative">

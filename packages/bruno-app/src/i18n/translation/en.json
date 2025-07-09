@@ -100,7 +100,8 @@
   },
   "CollectionSettings_Docs": {
     "Save": "Save",
-    "Documentation": "Documentation"
+    "Documentation": "Documentation",
+    "LongDescriptions": "Welcome to your collection documentation! This space is designed to help you document your API collection effectively.\n\n## Overview\nUse this section to provide a high-level overview of your collection. You can describe:\n- The purpose of these API endpoints\n- Key features and functionalities\n- Target audience or users\n\n## Best Practices\n- Keep documentation up to date\n- Include request/response examples\n- Document error scenarios\n- Add relevant links and references\n\n## Markdown Support\nThis documentation supports Markdown formatting! You can use:\n- Bold and italic text\n- code blocks and syntax highlighting\n- Tables and lists\n- Links\n- And more!"
   },
   "CollectionSettings_Headers": {
     "Add_Header_Description": "Add request headers that will be sent with every request in this collection.",
@@ -170,5 +171,183 @@
   "CollectionSettings_Vars_VarsTable": {
     "Value": "Value",
     "Expr": "Expr"
+  },
+  "RequestPane_Auth_ApiKeyAuth": {
+    "Key": "Key",
+    "Value": "Value",
+    "Add_To": "Add To",
+    "Header": "Header",
+    "Query_Param": "Query Param"
+  },
+  "RequestPane_Auth_AwsV4Auth": {
+    "Access_Key_ID": "Access Key ID",
+    "Secret_Access_Key": "Secret Access Key",
+    "Session_Token": "Session Token",
+    "Service": "Service",
+    "Region": "Region",
+    "Profile_Name": "Profile Name"
+  },
+  "RequestPane_Auth_BasicAuth": {
+    "Username": "Username",
+    "Password": "Password"
+  },
+  "RequestPane_Auth_BearerAuth": {
+    "Token": "Token"
+  },
+  "RequestPane_Auth_DigestAuth": {
+    "Username": "Username",
+    "Password": "Password"
+  },
+  "RequestPane_Auth_NTLMAuth": {
+    "Username": "Username",
+    "Password": "Password",
+    "Domain": "Domain"
+  },
+  "RequestPane_Auth_OAuth2_AuthorizationCode": {
+    "Configuration": "Configuration",
+    "Token": "Token",
+    "Advanced_Settings": "Advanced Settings",
+    "Settings": "Settings",
+    "Add_Credentials_to": "Add Credentials to",
+    "Use_PKCE": "Use PKCE",
+    "Token_ID": "Token ID",
+    "Add_token_to": "Add token to",
+    "Header_Prefix": "Header Prefix",
+    "Query_Param_Key": "Query Param Key",
+    "Refresh_Token_URL": "Refresh Token URL",
+    "Automatically_fetch_token_if_not_found": "Automatically fetch token if not found",
+    "Request_Body": "Request Body",
+    "Basic_Auth_Header": "Basic Auth Header",
+    "LongDescriptions2": "Automatically fetch a new token when you try to access a resource and don't have one.",
+    "LongDescriptions1": "Automatically refresh your token using the refresh URL when it expires."
+  },
+  "RequestPane_Auth_OAuth2_ClientCredentials": {
+    "Configuration": "Configuration",
+    "Token": "Token",
+    "Advanced_Settings": "Advanced Settings",
+    "Settings": "Settings",
+    "Add_Credentials_to": "Add Credentials to",
+    "Token_ID": "Token ID",
+    "Add_token_to": "Add token to",
+    "Header_Prefix": "Header Prefix",
+    "Query_Param_Key": "Query Param Key",
+    "Refresh_Token_URL": "Refresh Token URL",
+    "Automatically_fetch_token_if_not_found": "Automatically fetch token if not found",
+    "Request_Body": "Request Body",
+    "Basic_Auth_Header": "Basic Auth Header",
+    "Header": "Header",
+    "URL": "URL",
+    "LongDescriptions2": "Automatically fetch a new token when you try to access a resource and don't have one.",
+    "LongDescriptions1": "Automatically refresh your token using the refresh URL when it expires."
+  },
+  "RequestPane_Auth_OAuth2_GrantTypeSelector": {
+    "Grant_Type": "Grant Type",
+    "Password_Credentials": "Password Credentials",
+    "Authorization_Code": "Authorization Code",
+    "Client_Credentials": "Client Credentials"
+  },
+  "RequestPane_Auth_OAuth2": {
+    "TBD": "TBD"
+  },
+  "RequestPane_Auth_OAuth2_Oauth2ActionButtons": {
+    "Get_Access_Token": "Get Access Token",
+    "Refresh_Token": "Refresh Token",
+    "Clear_Cache": "Clear Cache"
+  },
+  "RequestPane_Auth_OAuth2_Oauth2TokenViewer": {
+    "Token_Type": "Token Type",
+    "Scope": "Scope",
+    "Decoded_Payload": "Decoded Payload",
+    "No_token_found": "No token found",
+    "LongDescriptions": "Error fetching token. Check network logs for more details."
+  },
+  "RequestPane_Auth_OAuth2_PasswordCredentials": {
+    "Configuration": "Configuration",
+    "Token": "Token",
+    "Advanced_Settings": "Advanced Settings",
+    "Settings": "Settings",
+    "Add_Credentials_to": "Add Credentials to",
+    "Token_ID": "Token ID",
+    "Add_token_to": "Add token to",
+    "Header_Prefix": "Header Prefix",
+    "Query_Param_Key": "Query Param Key",
+    "Refresh_Token_URL": "Refresh Token URL",
+    "Automatically_fetch_token_if_not_found": "Automatically fetch token if not found",
+    "Request_Body": "Request_Body",
+    "Basic_Auth_Header": "Basic Auth Header",
+    "Header": "Header",
+    "LongDescriptions2": "Automatically fetch a new token when you try to access a resource and don't have one.",
+    "LongDescriptions1": "Automatically refresh your token using the refresh URL when it expires."
+  },
+  "RequestPane_Auth_WsseAuth": {
+    "Username": "Username",
+    "Password": "Password"
+  },
+  "RequestPane_FileBody": {
+    "File": "File",
+    "Selected": "Selected",
+    "Add_File": "+ Add File"
+  },
+  "RequestPane_GraphQLRequestPane": {
+    "Something_went_wrong": "Something went wrong",
+    "Variables": "Variables",
+    "Headers": "Headers",
+    "Auth": "Auth",
+    "Vars": "Vars",
+    "Script": "Script",
+    "Assert": "Assert",
+    "Tests": "Tests",
+    "Docs": "Docs"
+  },
+  "RequestPane_GraphQLSchemaActions": {
+    "Schema": "Schema",
+    "Docs": "Docs",
+    "Load_from_File": "Load from File"
+  },
+  "RequestPane_HttpRequestPane": {
+    "Params": "Params",
+    "Body": "Body",
+    "Headers": "Headers",
+    "Auth": "Auth",
+    "Vars": "Vars",
+    "Script": "Script",
+    "Assert": "Assert",
+    "Tests": "Tests",
+    "Docs": "Docs",
+    "Something_went_wrong": "Something went wrong"
+  },
+  "RequestPane_QueryEditor": {
+    "Deprecated": "Deprecated"
+  },
+  "RequestPane_QueryParams": {
+    "Add_Param": "Add Param",
+    "Path": "Path",
+    "Bulk_Edit": "Bulk Edit"
+  },
+  "RequestPane_QueryUrl": {
+    "Generate_Code": "Generate Code",
+    "Save": "Save"
+  },
+  "RequestPane_RequestBody_RequestBodyMode": {
+    "Raw": "Raw",
+    "Other": "Other",
+    "Prettify": "Prettify",
+    "Multipart_Form": "Multipart Form",
+    "Form_URL_Encoded": "Form URL Encoded"
+  },
+  "RequestPane_RequestHeaders": {
+    "Add_Header": "+ Add Header",
+    "Bulk_Edit": "Bulk Edit"
+  },
+  "RequestPane_Vars_VarsTable": {
+    "Value": "Value",
+    "Expr": "Expr",
+    "Add": "+ Add"
+  },
+  "RequestPane_Assertions": {
+    "Add_Assertion": "+ Add Assertion",
+    "Expr": "Expr",
+    "Operator": "Operator",
+    "Value": "Value"
   }
 }

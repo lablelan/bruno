@@ -6,8 +6,10 @@ import SingleLineEditor from 'components/SingleLineEditor';
 import { updateAuth } from 'providers/ReduxStore/slices/collections';
 import { sendRequest, saveRequest } from 'providers/ReduxStore/slices/collections/actions';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const WsseAuth = ({ item, collection, updateAuth, request, save }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
 
@@ -49,7 +51,7 @@ const WsseAuth = ({ item, collection, updateAuth, request, save }) => {
 
   return (
     <StyledWrapper className="mt-2 w-full">
-      <label className="block font-medium mb-2">Username</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_WsseAuth.Username')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={wsseAuth.username || ''}
@@ -62,7 +64,7 @@ const WsseAuth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Password</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_WsseAuth.Password')}</label>
       <div className="single-line-editor-wrapper">
         <SingleLineEditor
           value={wsseAuth.password || ''}

@@ -8,8 +8,10 @@ import OAuth2ClientCredentials from './ClientCredentials/index';
 import { updateAuth } from 'providers/ReduxStore/slices/collections';
 import { saveRequest, sendRequest } from 'providers/ReduxStore/slices/collections/actions';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const GrantTypeComponentMap = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const save = () => {
@@ -35,7 +37,7 @@ const GrantTypeComponentMap = ({ item, collection }) => {
       return <OAuth2ClientCredentials item={item} save={save} request={request} handleRun={handleRun} updateAuth={updateAuth} collection={collection} />;
       break;
     default:
-      return <div>TBD</div>;
+      return <div>{t('RequestPane_Auth_OAuth2.TBD')}</div>;
       break;
   }
 };

@@ -9,8 +9,10 @@ import StyledWrapper from './StyledWrapper';
 import Table from 'components/Table/index';
 import ReorderTable from 'components/ReorderTable/index';
 import { moveAssertion } from 'providers/ReduxStore/slices/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const Assertions = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const assertions = item.draft ? get(item, 'draft.request.assertions') : get(item, 'request.assertions');
 
@@ -74,9 +76,9 @@ const Assertions = ({ item, collection }) => {
     <StyledWrapper className="w-full">
       <Table
         headers={[
-          { name: 'Expr', accessor: 'expr', width: '30%' },
-          { name: 'Operator', accessor: 'operator', width: '120px' },
-          { name: 'Value', accessor: 'value', width: '30%' },
+          { name: t('RequestPane_Assertions.Expr'), accessor: 'expr', width: '30%' },
+          { name: t('RequestPane_Assertions.Operator'), accessor: 'operator', width: '120px' },
+          { name: t('RequestPane_Assertions.Value'), accessor: 'value', width: '30%' },
           { name: '', accessor: '', width: '15%' }
         ]}
       >
@@ -114,7 +116,7 @@ const Assertions = ({ item, collection }) => {
         </ReorderTable>
       </Table>
       <button className="btn-add-assertion text-link pr-2 py-3 mt-2 select-none" onClick={handleAddAssertion}>
-        + Add Assertion
+        {t('RequestPane_Assertions.Add_Assertion')}
       </button>
     </StyledWrapper>
   );

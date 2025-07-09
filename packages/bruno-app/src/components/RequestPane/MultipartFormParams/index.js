@@ -206,12 +206,12 @@ const MultipartFormParams = ({ item, collection }) => {
       </Table>
       <div>
         <button className="btn-add-param text-link pr-2 pt-3 mt-2 select-none" onClick={addParam}>
-          t('MultipartFormParams.Add_Param')
+          {t('MultipartFormParams.Add_Param')}
         </button>
       </div>
       <div>
         <button className="btn-add-param text-link pr-2 pt-3 select-none" onClick={addFile}>
-          t('MultipartFormParams.Add_File')
+          {t('MultipartFormParams.Add_File')}
         </button>
       </div>
     </StyledWrapper>

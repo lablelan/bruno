@@ -8,8 +8,10 @@ import { sendRequest, saveRequest } from 'providers/ReduxStore/slices/collection
 import StyledWrapper from './StyledWrapper';
 import FilePickerEditor from 'components/FilePickerEditor/index';
 import SingleLineEditor from 'components/SingleLineEditor/index';
+import { useTranslation } from 'react-i18next';
 
 const FileBody = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const params = item.draft ? get(item, 'draft.request.body.file') : get(item, 'request.body.file');
@@ -71,13 +73,13 @@ const FileBody = ({ item, collection }) => {
         <thead>
           <tr>
             <td>
-              <div className="flex items-center justify-center">File</div>
+              <div className="flex items-center justify-center">{t('RequestPane_FileBody.File')}</div>
             </td>
             <td>
               <div className="flex items-center justify-center">Content-Type</div>
             </td>
             <td>
-              <div className="flex items-center justify-center">Selected</div>
+              <div className="flex items-center justify-center">{t('RequestPane_FileBody.Selected')}</div>
             </td>
             <td></td>
           </tr>
@@ -155,7 +157,7 @@ const FileBody = ({ item, collection }) => {
       </table>
       <div>
         <button className="btn-add-param text-link pr-2 pt-3 select-none" onClick={addFile}>
-          + Add File
+          {t('RequestPane_FileBody.Add_File')}
         </button>
       </div>
     </StyledWrapper>

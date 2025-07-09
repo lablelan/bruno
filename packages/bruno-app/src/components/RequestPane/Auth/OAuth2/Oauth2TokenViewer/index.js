@@ -4,8 +4,10 @@ import StyledWrapper from "./StyledWrapper";
 import { IconChevronDown, IconChevronRight, IconCopy, IconCheck } from '@tabler/icons';
 import { getAllVariables } from 'utils/collections/index';
 import { interpolate } from '@usebruno/common';
+import { useTranslation } from 'react-i18next';
 
 const TokenSection = ({ title, token }) => {
+  const { t } = useTranslation();
   if (!token) return null;
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -70,7 +72,9 @@ const TokenSection = ({ title, token }) => {
           </div>
           {decodedToken && (
             <div className="mt-3">
-              <div className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">Decoded Payload</div>
+              <div className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
+                {t('RequestPane_Auth_OAuth2_Oauth2TokenViewer.Decoded_Payload')}
+                </div>
               <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                 {Object.entries(decodedToken).map(([key, value]) => (
                   <div key={key} className="overflow-hidden text-ellipsis">
@@ -126,6 +130,7 @@ const ExpiryTimer = ({ expiresIn }) => {
 
 
 const Oauth2TokenViewer = ({ collection, item, url, credentialsId, handleRun }) => {
+  const { t } = useTranslation();
   const { uid: collectionUid } = collection;
 
   const interpolatedUrl = useMemo(() => {
@@ -140,7 +145,7 @@ const Oauth2TokenViewer = ({ collection, item, url, credentialsId, handleRun }) 
     <StyledWrapper className="relative w-auto h-fit mt-2">
       {Object.keys(creds)?.length ? (
         creds?.error ? (
-          <pre className="text-red-600 dark:text-red-400">Error fetching token. Check network logs for more details.</pre>
+          <pre className="text-red-600 dark:text-red-400">{t('RequestPane_Auth_OAuth2_Oauth2TokenViewer.LongDescriptions')}</pre>
         ) : (
           <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm">
             <TokenSection title="Access Token" token={creds.access_token} />
@@ -149,11 +154,11 @@ const Oauth2TokenViewer = ({ collection, item, url, credentialsId, handleRun }) 
             {(creds.token_type || creds.scope) ? <div className="mt-3 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg text-xs">
               <div className="grid grid-cols-2 gap-2">
                 {creds.token_type ? <div className="flex items-center space-x-1">
-                  <span className="font-medium">Token Type:</span>
+                  <span className="font-medium">{t('RequestPane_Auth_OAuth2_Oauth2TokenViewer.Token_Type')}:</span>
                   <span className="text-gray-600 dark:text-gray-300">{creds.token_type}</span>
                 </div> : null}
                 {creds?.scope ? <div className="flex items-center space-x-1 min-w-0">
-                  <span className="font-medium flex-shrink-0">Scope:</span>
+                  <span className="font-medium flex-shrink-0">{t('RequestPane_Auth_OAuth2_Oauth2TokenViewer.Scope')}:</span>
                   <span className="text-gray-600 dark:text-gray-300 truncate" title={creds.scope}>
                     {creds.scope}
                   </span>
@@ -163,7 +168,7 @@ const Oauth2TokenViewer = ({ collection, item, url, credentialsId, handleRun }) 
           </div>
         )     
       ) : (
-        <div className="text-sm text-gray-500 dark:text-gray-400">No token found</div>
+        <div className="text-sm text-gray-500 dark:text-gray-400">{t('RequestPane_Auth_OAuth2_Oauth2TokenViewer.No_token_found')}</div>
       )}
     </StyledWrapper>
   );

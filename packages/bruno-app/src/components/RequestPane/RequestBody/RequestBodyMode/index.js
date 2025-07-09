@@ -10,8 +10,10 @@ import { updateRequestBody } from 'providers/ReduxStore/slices/collections/index
 import { toastError } from 'utils/common/error';
 import { format, applyEdits } from 'jsonc-parser';
 import xmlFormat from 'xml-formatter';
+import { useTranslation } from 'react-i18next';
 
 const RequestBodyMode = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const dropdownTippyRef = useRef();
   const onDropdownCreate = (ref) => (dropdownTippyRef.current = ref);
@@ -79,7 +81,7 @@ const RequestBodyMode = ({ item, collection }) => {
               onModeChange('multipartForm');
             }}
           >
-            Multipart Form
+            {t('RequestPane_RequestBody_RequestBodyMode.Multipart_Form')}
           </div>
           <div
             className="dropdown-item"
@@ -88,9 +90,9 @@ const RequestBodyMode = ({ item, collection }) => {
               onModeChange('formUrlEncoded');
             }}
           >
-            Form URL Encoded
+            {t('RequestPane_RequestBody_RequestBodyMode.Form_URL_Encoded')}
           </div>
-          <div className="label-item font-medium">Raw</div>
+          <div className="label-item font-medium">{t('RequestPane_RequestBody_RequestBodyMode.Raw')}</div>
           <div
             className="dropdown-item"
             onClick={() => {
@@ -127,7 +129,7 @@ const RequestBodyMode = ({ item, collection }) => {
           >
             SPARQL
           </div>
-          <div className="label-item font-medium">Other</div>
+          <div className="label-item font-medium">{t('RequestPane_RequestBody_RequestBodyMode.Other')}</div>
           <div
             className="dropdown-item"
             onClick={() => {
@@ -149,9 +151,7 @@ const RequestBodyMode = ({ item, collection }) => {
         </Dropdown>
       </div>
       {(bodyMode === 'json' || bodyMode === 'xml') && (
-        <button className="ml-2" onClick={onPrettify}>
-          Prettify
-        </button>
+        <button className="ml-2" onClick={onPrettify}>{t('RequestPane_RequestBody_RequestBodyMode.Prettify')}</button>
       )}
     </StyledWrapper>
   );

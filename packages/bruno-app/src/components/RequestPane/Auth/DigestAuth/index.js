@@ -5,8 +5,10 @@ import { useDispatch } from 'react-redux';
 import SingleLineEditor from 'components/SingleLineEditor';
 import { sendRequest, saveRequest } from 'providers/ReduxStore/slices/collections/actions';
 import StyledWrapper from './StyledWrapper';
+import { useTranslation } from 'react-i18next';
 
 const DigestAuth = ({ item, collection, updateAuth, request, save }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
 
@@ -48,7 +50,7 @@ const DigestAuth = ({ item, collection, updateAuth, request, save }) => {
 
   return (
     <StyledWrapper className="mt-2 w-full">
-      <label className="block font-medium mb-2">Username</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_DigestAuth.Username')}</label>
       <div className="single-line-editor-wrapper mb-2">
         <SingleLineEditor
           value={digestAuth.username || ''}
@@ -61,7 +63,7 @@ const DigestAuth = ({ item, collection, updateAuth, request, save }) => {
         />
       </div>
 
-      <label className="block font-medium mb-2">Password</label>
+      <label className="block font-medium mb-2">{t('RequestPane_Auth_DigestAuth.Password')}</label>
       <div className="single-line-editor-wrapper">
         <SingleLineEditor
           value={digestAuth.password || ''}

@@ -6,8 +6,10 @@ import { IconLoader2 } from '@tabler/icons';
 import { interpolate } from '@usebruno/common';
 import { fetchOauth2Credentials, clearOauth2Cache, refreshOauth2Credentials } from 'providers/ReduxStore/slices/collections/actions';
 import { getAllVariables } from "utils/collections/index";
+import { useTranslation } from 'react-i18next';
 
 const Oauth2ActionButtons = ({ item, request, collection, url: accessTokenUrl, credentialsId }) => {
+  const { t } = useTranslation();
   const { uid: collectionUid } = collection;
 
   const dispatch = useDispatch();
@@ -80,14 +82,12 @@ const Oauth2ActionButtons = ({ item, request, collection, url: accessTokenUrl, c
   return (
     <div className="flex flex-row gap-4 mt-4">
       <button onClick={handleFetchOauth2Credentials} className={`submit btn btn-sm btn-secondary w-fit flex flex-row`}>
-        Get Access Token{fetchingToken? <IconLoader2 className="animate-spin ml-2" size={18} strokeWidth={1.5} /> : ""}
+        {t('RequestPane_Auth_OAuth2_Oauth2ActionButtons.Get_Access_Token')}{fetchingToken? <IconLoader2 className="animate-spin ml-2" size={18} strokeWidth={1.5} /> : ""}
       </button>
       {creds?.refresh_token ? <button onClick={handleRefreshAccessToken} className={`submit btn btn-sm btn-secondary w-fit flex flex-row`}>
-        Refresh Token{refreshingToken? <IconLoader2 className="animate-spin ml-2" size={18} strokeWidth={1.5} /> : ""}
+        {t('RequestPane_Auth_OAuth2_Oauth2ActionButtons.Refresh_Token')}{refreshingToken? <IconLoader2 className="animate-spin ml-2" size={18} strokeWidth={1.5} /> : ""}
       </button> : null}
-      <button onClick={handleClearCache} className="submit btn btn-sm btn-secondary w-fit">
-        Clear Cache
-      </button>
+      <button onClick={handleClearCache} className="submit btn btn-sm btn-secondary w-fit">{t('RequestPane_Auth_OAuth2_Oauth2ActionButtons.Clear_Cache')}</button>
     </div>
   )
 }

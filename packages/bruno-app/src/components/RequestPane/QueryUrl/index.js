@@ -11,8 +11,10 @@ import { isMacOS } from 'utils/common/platform';
 import StyledWrapper from './StyledWrapper';
 import GenerateCodeItem from 'components/Sidebar/Collections/Collection/CollectionItem/GenerateCodeItem/index';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 const QueryUrl = ({ item, collection, handleRun }) => {
+  const { t } = useTranslation();
   const { theme, storedTheme } = useTheme();
   const dispatch = useDispatch();
   const method = item.draft ? get(item, 'draft.request.method') : get(item, 'request.method');
@@ -114,9 +116,7 @@ const QueryUrl = ({ item, collection, handleRun }) => {
               size={22}
               className={'cursor-pointer'}
             />
-            <span className="infotiptext text-xs">
-              Generate Code
-            </span>
+            <span className="infotiptext text-xs">{t('RequestPane_QueryUrl.Generate_Code')}</span>
           </div>
           <div
             className="infotip mr-3"
@@ -133,7 +133,7 @@ const QueryUrl = ({ item, collection, handleRun }) => {
               className={`${item.draft ? 'cursor-pointer' : 'cursor-default'}`}
             />
             <span className="infotiptext text-xs">
-              Save <span className="shortcut">({saveShortcut})</span>
+              {t('RequestPane_QueryUrl.Save')} <span className="shortcut">({saveShortcut})</span>
             </span>
           </div>
           <IconArrowRight color={theme.requestTabPanel.url.icon} strokeWidth={1.5} size={22} />

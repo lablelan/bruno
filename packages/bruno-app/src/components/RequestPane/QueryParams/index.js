@@ -20,8 +20,10 @@ import StyledWrapper from './StyledWrapper';
 import Table from 'components/Table/index';
 import ReorderTable from 'components/ReorderTable';
 import BulkEditor from '../../BulkEditor';
+import { useTranslation } from 'react-i18next';
 
 const QueryParams = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const params = item.draft ? get(item, 'draft.request.params') : get(item, 'request.params');
@@ -200,14 +202,12 @@ const QueryParams = ({ item, collection }) => {
 
         <div className="flex justify-between mt-2">
           <button className="btn-action text-link pr-2 py-3 select-none" onClick={handleAddQueryParam}>
-            +&nbsp;<span>Add Param</span>
+            +&nbsp;<span>{t('RequestPane_QueryParams.Add_Param')}</span>
           </button>
-          <button className="btn-action text-link select-none" onClick={toggleBulkEditMode}>
-            Bulk Edit
-          </button>
+          <button className="btn-action text-link select-none" onClick={toggleBulkEditMode}>{t('RequestPane_QueryParams.Bulk_Edit')}</button>
         </div>
         <div className="mb-2 title text-xs flex items-stretch">
-          <span>Path</span>
+          <span>{t('RequestPane_QueryParams.Path')}</span>
           <InfoTip infotipId="path-param-InfoTip">
             <div>
               Path variables are automatically added whenever the

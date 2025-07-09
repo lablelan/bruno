@@ -100,7 +100,8 @@
   },
   "CollectionSettings_Docs": {
     "Save": "保存",
-    "Documentation": "文档"
+    "Documentation": "文档",
+    "LongDescriptions": "欢迎使用您的集合文档！此空间旨在帮助您有效地记录您的 API 集合。\n\n## 概述 \n 使用本节提供集合的高级概述。您可以描述：\n- 这些 API 端点的用途 \n- 主要特性和功能 \n- 目标受众或用户 \n\n## 最佳实践 \n- 保持文档更新 \n- 包含请求 / 响应示例 \n- 记录错误场景 \n- 添加相关链接和参考资料 \n\n## Markdown 支持 \n 本 documentation 支持 Markdown 格式！您可以使用：\n- 粗体 和 斜体 文本 \n- 代码块 和语法高亮 \n- 表格和列表 \n- 链接\n- 以及更多！"
   },
   "CollectionSettings_Headers": {
     "Add_Header_Description": "添加将随集合中所有请求一同发送的请求头。",
@@ -170,5 +171,183 @@
   "CollectionSettings_Vars_VarsTable": {
     "Value": "值",
     "Expr": "表达式"
+  },
+  "RequestPane_Auth_ApiKeyAuth": {
+    "Key": "键名",
+    "Value": "值",
+    "Add_To": "添加到",
+    "Header": "请求头",
+    "Query_Param": "查询参数"
+  },
+  "RequestPane_Auth_AwsV4Auth": {
+    "Access_Key_ID": "访问密钥ID",
+    "Secret_Access_Key": "秘密访问密钥",
+    "Session_Token": "会话令牌",
+    "Service": "服务",
+    "Region": "区域",
+    "Profile_Name": "配置文件名称"
+  },
+  "RequestPane_Auth_BasicAuth": {
+    "Username": "用户名",
+    "Password": "密码"
+  },
+  "RequestPane_Auth_BearerAuth": {
+    "Token": "令牌"
+  },
+  "RequestPane_Auth_DigestAuth": {
+    "Username": "用户名",
+    "Password": "密码"
+  },
+  "RequestPane_Auth_NTLMAuth": {
+    "Username": "用户名",
+    "Password": "密码",
+    "Domain": "域"
+  },
+  "RequestPane_Auth_OAuth2_AuthorizationCode": {
+    "Configuration": "配置",
+    "Token": "令牌",
+    "Advanced_Settings": "高级设置",
+    "Settings": "设置",
+    "Add_Credentials_to": "将凭据添加到",
+    "Use_PKCE": "使用PKCE",
+    "Token_ID": "令牌ID",
+    "Add_token_to": "将令牌添加到",
+    "Header_Prefix": "请求头前缀",
+    "Query_Param_Key": "查询参数键名",
+    "Refresh_Token_URL": "刷新令牌URL",
+    "Automatically_fetch_token_if_not_found": "若未找到令牌则自动获取",
+    "Request_Body": "请求体",
+    "Basic_Auth_Header": "基础认证请求头",
+    "LongDescriptions2": "尝试访问资源但没有令牌时，自动获取新令牌。",
+    "LongDescriptions1": "令牌过期时，使用刷新URL自动刷新令牌。"
+  },
+  "RequestPane_Auth_OAuth2_ClientCredentials": {
+    "Configuration": "配置",
+    "Token": "令牌",
+    "Advanced_Settings": "高级设置",
+    "Settings": "设置",
+    "Add_Credentials_to": "将凭据添加到",
+    "Token_ID": "令牌ID",
+    "Add_token_to": "将令牌添加到",
+    "Header_Prefix": "请求头前缀",
+    "Query_Param_Key": "查询参数键名",
+    "Refresh_Token_URL": "刷新令牌URL",
+    "Automatically_fetch_token_if_not_found": "若未找到令牌则自动获取",
+    "Request_Body": "请求体",
+    "Basic_Auth_Header": "基础认证请求头",
+    "Header": "请求头",
+    "URL": "统一资源定位符",
+    "LongDescriptions2": "尝试访问资源但没有令牌时，自动获取新令牌。",
+    "LongDescriptions1": "令牌过期时，使用刷新URL自动刷新令牌。"
+  },
+  "RequestPane_Auth_OAuth2_GrantTypeSelector": {
+    "Grant_Type": "授权类型",
+    "Password_Credentials": "密码凭据",
+    "Authorization_Code": "授权码",
+    "Client_Credentials": "客户端凭据"
+  },
+  "RequestPane_Auth_OAuth2": {
+    "TBD": "待实现"
+  },
+  "RequestPane_Auth_OAuth2_Oauth2ActionButtons": {
+    "Get_Access_Token": "获取访问令牌",
+    "Refresh_Token": "刷新令牌",
+    "Clear_Cache": "清除缓存"
+  },
+  "RequestPane_Auth_OAuth2_Oauth2TokenViewer": {
+    "Token_Type": "令牌类型",
+    "Scope": "权限范围",
+    "Decoded_Payload": "解码后的负载",
+    "No_token_found": "未找到令牌",
+    "LongDescriptions": "获取令牌出错。详情请查看网络日志。"
+  },
+  "RequestPane_Auth_OAuth2_PasswordCredentials": {
+    "Configuration": "配置",
+    "Token": "令牌",
+    "Advanced_Settings": "高级设置",
+    "Settings": "设置",
+    "Add_Credentials_to": "将凭据添加到",
+    "Token_ID": "令牌ID",
+    "Add_token_to": "将令牌添加到",
+    "Header_Prefix": "请求头前缀",
+    "Query_Param_Key": "查询参数键名",
+    "Refresh_Token_URL": "刷新令牌URL",
+    "Automatically_fetch_token_if_not_found": "若未找到令牌则自动获取",
+    "Request_Body": "请求体",
+    "Basic_Auth_Header": "基础认证请求头",
+    "Header": "请求头",
+    "LongDescriptions2": "尝试访问资源但没有令牌时，自动获取新令牌。",
+    "LongDescriptions1": "令牌过期时，使用刷新URL自动刷新令牌。"
+  },
+  "RequestPane_Auth_WsseAuth": {
+    "Username": "用户名",
+    "Password": "密码"
+  },
+  "RequestPane_FileBody": {
+    "File": "文件",
+    "Selected": "已选择",
+    "Add_File": "+ 添加文件"
+  },
+  "RequestPane_GraphQLRequestPane": {
+    "Something_went_wrong": "出了点问题",
+    "Variables": "变量",
+    "Headers": "请求头",
+    "Auth": "认证",
+    "Vars": "变量",
+    "Script": "脚本",
+    "Assert": "断言",
+    "Tests": "测试",
+    "Docs": "文档"
+  },
+  "RequestPane_GraphQLSchemaActions": {
+    "Schema": "模式",
+    "Docs": "文档",
+    "Load_from_File": "从文件加载"
+  },
+  "RequestPane_HttpRequestPane": {
+    "Params": "参数",
+    "Body": "请求体",
+    "Headers": "请求头",
+    "Auth": "认证",
+    "Vars": "变量",
+    "Script": "脚本",
+    "Assert": "断言",
+    "Tests": "测试",
+    "Docs": "文档",
+    "Something_went_wrong": "出了点问题"
+  },
+  "RequestPane_QueryEditor": {
+    "Deprecated": "已过时"
+  },
+  "RequestPane_QueryParams": {
+    "Add_Param": "添加参数",
+    "Path": "路径",
+    "Bulk_Edit": "批量编辑"
+  },
+  "RequestPane_QueryUrl": {
+    "Generate_Code": "生成代码",
+    "Save": "保存"
+  },
+  "RequestPane_RequestBody_RequestBodyMode": {
+    "Raw": "原始",
+    "Other": "其他",
+    "Prettify": "格式化",
+    "Multipart_Form": "多部分表单",
+    "Form_URL_Encoded": "表单URL编码"
+  },
+  "RequestPane_RequestHeaders": {
+    "Add_Header": "+ 添加请求头",
+    "Bulk_Edit": "批量编辑"
+  },
+  "RequestPane_Vars_VarsTable": {
+    "Value": "值",
+    "Expr": "表达式",
+    "Add": "+ 添加"
+  },
+  "RequestPane_Assertions": {
+    "Add_Assertion": "+ 添加断言",
+    "Expr": "表达式",
+    "Operator": "运算符",
+    "Value": "值"
   }
 }

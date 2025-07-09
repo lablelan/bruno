@@ -7,8 +7,10 @@ import { IconCaretDown, IconKey } from '@tabler/icons';
 import { humanizeGrantType } from 'utils/collections';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const GrantTypeSelector = ({ item = {}, request, updateAuth, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const dropdownTippyRef = useRef();
   const oAuth = get(request, 'auth.oauth2', {});
@@ -77,9 +79,7 @@ const GrantTypeSelector = ({ item = {}, request, updateAuth, collection }) => {
         <div className="flex items-center px-2.5 py-1.5 bg-indigo-50/50 dark:bg-indigo-500/10 rounded-md">
           <IconKey size={14} className="text-indigo-500 dark:text-indigo-400" />
         </div>
-        <span className="text-sm font-medium">
-          Grant Type
-        </span>
+        <span className="text-sm font-medium">{t('RequestPane_Auth_OAuth2_GrantTypeSelector.Grant_Type')}</span>
       </div>
       <div className="inline-flex items-center cursor-pointer grant-type-mode-selector w-fit">
         <Dropdown onCreate={onDropdownCreate} icon={<Icon />} placement="bottom-end">
@@ -90,7 +90,8 @@ const GrantTypeSelector = ({ item = {}, request, updateAuth, collection }) => {
               onGrantTypeChange('password');
             }}
           >
-            Password Credentials
+            
+            {t('RequestPane_Auth_OAuth2_GrantTypeSelector.Password_Credentials')}
           </div>
           <div
             className="dropdown-item"
@@ -99,7 +100,8 @@ const GrantTypeSelector = ({ item = {}, request, updateAuth, collection }) => {
               onGrantTypeChange('authorization_code');
             }}
           >
-            Authorization Code
+            
+            {t('RequestPane_Auth_OAuth2_GrantTypeSelector.Authorization_Code')}
           </div>
           <div
             className="dropdown-item"
@@ -108,7 +110,8 @@ const GrantTypeSelector = ({ item = {}, request, updateAuth, collection }) => {
               onGrantTypeChange('client_credentials');
             }}
           >
-            Client Credentials
+            
+            {t('RequestPane_Auth_OAuth2_GrantTypeSelector.Client_Credentials')}
           </div>
         </Dropdown>
       </div>

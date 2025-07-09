@@ -12,8 +12,10 @@ import toast from 'react-hot-toast';
 import { variableNameRegex } from 'utils/common/regex';
 import Table from 'components/Table/index';
 import ReorderTable from 'components/ReorderTable/index';
+import { useTranslation } from 'react-i18next';
 
 const VarsTable = ({ item, collection, vars, varType }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
 
@@ -93,11 +95,11 @@ const VarsTable = ({ item, collection, vars, varType }) => {
           { name: 'Name', accessor: 'name', width: '40%' },
           { name: varType === 'request' ? (
               <div className="flex items-center">
-                <span>Value</span>
+                <span>{t('RequestPane_Vars_VarsTable.Value')}</span>
               </div>
           ) : (
               <div className="flex items-center">
-                <span>Expr</span>
+                <span>{t('RequestPane_Vars_VarsTable.Expr')}</span>
                 <InfoTip content="You can write any valid JS expression here" infotipId="response-var" />
               </div>
           ), accessor: 'value', width: '46%' },
@@ -163,7 +165,7 @@ const VarsTable = ({ item, collection, vars, varType }) => {
         </ReorderTable>
       </Table>
       <button className="btn-add-var text-link pr-2 py-3 mt-2 select-none" onClick={handleAddVar}>
-        + Add
+        {t('RequestPane_Vars_VarsTable.Add')}
       </button>
     </StyledWrapper>
   );

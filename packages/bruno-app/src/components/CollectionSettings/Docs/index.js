@@ -87,7 +87,7 @@ const Docs = ({ collection }) => {
               docs?.length > 0 ?
                 <Markdown collectionPath={collection.pathname} onDoubleClick={toggleViewMode} content={docs} />
                 :
-                <Markdown collectionPath={collection.pathname} onDoubleClick={toggleViewMode} content={documentationPlaceholder} />
+                <Markdown collectionPath={collection.pathname} onDoubleClick={toggleViewMode} content={t('CollectionSettings_Docs.LongDescriptions')} />
             }         
           </div>
         </div>
