@@ -25,8 +25,10 @@ import { areItemsLoading } from 'utils/collections';
 import { scrollToTheActiveTab } from 'utils/tabs';
 import ShareCollection from 'components/ShareCollection/index';
 import { CollectionItemDragPreview } from './CollectionItem/CollectionItemDragPreview/index';
+import { useTranslation } from 'react-i18next';
 
 const Collection = ({ collection, searchText }) => {
+  const { t } = useTranslation();
   const [showNewFolderModal, setShowNewFolderModal] = useState(false);
   const [showNewRequestModal, setShowNewRequestModal] = useState(false);
   const [showRenameCollectionModal, setShowRenameCollectionModal] = useState(false);
@@ -237,7 +239,7 @@ const Collection = ({ collection, searchText }) => {
                 setShowNewRequestModal(true);
               }}
             >
-              New Request
+              {t('Sidebar_Collections_Collection.New_Request')}
             </div>
             <div
               className="dropdown-item"
@@ -246,7 +248,7 @@ const Collection = ({ collection, searchText }) => {
                 setShowNewFolderModal(true);
               }}
             >
-              New Folder
+              {t('Sidebar_Collections_Collection.New_Folder')}
             </div>
             <div
               className="dropdown-item"
@@ -255,7 +257,7 @@ const Collection = ({ collection, searchText }) => {
                 setShowCloneCollectionModalOpen(true);
               }}
             >
-              Clone
+              {t('Sidebar_Collections_Collection.Clone')}
             </div>
             <div
               className="dropdown-item"
@@ -264,7 +266,7 @@ const Collection = ({ collection, searchText }) => {
                 handleRun();
               }}
             >
-              Run
+              {t('Sidebar_Collections_Collection.Run')}
             </div>
             <div
               className="dropdown-item"
@@ -273,7 +275,7 @@ const Collection = ({ collection, searchText }) => {
                 setShowRenameCollectionModal(true);
               }}
             >
-              Rename
+              {t('Sidebar_Collections_Collection.Rename')}
             </div>
             <div
               className="dropdown-item"
@@ -282,7 +284,7 @@ const Collection = ({ collection, searchText }) => {
                 setShowShareCollectionModal(true);
               }}
             >
-              Share
+              {t('Sidebar_Collections_Collection.Share')}
             </div>
             <div
               className="dropdown-item"
@@ -291,7 +293,7 @@ const Collection = ({ collection, searchText }) => {
                 setShowRemoveCollectionModal(true);
               }}
             >
-              Close
+              {t('Sidebar_Collections_Collection.Close')}
             </div>
             <div
               className="dropdown-item"
@@ -300,7 +302,7 @@ const Collection = ({ collection, searchText }) => {
                 viewCollectionSettings();
               }}
             >
-              Settings
+              {t('Sidebar_Collections_Collection.Settings')}
             </div>
           </Dropdown>
         </div>

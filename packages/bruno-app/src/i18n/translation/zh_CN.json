@@ -801,5 +801,29 @@
     "Name": "名称",
     "Value": "值",
     "Secret": "机密"
+  },
+  "Sidebar_Collections_Collection": {
+    "New_Request": "新建请求",
+    "New_Folder": "新建文件夹",
+    "Run": "运行",
+    "Rename": "重命名",
+    "Clone": "克隆",
+    "Close": "关闭",
+    "Share": "分享",
+    "Delete": "删除",
+    "Settings": "设置",
+    "Info": "信息"
+  },
+  "Sidebar_Collections_CollectionItem": {
+    "New_Request": "新建请求",
+    "New_Folder": "新建文件夹",
+    "Run": "运行",
+    "Rename": "重命名",
+    "Clone": "克隆",
+    "Generate_Code": "生成代码",
+    "Show_in_Folder": "在文件夹中显示",
+    "Delete": "删除",
+    "Settings": "设置",
+    "Info": "信息"
   }
 }

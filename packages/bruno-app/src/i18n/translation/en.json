@@ -801,5 +801,29 @@
     "Name": "Name",
     "Value": "Value",
     "Secret": "Secret"
+  },
+  "Sidebar_Collections_Collection": {
+    "New_Request": "New Request",
+    "New_Folder": "New Folder",
+    "Run": "Run",
+    "Rename": "Rename",
+    "Clone": "Clone",
+    "Close": "Close",
+    "Share": "Share",
+    "Delete": "Delete",
+    "Settings": "Settings",
+    "Info": "Info"
+  },
+  "Sidebar_Collections_CollectionItem": {
+    "New_Request": "New Request",
+    "New_Folder": "New Folder",
+    "Run": "Run",
+    "Rename": "Rename",
+    "Clone": "Clone",
+    "Generate_Code": "Generate Code",
+    "Show_in_Folder": "Show in Folder",
+    "Delete": "Delete",
+    "Settings": "Settings",
+    "Info": "Info"
   }
 }

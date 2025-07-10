@@ -30,8 +30,10 @@ import { scrollToTheActiveTab } from 'utils/tabs';
 import { isTabForItemActive as isTabForItemActiveSelector, isTabForItemPresent as isTabForItemPresentSelector } from 'src/selectors/tab';
 import { isEqual } from 'lodash';
 import { calculateDraggedItemNewPathname } from 'utils/collections/index';
+import { useTranslation } from 'react-i18next';
 
 const CollectionItem = ({ item, collectionUid, collectionPathname, searchText }) => {
+  const { t } = useTranslation();
   const _isTabForItemActiveSelector = isTabForItemActiveSelector({ itemUid: item.uid });
   const isTabForItemActive = useSelector(_isTabForItemActiveSelector, isEqual);
 
@@ -378,7 +380,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                       setNewRequestModalOpen(true);
                     }}
                   >
-                    New Request
+                    {t('Sidebar_Collections_CollectionItem.New_Request')}
                   </div>
                   <div
                     className="dropdown-item"
@@ -387,7 +389,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                       setNewFolderModalOpen(true);
                     }}
                   >
-                    New Folder
+                    {t('Sidebar_Collections_CollectionItem.New_Folder')}
                   </div>
                   <div
                     className="dropdown-item"
@@ -396,7 +398,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                       setRunCollectionModalOpen(true);
                     }}
                   >
-                    Run
+                    {t('Sidebar_Collections_CollectionItem.Run')}
                   </div>
                 </>
               )}
@@ -407,7 +409,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                   setRenameItemModalOpen(true);
                 }}
               >
-                Rename
+                {t('Sidebar_Collections_CollectionItem.Rename')}
               </div>
               <div
                 className="dropdown-item"
@@ -416,7 +418,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                   setCloneItemModalOpen(true);
                 }}
               >
-                Clone
+                {t('Sidebar_Collections_CollectionItem.Clone')}
               </div>
               {!isFolder && (
                 <div
@@ -427,7 +429,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                     handleRun();
                   }}
                 >
-                  Run
+                  {t('Sidebar_Collections_CollectionItem.Run')}
                 </div>
               )}
               {!isFolder && (item.type === 'http-request' || item.type === 'graphql-request') && (
@@ -437,7 +439,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                     handleGenerateCode(e);
                   }}
                 >
-                  Generate Code
+                  {t('Sidebar_Collections_CollectionItem.Generate_Code')}
                 </div>
               )}
               <div
@@ -447,7 +449,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                   handleShowInFolder();
                 }}
               >
-                Show in Folder
+                {t('Sidebar_Collections_CollectionItem.Show_in_Folder')}
               </div>
               <div
                 className="dropdown-item delete-item"
@@ -456,7 +458,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                   setDeleteItemModalOpen(true);
                 }}
               >
-                Delete
+                {t('Sidebar_Collections_CollectionItem.Delete')}
               </div>
               {isFolder && (
                 <div
@@ -466,7 +468,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                     viewFolderSettings();
                   }}
                 >
-                  Settings
+                  {t('Sidebar_Collections_CollectionItem.Settings')}
                 </div>
               )}
               <div
@@ -476,7 +478,7 @@ const CollectionItem = ({ item, collectionUid, collectionPathname, searchText })
                   setItemInfoModalOpen(true);
                 }}
               >
-                Info
+                {t('Sidebar_Collections_CollectionItem.Info')}
               </div>
             </Dropdown>
           </div>
