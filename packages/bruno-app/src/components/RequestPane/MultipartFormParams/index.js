@@ -16,6 +16,7 @@ import StyledWrapper from './StyledWrapper';
 import FilePickerEditor from 'components/FilePickerEditor';
 import Table from 'components/Table/index';
 import ReorderTable from 'components/ReorderTable/index';
+import { useTranslation } from 'react-i18next';
 
 const MultipartFormParams = ({ item, collection }) => {
   const { t } = useTranslation();

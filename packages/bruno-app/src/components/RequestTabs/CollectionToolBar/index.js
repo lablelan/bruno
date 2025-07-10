@@ -8,8 +8,10 @@ import { useDispatch } from 'react-redux';
 import ToolHint from 'components/ToolHint';
 import StyledWrapper from './StyledWrapper';
 import JsSandboxMode from 'components/SecuritySettings/JsSandboxMode';
+import { useTranslation } from 'react-i18next';
 
 const CollectionToolBar = ({ collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const handleRun = () => {
@@ -54,17 +56,17 @@ const CollectionToolBar = ({ collection }) => {
             <JsSandboxMode collection={collection} />
           </span>
           <span className="mr-3">
-            <ToolHint text="Runner" toolhintId="RunnnerToolhintId" place='bottom'>
+            <ToolHint text={t("RequestTabs_CollectionToolBar.Runner")} toolhintId="RunnnerToolhintId" place='bottom'>
               <IconRun className="cursor-pointer" size={18} strokeWidth={1.5} onClick={handleRun} />
             </ToolHint>
           </span>
           <span className="mr-3">
-            <ToolHint text="Variables" toolhintId="VariablesToolhintId">
+            <ToolHint text={t("RequestTabs_CollectionToolBar.Variables")} toolhintId="VariablesToolhintId">
               <IconEye className="cursor-pointer" size={18} strokeWidth={1.5} onClick={viewVariables} />
             </ToolHint>
           </span>
           <span className="mr-3">
-            <ToolHint text="Collection Settings" toolhintId="CollectionSettingsToolhintId">
+            <ToolHint text={t("RequestTabs_CollectionToolBar.Collection_Settings")} toolhintId="CollectionSettingsToolhintId">
               <IconSettings className="cursor-pointer" size={18} strokeWidth={1.5} onClick={viewCollectionSettings} />
             </ToolHint>
           </span>

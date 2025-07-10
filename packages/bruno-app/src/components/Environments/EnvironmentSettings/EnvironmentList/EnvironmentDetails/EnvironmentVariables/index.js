@@ -14,8 +14,10 @@ import { saveEnvironment } from 'providers/ReduxStore/slices/collections/actions
 import toast from 'react-hot-toast';
 import { Tooltip } from 'react-tooltip';
 import { getGlobalEnvironmentVariables } from 'utils/collections';
+import { useTranslation } from 'react-i18next';
 
 const EnvironmentVariables = ({ environment, collection, setIsModified, originalEnvironmentVariables, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const addButtonRef = useRef(null);
@@ -127,10 +129,10 @@ const EnvironmentVariables = ({ environment, collection, setIsModified, original
         <table>
           <thead>
             <tr>
-              <td className="text-center">Enabled</td>
-              <td>Name</td>
-              <td>Value</td>
-              <td className="text-center">Secret</td>
+              <td className="text-center">{t('EnvironmentDetails_EnvironmentVariables.Enabled')}</td>
+              <td>{t('EnvironmentDetails_EnvironmentVariables.Name')}</td>
+              <td>{t('EnvironmentDetails_EnvironmentVariables.Value')}</td>
+              <td className="text-center">{t('EnvironmentDetails_EnvironmentVariables.Secret')}</td>
               <td></td>
             </tr>
           </thead>
@@ -199,7 +201,7 @@ const EnvironmentVariables = ({ environment, collection, setIsModified, original
             className="btn-add-param text-link pr-2 py-3 mt-2 select-none"
             onClick={addVariable}
           >
-            + Add Variable
+            {t('EnvironmentDetails_EnvironmentVariables.Add_Variable')}
           </button>
         </div>
       </div>
@@ -207,15 +209,15 @@ const EnvironmentVariables = ({ environment, collection, setIsModified, original
       <div className="flex items-center">
         <button type="submit" className="submit btn btn-sm btn-secondary mt-2 flex items-center" onClick={formik.handleSubmit}>
           <IconDeviceFloppy size={16} strokeWidth={1.5} className="mr-1" />
-          Save
+          {t('EnvironmentDetails_EnvironmentVariables.Save')}
         </button>
         <button type="submit" className="ml-2 px-1 submit btn btn-sm btn-close mt-2 flex items-center" onClick={handleReset}>
           <IconRefresh size={16} strokeWidth={1.5} className="mr-1" />
-          Reset
+          {t('EnvironmentDetails_EnvironmentVariables.Reset')}
         </button>
         <button type="submit" className="submit btn btn-sm btn-close mt-2 flex items-center" onClick={onActivate}>
           <IconCircleCheck size={16} strokeWidth={1.5} className="mr-1" />
-          Activate
+          {t('EnvironmentDetails_EnvironmentVariables.Activate')}
         </button>
       </div>
     </StyledWrapper>

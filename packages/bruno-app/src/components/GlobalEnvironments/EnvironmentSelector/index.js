@@ -22,7 +22,7 @@ const EnvironmentSelector = () => {
   const Icon = forwardRef((props, ref) => {
     return (
         <div ref={ref} className={`current-environment flex flex-row gap-1 rounded-xl text-xs cursor-pointer items-center justify-center select-none ${activeGlobalEnvironmentUid? 'environment-active': ''}`}>
-          <ToolHint text="Global Environments" toolhintId="GlobalEnvironmentsToolhintId" className='flex flex-row'>
+          <ToolHint text={t("GlobalEnvironments_EnvironmentSelector.Global_Environments")} toolhintId="GlobalEnvironmentsToolhintId" className='flex flex-row'>
             <IconWorld className="globe" size={16} strokeWidth={1.5} />
             {
               activeEnvironment ? <div className='text-nowrap truncate max-w-32'>{activeEnvironment?.name}</div> : null
@@ -58,7 +58,7 @@ const EnvironmentSelector = () => {
     <StyledWrapper>
       <div className="flex items-center cursor-pointer environment-selector mr-3">
         <Dropdown onCreate={onDropdownCreate} icon={<Icon />} placement="bottom-end" transparent={true}>
-          <div className="label-item font-medium">Global Environments</div>
+          <div className="label-item font-medium">{t("GlobalEnvironments_EnvironmentSelector.Global_Environments")}</div>
           {globalEnvironments && globalEnvironments.length
             ? globalEnvironments.map((e) => (
                 <div

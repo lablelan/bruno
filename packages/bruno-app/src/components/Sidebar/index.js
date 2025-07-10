@@ -160,7 +160,7 @@ const Sidebar = () => {
                     <a
                       className="cursor-pointer"
                       data-trigger="golden-edition"
-                      onClick={() => setGoldenEditionOpen(true)}
+                      // onClick={() => setGoldenEditionOpen(true)}
                       tabIndex={0}
                       aria-label="Open Golden Edition"
                     >

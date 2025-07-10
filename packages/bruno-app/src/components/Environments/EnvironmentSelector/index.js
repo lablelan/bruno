@@ -21,7 +21,7 @@ const EnvironmentSelector = ({ collection }) => {
   const Icon = forwardRef((props, ref) => {
     return (
       <div ref={ref} className="current-environment flex items-center justify-center pl-3 pr-2 py-1 select-none">
-        <p className="text-nowrap truncate max-w-32">{activeEnvironment ? activeEnvironment.name : 'No Environment'}</p>
+        <p className="text-nowrap truncate max-w-32">{activeEnvironment ? activeEnvironment.name : t('Environments_EnvironmentSelector.No_Environment')}</p>
         <IconCaretDown className="caret" size={14} strokeWidth={2} />
       </div>
     );
@@ -55,7 +55,7 @@ const EnvironmentSelector = ({ collection }) => {
     <StyledWrapper>
       <div className="flex items-center cursor-pointer environment-selector">
         <Dropdown onCreate={onDropdownCreate} icon={<Icon />} placement="bottom-end">
-          <div className="label-item font-medium">Collection Environments</div>
+          <div className="label-item font-medium">{t('Environments_EnvironmentSelector.Collection_Environments')}</div>
           {environments && environments.length
             ? environments.map((e) => (
                 <div

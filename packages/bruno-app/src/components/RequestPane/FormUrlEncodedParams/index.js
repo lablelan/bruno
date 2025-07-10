@@ -15,8 +15,10 @@ import { sendRequest, saveRequest } from 'providers/ReduxStore/slices/collection
 import StyledWrapper from './StyledWrapper';
 import ReorderTable from 'components/ReorderTable/index';
 import Table from 'components/Table/index';
+import { useTranslation } from 'react-i18next';
 
 const FormUrlEncodedParams = ({ item, collection }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { storedTheme } = useTheme();
   const params = item.draft ? get(item, 'draft.request.body.formUrlEncoded') : get(item, 'request.body.formUrlEncoded');
@@ -33,7 +35,6 @@ const FormUrlEncodedParams = ({ item, collection }) => {
   const onSave = () => dispatch(saveRequest(item.uid, collection.uid));
   const handleRun = () => dispatch(sendRequest(item, collection.uid));
   const handleParamChange = (e, _param, type) => {
-    const { t } = useTranslation();
     const param = cloneDeep(_param);
     switch (type) {
       case 'name': {
@@ -147,7 +148,7 @@ const FormUrlEncodedParams = ({ item, collection }) => {
         </ReorderTable>
       </Table>
       <button className="btn-add-param text-link pr-2 py-3 mt-2 select-none" onClick={addParam}>
-        t('FormUrlEncodedParams.Add_Param')
+        {t('FormUrlEncodedParams.Add_Param')}
       </button>
     </StyledWrapper>
   );

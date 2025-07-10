@@ -51,7 +51,7 @@ const EnvironmentSettings = ({ globalEnvironments, activeGlobalEnvironmentUid, o
   if (!environments || !environments.length) {
     return (
       <StyledWrapper>
-        <Modal size="md" title="Global Environments" handleCancel={onClose} hideCancel={true} hideFooter={true}>
+        <Modal size="md" title={t('GlobalEnvironments_EnvironmentSettings.Global_Environments')} handleCancel={onClose} hideCancel={true} hideFooter={true}>
           {tab === 'create' ? (
             <CreateEnvironment onClose={() => setTab('default')} />
           ) : tab === 'import' ? (
@@ -66,7 +66,7 @@ const EnvironmentSettings = ({ globalEnvironments, activeGlobalEnvironmentUid, o
   }
 
   return (
-    <Modal size="lg" title="Global Environments" handleCancel={onClose} hideFooter={true}>
+    <Modal size="lg" title={t('GlobalEnvironments_EnvironmentSettings.Global_Environments')} handleCancel={onClose} hideFooter={true}>
       <EnvironmentList
         environments={globalEnvironments}
         activeEnvironmentUid={activeGlobalEnvironmentUid}

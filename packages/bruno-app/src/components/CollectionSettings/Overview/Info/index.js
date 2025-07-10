@@ -43,7 +43,7 @@ const Info = ({ collection }) => {
             <div className="ml-4">
               <div className="font-semibold text-sm">{t('CollectionSettings_Overview_Info.Environments')}</div>
               <div className="mt-1 text-sm text-muted">
-                {collection.environments?.length || 0} {t('CollectionSettings_Overview_Info.environment')}{collection.environments?.length !== 1 ? 's' : ''} configured
+                {collection.environments?.length || 0} {collection.environments?.length !== 1 ? t('CollectionSettings_Overview_Info.environment')+'s' : t('CollectionSettings_Overview_Info.environment')} {t('CollectionSettings_Overview_Info.configured')}
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ const Info = ({ collection }) => {
               <div className="font-semibold text-sm">{t('CollectionSettings_Overview_Info.Requests')}</div>
               <div className="mt-1 text-sm text-muted">
                 {
-                  isCollectionLoading? `${totalItems - itemsLoadingCount} out of ${totalItems} requests in the collection loaded` : `${totalRequestsInCollection} request${totalRequestsInCollection !== 1 ? 's' : ''} in collection`
+                  isCollectionLoading? `${totalItems - itemsLoadingCount} ${t('CollectionSettings_Overview_Info.out_of')} ${totalItems} ${t('CollectionSettings_Overview_Info.requests_in_the_collection_loaded')}` : `${totalRequestsInCollection} ${totalRequestsInCollection !== 1 ? t('CollectionSettings_Overview_Info.request') + 's' : t('CollectionSettings_Overview_Info.request')} ${t('CollectionSettings_Overview_Info.in_collection')}`
                 }
               </div>
             </div>

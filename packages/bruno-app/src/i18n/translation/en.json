@@ -121,12 +121,17 @@
     "Presets": "Presets"
   },
   "CollectionSettings_Overview_Info": {
+    "request": "request",
+    "configured": "configured",
     "Location": "Location",
     "environment": "environment",
     "Environments": "Environments",
     "Requests": "Requests",
     "Share": "Share",
-    "Share_Collection": "Share Collection"
+    "Share_Collection": "Share Collection",
+    "in_collection": "in collection",
+    "out_of": "out of",
+    "requests_in_the_collection_loaded": "requests in the collection loaded"
   },
   "CollectionSettings_Overview_RequestsNotLoaded": {
     "Following_requests_were_not_loaded": "Following requests were not loaded"
@@ -331,6 +336,7 @@
     "Save": "Save"
   },
   "RequestPane_RequestBody_RequestBodyMode": {
+    "Form": "Form",
     "Raw": "Raw",
     "Other": "Other",
     "Prettify": "Prettify",
@@ -474,6 +480,7 @@
     "Devtools": "Devtools"
   },
   "Environments_EnvironmentSelector": {
+    "Collection_Environments": "Collection Environments",
     "No_Environment": "No Environment",
     "Configure": "Configure"
   },
@@ -504,6 +511,7 @@
     "Environment_Name": "Environment Name"
   },
   "GlobalEnvironments_EnvironmentSelector": {
+    "Global_Environments": "Global Environments",
     "No_Environment": "No Environment",
     "Configure": "Configure"
   },
@@ -530,6 +538,7 @@
     "Import_your_Postman_environments": "Import your Postman environments"
   },
   "GlobalEnvironments_EnvironmentSettings": {
+    "Global_Environments": "Global Environments",
     "No_Global_Environments_found": "No Global Environments found",
     "Create_Global_Environment": "Create Global Environment",
     "Or": "Or",
@@ -724,7 +733,10 @@
     "Run_Collection": "Run Collection",
     "Reset": "Reset",
     "Cancel_Execution": "Cancel Execution",
-    "Run_Again": "Run Again"
+    "Run_Again": "Run Again",
+    "You_have": "You have",
+    "requests_in_this_collection": "requests in this collection",
+    "LongDescriptions1": "Requests in this collection are still loading."
   },
   "RunnerResults_ResponsePane": {
     "Response": "Response",
@@ -762,5 +774,32 @@
   },
   "Welcome": {
     "bruno": "bruno"
+  },
+  "Hotkeys_keyMappings": {
+    "Save": "Save",
+    "Send Request": "Send Request",
+    "Edit Environment": "Edit Environment",
+    "New Request": "New Request",
+    "Close Tab" : "Close Tab",
+    "Open Preferences": "Open Preferences",
+    "Minimize Window": "Minimize Window",
+    "Switch to Previous Tab": "Switch to Previous Tab",
+    "Switch to Next Tab": "Switch to Next Tab",
+    "Close All Tabs": "Close All Tabs"
+  },
+  "RequestTabs_CollectionToolBar": {
+    "Runner": "Runner",
+    "Variables": "Variables",
+    "Collection_Settings": "Collection Settings"
+  },
+  "EnvironmentDetails_EnvironmentVariables": {
+    "Save": "Save",
+    "Reset": "Reset",
+    "Activate": "Activate",
+    "Add_Variable": "+ Add Variable",
+    "Enabled": "Enabled",
+    "Name": "Name",
+    "Value": "Value",
+    "Secret": "Secret"
   }
 }

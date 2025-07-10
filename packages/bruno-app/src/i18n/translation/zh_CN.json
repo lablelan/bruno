@@ -121,12 +121,17 @@
     "Presets": "预设"
   },
   "CollectionSettings_Overview_Info": {
+    "request": "请求",
+    "configured": "已配置",
     "Location": "位置",
     "environment": "环境",
     "Environments": "环境",
     "Requests": "请求",
     "Share": "分享",
-    "Share_Collection": "分享集合"
+    "Share_Collection": "分享集合",
+    "in_collection": "在集合中",
+    "out_of": "共",
+    "requests_in_the_collection_loaded": "集合中的请求已加载"
   },
   "CollectionSettings_Overview_RequestsNotLoaded": {
     "Following_requests_were_not_loaded": "以下请求未加载"
@@ -331,11 +336,12 @@
     "Save": "保存"
   },
   "RequestPane_RequestBody_RequestBodyMode": {
+    "Form": "表单",
     "Raw": "原始",
     "Other": "其他",
     "Prettify": "美化",
-    "Multipart_Form": "多部分表单",
-    "Form_URL_Encoded": "表单URL编码"
+    "Multipart_FormX": "多部分表单",
+    "Form_URL_EncodedX": "表单URL编码"
   },
   "RequestPane_RequestHeaders": {
     "Add_Header": "+ 添加请求头",
@@ -474,6 +480,7 @@
     "Devtools": "开发者工具"
   },
   "Environments_EnvironmentSelector": {
+    "Collection_Environments": "集合环境",
     "No_Environment": "无环境",
     "Configure": "配置"
   },
@@ -504,6 +511,7 @@
     "Environment_Name": "环境名称"
   },
   "GlobalEnvironments_EnvironmentSelector": {
+    "Global_Environments": "全局环境",
     "No_Environment": "无环境",
     "Configure": "配置"
   },
@@ -530,6 +538,7 @@
     "Import_your_Postman_environments": "导入您的Postman环境"
   },
   "GlobalEnvironments_EnvironmentSettings": {
+    "Global_Environments": "全局环境",
     "No_Global_Environments_found": "未找到全局环境",
     "Create_Global_Environment": "创建全局环境",
     "Or": "或者",
@@ -724,7 +733,10 @@
     "Run_Collection": "运行集合",
     "Reset": "重置",
     "Cancel_Execution": "取消执行",
-    "Run_Again": "再次运行"
+    "Run_Again": "再次运行",
+    "You_have": "您有",
+    "requests_in_this_collection": "个请求在此集合中",
+    "LongDescriptions1": "此集合中的请求仍在加载中。"
   },
   "RunnerResults_ResponsePane": {
     "Response": "响应",
@@ -762,5 +774,32 @@
   },
   "Welcome": {
     "bruno": "Bruno"
+  },
+  "Hotkeys_keyMappings": {
+    "Save": "保存",
+    "Send Request": "发送请求",
+    "Edit Environment": "编辑环境",
+    "New Request": "新建请求",
+    "Close Tab": "关闭标签页",
+    "Open Preferences": "打开偏好设置",
+    "Minimize Window": "最小化窗口",
+    "Switch to Previous Tab": "切换到上一个标签页",
+    "Switch to Next Tab": "切换到下一个标签页",
+    "Close All Tabs": "关闭所有标签页"
+  },
+  "RequestTabs_CollectionToolBar": {
+    "Runner": "运行器",
+    "Variables": "变量",
+    "Collection_Settings": "集合设置"
+  },
+  "EnvironmentDetails_EnvironmentVariables": {
+    "Save": "保存",
+    "Reset": "重置",
+    "Activate": "激活",
+    "Add_Variable": "+ 添加变量",
+    "Enabled": "已启用",
+    "Name": "名称",
+    "Value": "值",
+    "Secret": "机密"
   }
 }

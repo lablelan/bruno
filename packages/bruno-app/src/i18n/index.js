@@ -17,9 +17,8 @@ i18n
   .init({
     resources,
     lng: 'zh_CN', // Use "en" as the default language. "cimode" can be used to debug / show translation placeholder
-
     ns: 'translation', // Use translation as the default Namespace that will be loaded by default
-
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false // react already safes from xss
     }

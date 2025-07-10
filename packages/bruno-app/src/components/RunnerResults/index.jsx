@@ -127,9 +127,9 @@ export default function RunnerResults({ collection }) {
           <IconRun size={20} strokeWidth={1.5} className="ml-2" />
         </div>
         <div className="mt-6">
-          You have <span className="font-medium">{totalRequestsInCollection}</span> requests in this collection.
+          {t('RunnerResults.You_have')} <span className="font-medium">{totalRequestsInCollection}</span> {t('RunnerResults.requests_in_this_collection')}.
         </div>
-        {isCollectionLoading ? <div className='my-1 danger'>Requests in this collection are still loading.</div> : null}
+        {isCollectionLoading ? <div className='my-1 danger'>{t('RunnerResults.LongDescriptions1')}</div> : null}
         <div className="mt-6">
           <label>{t('RunnerResults.Delay')} (in ms)</label>
           <input

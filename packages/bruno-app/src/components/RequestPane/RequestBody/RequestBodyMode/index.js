@@ -73,7 +73,7 @@ const RequestBodyMode = ({ item, collection }) => {
     <StyledWrapper>
       <div className="inline-flex items-center cursor-pointer body-mode-selector">
         <Dropdown onCreate={onDropdownCreate} icon={<Icon />} placement="bottom-end">
-          <div className="label-item font-medium">Form</div>
+          <div className="label-item font-medium">{t('RequestPane_RequestBody_RequestBodyMode.Form')}</div>
           <div
             className="dropdown-item"
             onClick={() => {
@@ -81,7 +81,7 @@ const RequestBodyMode = ({ item, collection }) => {
               onModeChange('multipartForm');
             }}
           >
-            {t('RequestPane_RequestBody_RequestBodyMode.Multipart_Form')}
+            Multipart Form
           </div>
           <div
             className="dropdown-item"
@@ -90,7 +90,7 @@ const RequestBodyMode = ({ item, collection }) => {
               onModeChange('formUrlEncoded');
             }}
           >
-            {t('RequestPane_RequestBody_RequestBodyMode.Form_URL_Encoded')}
+            Form URL Encoded
           </div>
           <div className="label-item font-medium">{t('RequestPane_RequestBody_RequestBodyMode.Raw')}</div>
           <div

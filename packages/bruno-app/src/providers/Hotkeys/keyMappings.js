@@ -22,6 +22,7 @@ const KeyMapping = {
   },
   closeAllTabs: { mac: 'command+shift+w', windows: 'ctrl+shift+w', name: 'Close All Tabs' }
 };
+import { useTranslation } from 'react-i18next';
 
 /**
  * Retrieves the key bindings for a specific operating system.
@@ -30,12 +31,13 @@ const KeyMapping = {
  * @returns {Object} An object containing the key bindings for the specified OS.
  */
 export const getKeyBindingsForOS = (os) => {
+  const { t } = useTranslation();
   const keyBindings = {};
   for (const [action, { name, ...keys }] of Object.entries(KeyMapping)) {
     if (keys[os]) {
       keyBindings[action] = {
         keys: keys[os],
-        name
+        name: t(`Hotkeys_keyMappings.${name}`)
       };
     }
   }
